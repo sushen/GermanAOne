@@ -9,11 +9,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.biswas.germana1.ads.InterstitialAdManager
 import com.biswas.germana1.ui.auth.AuthViewModel
 import com.biswas.germana1.ui.navigation.AppNavigation
 import com.biswas.germana1.ui.theme.GermanA1Theme
-
-import com.biswas.germana1.ads.InterstitialAdManager
 
 class MainActivity : ComponentActivity() {
 
@@ -34,9 +33,9 @@ class MainActivity : ComponentActivity() {
                 ) {
                     AppNavigation(
                         authViewModel = authViewModel,
-                        onStartLesson = {
+                        onTriggerAd = {
                             interstitialAdManager.showAd(this) {
-                                // Transition or action after ad is closed/failed
+                                // Ad dismissed or failed to show; proceed smoothly
                             }
                         }
                     )
