@@ -22,6 +22,7 @@ sealed class Screen(val route: String) {
 @Composable
 fun AppNavigation(
     authViewModel: AuthViewModel,
+    onStartLesson: () -> Unit = {},
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController()
 ) {
@@ -66,7 +67,8 @@ fun AppNavigation(
                     navController.navigate(Screen.Login.route) {
                         popUpTo(Screen.Home.route) { inclusive = true }
                     }
-                }
+                },
+                onStartLesson = onStartLesson
             )
         }
     }
