@@ -27,6 +27,7 @@ import com.biswas.germana1.domain.auth.User
 fun HomeScreen(
     currentUser: User?,
     onLogout: () -> Unit,
+    onStartLesson: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     Scaffold(
@@ -100,7 +101,7 @@ fun HomeScreen(
                     )
                     Spacer(modifier = Modifier.height(12.dp))
                     Button(
-                        onClick = { /* Will be wired to Lesson 1 */ },
+                        onClick = onStartLesson,
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Text("Start Lesson")

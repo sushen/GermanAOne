@@ -13,12 +13,18 @@ import com.biswas.germana1.ui.auth.AuthViewModel
 import com.biswas.germana1.ui.navigation.AppNavigation
 import com.biswas.germana1.ui.theme.GermanA1Theme
 
+import com.biswas.germana1.ads.InterstitialAdManager
+
 class MainActivity : ComponentActivity() {
 
     private val authViewModel: AuthViewModel by viewModels()
+    private lateinit var interstitialAdManager: InterstitialAdManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        interstitialAdManager = InterstitialAdManager(this)
+        interstitialAdManager.loadAd()
+
         enableEdgeToEdge()
         setContent {
             GermanA1Theme {
@@ -26,7 +32,14 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    AppNavigation(authViewModel = authViewModel)
+                    AppNavigation(
+                        authViewModel = authViewModel,
+                        onStartLesson = {
+                            interstitialAdManager.showAd(this) {
+                                // Transition or action after ad is closed/failed
+                            }
+                        }
+                    )
                 }
             }
         }
