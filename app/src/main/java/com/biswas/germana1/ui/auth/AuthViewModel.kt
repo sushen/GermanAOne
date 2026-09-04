@@ -79,6 +79,23 @@ class AuthViewModel(
         }
     }
 
+    fun loginAsGuest() {
+        viewModelScope.launch {
+            _uiState.value = AuthUiState.Loading
+            when (val result = authRepository.loginAsGuest()) {
+                is AuthResult.Success -> {
+                    _uiState.value = AuthUiState.Success(result.data)
+                }
+                is AuthResult.Error -> {
+                    _uiState.value = AuthUiState.Error(result.message)
+                }
+                is AuthResult.Loading -> {
+                    _uiState.value = AuthUiState.Loading
+                }
+            }
+        }
+    }
+
     fun logout() {
         viewModelScope.launch {
             authRepository.logout()
