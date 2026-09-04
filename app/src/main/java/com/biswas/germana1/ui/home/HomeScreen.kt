@@ -61,7 +61,11 @@ fun HomeScreen(
                     )
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
-                        text = currentUser?.email ?: "Guest User",
+                        text = when {
+                            currentUser?.isAnonymous == true -> "Guest Learner Mode"
+                            currentUser?.email != null -> currentUser.email
+                            else -> "Guest Learner"
+                        },
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onPrimaryContainer
                     )
@@ -110,7 +114,7 @@ fun HomeScreen(
                 onClick = onLogout,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text("Log Out")
+                Text(if (currentUser?.isAnonymous == true) "Exit Guest Mode" else "Log Out")
             }
         }
     }

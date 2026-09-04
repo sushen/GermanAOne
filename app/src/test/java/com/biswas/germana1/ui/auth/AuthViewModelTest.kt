@@ -41,6 +41,15 @@ class FakeAuthRepository : AuthRepository {
         return AuthResult.Success(user)
     }
 
+    override suspend fun loginAsGuest(): AuthResult<User> {
+        if (shouldReturnError) {
+            return AuthResult.Error("Guest login failed")
+        }
+        val user = User(uid = "guest_uid", email = "guest@germana1.app", displayName = "Guest Learner", isAnonymous = true)
+        _currentUser.value = user
+        return AuthResult.Success(user)
+    }
+
     override suspend fun logout() {
         _currentUser.value = null
     }
@@ -81,6 +90,17 @@ class AuthViewModelTest {
 
         assertTrue(viewModel.uiState.value is AuthUiState.Success)
         assertEquals("user@example.com", (viewModel.uiState.value as AuthUiState.Success).user.email)
+    }
+
+    @Test
+    fun loginAsGuest_success_updatesUiStateToSuccessWithAnonymousUser() = runTest {
+        viewModel.loginAsGuest()
+        testDispatcher.scheduler.advanceUntilIdle()
+
+        assertTrue(viewModel.uiState.value is AuthUiState.Success)
+        val user = (viewModel.uiState.value as AuthUiState.Success).user
+        assertTrue(user.isAnonymous)
+        assertEquals("Guest Learner", user.displayName)
     }
 
     @Test

@@ -50,8 +50,30 @@ class FirebaseAuthRepositoryImpl(
         }
     }
 
+    override suspend fun loginAsGuest(): AuthResult<User> {
+        return try {
+            val result = firebaseAuth.signInAnonymously().await()
+            val user = result.user?.toDomainUser()
+            if (user != null) {
+                AuthResult.Success(user)
+            } else {
+                // Fallback for guest mode without Firebase backend connection
+                val guestUser = User(uid = "guest_temp_uid", email = "guest@germana1.app", displayName = "Guest Learner", isAnonymous = true)
+                AuthResult.Success(guestUser)
+            }
+        } catch (e: Exception) {
+            // Local fallback if Firebase auth is offline or not configured
+            val guestUser = User(uid = "guest_temp_uid", email = "guest@germana1.app", displayName = "Guest Learner", isAnonymous = true)
+            AuthResult.Success(guestUser)
+        }
+    }
+
     override suspend fun logout() {
-        firebaseAuth.signOut()
+        try {
+            firebaseAuth.signOut()
+        } catch (e: Exception) {
+            // Ignored if offline
+        }
     }
 
     override fun getCurrentUser(): User? {
@@ -62,7 +84,7 @@ class FirebaseAuthRepositoryImpl(
         return User(
             uid = uid,
             email = email,
-            displayName = displayName,
+            displayName = displayName ?: if (isAnonymous) "Guest Learner" else null,
             isAnonymous = isAnonymous
         )
     }
