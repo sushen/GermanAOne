@@ -19,7 +19,7 @@ class LessonRepositoryImplTest {
     @Test
     fun getLessons_returnsAllLessonsInOrder() {
         val lessons = repository.getLessons()
-        assertEquals(6, lessons.size)
+        assertEquals(7, lessons.size)
         assertEquals("lesson_1", lessons[0].id)
         assertEquals(1, lessons[0].order)
         assertEquals("lesson_2", lessons[1].id)
@@ -32,6 +32,8 @@ class LessonRepositoryImplTest {
         assertEquals(5, lessons[4].order)
         assertEquals("lesson_6", lessons[5].id)
         assertEquals(6, lessons[5].order)
+        assertEquals("lesson_7", lessons[6].id)
+        assertEquals(7, lessons[6].order)
     }
 
     @Test
@@ -147,6 +149,41 @@ class LessonRepositoryImplTest {
 
         assertTrue(containsMultipleChoice)
         assertTrue(containsFillInBlank)
+        assertTrue(containsTranslation)
+    }
+
+    @Test
+    fun getLessonById_returnsChapter7DetailsCorrectly() {
+        val lesson7 = repository.getLessonById("lesson_7")
+        assertNotNull(lesson7)
+        lesson7!!
+
+        assertEquals("Lektion 7: কেনাকাটা (Einkaufen)", lesson7.title)
+        assertEquals(7, lesson7.order)
+
+        assertTrue(lesson7.objectives.isNotEmpty())
+        assertTrue(lesson7.vocabulary.isNotEmpty())
+        assertTrue(lesson7.grammarRules.isNotEmpty())
+        assertTrue(lesson7.exampleSentences.isNotEmpty())
+        assertTrue(lesson7.dialogues.isNotEmpty())
+        assertTrue(lesson7.exercises.isNotEmpty())
+
+        val containsKaufenVocab = lesson7.vocabulary.any { it.german == "kaufen" }
+        assertTrue(containsKaufenVocab)
+
+        val containsKostenVocab = lesson7.vocabulary.any { it.german == "kosten" }
+        assertTrue(containsKostenVocab)
+
+        val containsTeuerVocab = lesson7.vocabulary.any { it.german == "teuer" }
+        assertTrue(containsTeuerVocab)
+
+        val containsKostenGrammar = lesson7.grammarRules.any { it.title.contains("kosten") || it.title.contains("দাম") }
+        assertTrue(containsKostenGrammar)
+
+        val containsMultipleChoice = lesson7.exercises.any { it.type == ExerciseType.MULTIPLE_CHOICE }
+        val containsTranslation = lesson7.exercises.any { it.type == ExerciseType.TRANSLATION }
+
+        assertTrue(containsMultipleChoice)
         assertTrue(containsTranslation)
     }
 }
