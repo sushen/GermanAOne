@@ -19,13 +19,15 @@ class LessonRepositoryImplTest {
     @Test
     fun getLessons_returnsAllLessonsInOrder() {
         val lessons = repository.getLessons()
-        assertEquals(3, lessons.size)
+        assertEquals(4, lessons.size)
         assertEquals("lesson_1", lessons[0].id)
         assertEquals(1, lessons[0].order)
         assertEquals("lesson_2", lessons[1].id)
         assertEquals(2, lessons[1].order)
         assertEquals("lesson_3", lessons[2].id)
         assertEquals(3, lessons[2].order)
+        assertEquals("lesson_4", lessons[3].id)
+        assertEquals(4, lessons[3].order)
     }
 
     @Test
@@ -50,6 +52,34 @@ class LessonRepositoryImplTest {
         val containsMultipleChoice = lesson3.exercises.any { it.type == ExerciseType.MULTIPLE_CHOICE }
         val containsFillInBlank = lesson3.exercises.any { it.type == ExerciseType.FILL_IN_BLANK }
         val containsTranslation = lesson3.exercises.any { it.type == ExerciseType.TRANSLATION }
+
+        assertTrue(containsMultipleChoice)
+        assertTrue(containsFillInBlank)
+        assertTrue(containsTranslation)
+    }
+
+    @Test
+    fun getLessonById_returnsChapter4DetailsCorrectly() {
+        val lesson4 = repository.getLessonById("lesson_4")
+        assertNotNull(lesson4)
+        lesson4!!
+
+        assertEquals("Lektion 4: আমার পরিবার (Meine Familie)", lesson4.title)
+        assertEquals(4, lesson4.order)
+
+        assertTrue(lesson4.objectives.isNotEmpty())
+        assertTrue(lesson4.vocabulary.isNotEmpty())
+        assertTrue(lesson4.grammarRules.isNotEmpty())
+        assertTrue(lesson4.exampleSentences.isNotEmpty())
+        assertTrue(lesson4.dialogues.isNotEmpty())
+        assertTrue(lesson4.exercises.isNotEmpty())
+
+        val containsMutterVocab = lesson4.vocabulary.any { it.german == "die Mutter" }
+        assertTrue(containsMutterVocab)
+
+        val containsMultipleChoice = lesson4.exercises.any { it.type == ExerciseType.MULTIPLE_CHOICE }
+        val containsFillInBlank = lesson4.exercises.any { it.type == ExerciseType.FILL_IN_BLANK }
+        val containsTranslation = lesson4.exercises.any { it.type == ExerciseType.TRANSLATION }
 
         assertTrue(containsMultipleChoice)
         assertTrue(containsFillInBlank)

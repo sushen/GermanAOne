@@ -270,6 +270,144 @@ class LessonRepositoryImpl : LessonRepository {
                     type = ExerciseType.MULTIPLE_CHOICE
                 )
             )
+        ),
+        Lesson(
+            id = "lesson_4",
+            title = "Lektion 4: আমার পরিবার (Meine Familie)",
+            description = "পরিবারের সদস্যদের নাম, পরিচয় দেওয়া, অধিকার প্রকাশ (mein/meine) এবং পরিবার সম্পর্কিত সাধারণ প্রশ্নোত্তর শিখুন।",
+            order = 4,
+            objectives = listOf(
+                "পরিবারের মৌলিক সদস্যদের নাম জার্মান ভাষায় বলা।",
+                "কাউকে পরিচয় করিয়ে দেওয়া ('Das ist...')।",
+                "পজেসিভ প্রোনাউন 'mein / meine' এবং 'dein / deine'-এর সঠিক ব্যবহার শেখা।",
+                "ভাই-বোন ও পরিবার নিয়ে সহজ প্রশ্ন করা ও উত্তর দেওয়া।",
+                "পরিবার সম্পর্কিত সংক্ষিপ্ত কথোপকথন বোঝা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("die Familie", "পরিবার", "দি ফা-মি-লি-য়ে", "Meine Familie ist groß."),
+                VocabularyItem("die Mutter", "মা", "দি মু-টার", "Das ist meine Mutter."),
+                VocabularyItem("der Vater", "বাবা", "দের ফা-টার", "Das ist mein Vater."),
+                VocabularyItem("die Eltern", "বাবা-মা / পিতা-মাতা", "দি এল-টার্ন", "Meine Eltern wohnen in Dhaka."),
+                VocabularyItem("der Bruder", "ভাই", "দের ব্রু-ডার", "Ich habe einen Bruder."),
+                VocabularyItem("die Schwester", "বোন", "দি শ্বে-স্টার", "Ich habe eine Schwester."),
+                VocabularyItem("der Sohn", "ছেলে / পুত্র", "দের জোন", "Das ist mein Sohn."),
+                VocabularyItem("die Tochter", "মেয়ে / কন্যা", "দি তোখ-টার", "Das ist meine Tochter."),
+                VocabularyItem("das Kind", "শিশু / সন্তান", "দাস কিন্ট", "Das Kind spielt."),
+                VocabularyItem("der Mann", "পুরুষ / স্বামী", "দের মান", "Mein Mann heißt Rahat."),
+                VocabularyItem("die Frau", "নারী / স্ত্রী", "দি ফ্রাউ", "Meine Frau heißt Salma."),
+                VocabularyItem("die Oma", "দাদি / নানি", "দি ও-মা", "Meine Oma ist sehr nett."),
+                VocabularyItem("der Opa", "দাদা / নানা", "দের ও-পা", "Mein Opa wohnt in Berlin."),
+                VocabularyItem("die Geschwister", "ভাই-বোন (বহুবচন)", "দি গে-শ্বিস-টার", "Hast du Geschwister?")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "পজেসিভ প্রোনাউন ('mein / meine' এবং 'dein / deine')",
+                    explanation = "'mein' এবং 'meine' দুটোর অর্থই 'আমার'। জার্মান ভাষায় noun-এর gender অনুযায়ী রূপ পরিবর্তন হয়:\n- Masculine (der) ও Neuter (das)-এর ক্ষেত্রে: mein / dein\n- Feminine (die) ও Plural (die)-এর ক্ষেত্রে: meine / deine",
+                    examples = listOf(
+                        "mein Vater (আমার বাবা) [der Vater]",
+                        "meine Mutter (আমার মা) [die Mutter]",
+                        "dein Bruder (তোমার ভাই) [der Bruder]",
+                        "deine Schwester (তোমার বোন) [die Schwester]"
+                    )
+                ),
+                GrammarRule(
+                    title = "পরিচয় করিয়ে দেওয়া ('Das ist...')",
+                    explanation = "'Das ist...' এর মাধ্যমে কোনো ব্যক্তি বা বস্তুকে পরিচয় করিয়ে দেওয়া হয় (অর্থ: ইনি ... / এই যে ...)।",
+                    examples = listOf(
+                        "Das ist mein Vater. (ইনি আমার বাবা।)",
+                        "Das ist meine Mutter. (ইনি আমার মা।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "সম্পর্ক বা অধিকার প্রকাশ ('haben')",
+                    explanation = "নিজের ভাই, বোন বা সন্তান আছে তা বলতে 'haben' ক্রিয়া ব্যবহৃত হয় (akku. masculin-এ 'einen', feminin-এ 'eine'):\n- Ich habe einen Bruder.\n- Ich habe eine Schwester.",
+                    examples = listOf(
+                        "Ich habe einen Bruder. (আমার একজন ভাই আছে।)",
+                        "Ich habe eine Schwester. (আমার একজন বোন আছে।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "পরিবার সম্পর্কিত প্রশ্ন (Familienfragen)",
+                    explanation = "পরিবার সম্পর্কে সাধারণ প্রশ্ন করার নিয়ম:\n- Wer ist das? (উনি কে? / এটি কে?)\n- Ist das dein Vater? (উনি কি তোমার বাবা?)\n- Hast du Geschwister? (তোমার কি ভাই-বোন আছে?)",
+                    examples = listOf(
+                        "Wer ist das? - Das ist meine Schwester.",
+                        "Hast du Geschwister? - Ja, ich habe einen Bruder."
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Das ist meine Mutter.", "ইনি আমার মা।", "দাস ইস্ট মাই-নে মু-টার"),
+                ExampleSentence("Das ist mein Vater.", "ইনি আমার বাবা।", "দাস ইস্ট ভাইন ফা-টার"),
+                ExampleSentence("Ich habe einen Bruder.", "আমার একজন ভাই আছে।", "ইখ হা-বে আই-নেন ব্রু-ডার"),
+                ExampleSentence("Ich habe eine Schwester.", "আমার একজন বোন আছে।", "ইখ হা-বে আই-নে শ্বে-স্টার"),
+                ExampleSentence("Meine Familie ist klein.", "আমার পরিবার ছোট।", "মাই-নে ফা-মি-লি-য়ে ইস্ট ক্লাইন"),
+                ExampleSentence("Meine Familie ist groß.", "আমার পরিবার বড়।", "মাই-নে ফা-মি-লি-য়ে ইস্ট গ্রোস")
+            ),
+            dialogues = listOf(
+                DialogueEntry("A", "Hallo! Das ist meine Familie.", "হ্যালো! এটি আমার পরিবার।"),
+                DialogueEntry("B", "Wer ist das?", "উনি কে?"),
+                DialogueEntry("A", "Das ist mein Vater.", "ইনি আমার বাবা।"),
+                DialogueEntry("B", "Und wer ist das?", "আর উনি কে?"),
+                DialogueEntry("A", "Das ist meine Mutter.", "ইনি আমার মা।"),
+                DialogueEntry("B", "Hast du Geschwister?", "তোমার কি ভাই-বোন আছে?"),
+                DialogueEntry("A", "Ja. Ich habe einen Bruder und eine Schwester.", "হ্যাঁ। আমার একজন ভাই এবং একজন বোন আছে।"),
+                DialogueEntry("B", "Wie heißt dein Bruder?", "তোমার ভাইয়ের নাম কী?"),
+                DialogueEntry("A", "Er heißt Karim.", "তার নাম করিম।")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_4_1",
+                    question = "'Das ist meine Mutter.' - এর বাংলা অর্থ কী?",
+                    options = listOf("ইনি আমার বাবা।", "ইনি আমার মা।", "এটি আমার ভাই।", "এটি আমার বোন।"),
+                    correctAnswer = "ইনি আমার মা।",
+                    explanation = "'Mutter' শব্দের অর্থ মা, তাই সঠিক অর্থ 'ইনি আমার মা।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_4_2",
+                    question = "শূন্যস্থান পূরণ করুন: Das ist ___ Vater.",
+                    options = listOf("meine", "mein", "deine", "eine"),
+                    correctAnswer = "mein",
+                    explanation = "'Vater' হলো Masculine (der Vater), তাই 'mein' বসবে।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_4_3",
+                    question = "'Das ist meine Schwester.' বাক্যে 'Schwester' এর বাংলা অর্থ কী?",
+                    correctAnswer = "বোন",
+                    explanation = "'Schwester' শব্দের অর্থ বোন।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_4_4",
+                    question = "'Hast du Geschwister?' - এর বাংলা অর্থ কী?",
+                    options = listOf("তোমার বয়স কত?", "তোমার কি ভাই-বোন আছে?", "তোমার ভাই কোথায়?", "তোমার নাম কী?"),
+                    correctAnswer = "তোমার কি ভাই-বোন আছে?",
+                    explanation = "'Geschwister' মানে ভাই-বোন, প্রশ্নটির অর্থ 'তোমার কি ভাই-বোন আছে?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_4_5",
+                    question = "জার্মানে অনুবাদ করুন: আমার একজন ভাই আছে।",
+                    correctAnswer = "Ich habe einen Bruder.",
+                    explanation = "'Bruder' শব্দের পূর্বে 'einen' ব্যবহৃত হয় (Ich habe einen Bruder)।",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_4_6",
+                    question = "শূন্যস্থান পূরণ করুন: Das ist ___ Mutter. (ইনি আমার মা।)",
+                    correctAnswer = "meine",
+                    explanation = "'Mutter' হলো Feminine (die Mutter), তাই 'meine' ব্যবহৃত হয়।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_4_7",
+                    question = "জার্মানে অনুবাদ করুন: উনি কে?",
+                    correctAnswer = "Wer ist das?",
+                    explanation = "কাউকে পরিচয় জানতে চাইতে 'Wer ist das?' জিজ্ঞেস করতে হয়।",
+                    type = ExerciseType.TRANSLATION
+                )
+            )
         )
     )
 
