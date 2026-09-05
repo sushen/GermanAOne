@@ -19,6 +19,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -37,7 +38,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.biswas.germana1.ui.components.BrandLogoHeader
-import com.biswas.germana1.ui.theme.BrandCharcoal
+import com.biswas.germana1.ui.theme.BrandDarkTextOnYellow
+import com.biswas.germana1.ui.theme.BrandRed
 import com.biswas.germana1.ui.theme.BrandYellow
 
 @Composable
@@ -98,7 +100,7 @@ fun LoginScreen(
                     text = "লগইন করুন",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
-                    color = BrandCharcoal
+                    color = MaterialTheme.colorScheme.onSurface
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -112,6 +114,12 @@ fun LoginScreen(
                     label = { Text("ইমেইল") },
                     singleLine = true,
                     shape = RoundedCornerShape(12.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        focusedLabelColor = BrandYellow,
+                        unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                    ),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Email,
                         imeAction = ImeAction.Next
@@ -130,6 +138,12 @@ fun LoginScreen(
                     label = { Text("পাসওয়ার্ড") },
                     singleLine = true,
                     shape = RoundedCornerShape(12.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        focusedLabelColor = BrandYellow,
+                        unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                    ),
                     visualTransformation = PasswordVisualTransformation(),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Password,
@@ -154,7 +168,7 @@ fun LoginScreen(
                     enabled = uiState !is AuthUiState.Loading,
                     colors = ButtonDefaults.buttonColors(
                         containerColor = BrandYellow,
-                        contentColor = BrandCharcoal
+                        contentColor = BrandDarkTextOnYellow
                     ),
                     shape = RoundedCornerShape(12.dp),
                     modifier = Modifier
@@ -163,14 +177,14 @@ fun LoginScreen(
                 ) {
                     if (uiState is AuthUiState.Loading) {
                         CircularProgressIndicator(
-                            color = BrandCharcoal,
+                            color = BrandDarkTextOnYellow,
                             modifier = Modifier.height(24.dp)
                         )
                     } else {
                         Text(
                             text = "লগইন",
                             fontWeight = FontWeight.Bold,
-                            color = BrandCharcoal
+                            color = BrandDarkTextOnYellow
                         )
                     }
                 }
@@ -185,7 +199,10 @@ fun LoginScreen(
                         .fillMaxWidth()
                         .height(50.dp)
                 ) {
-                    Text(text = "অতিথি হিসেবে চালিয়ে যান", color = BrandCharcoal)
+                    Text(
+                        text = "অতিথি হিসেবে চালিয়ে যান",
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
                 }
 
                 Spacer(modifier = Modifier.height(12.dp))
@@ -196,7 +213,7 @@ fun LoginScreen(
                 ) {
                     Text(
                         text = "একাউন্ট নেই? রেজিস্টার করুন",
-                        color = MaterialTheme.colorScheme.secondary,
+                        color = BrandRed,
                         fontWeight = FontWeight.Medium
                     )
                 }

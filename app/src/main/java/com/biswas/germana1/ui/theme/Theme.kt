@@ -1,6 +1,5 @@
 package com.biswas.germana1.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -9,49 +8,50 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
-
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
     primary = BrandYellow,
-    onPrimary = BrandCharcoal,
-    primaryContainer = BrandCharcoal,
-    onPrimaryContainer = BrandYellow,
+    onPrimary = BrandDarkTextOnYellow,
+    primaryContainer = BrandYellow,
+    onPrimaryContainer = BrandDarkTextOnYellow,
     secondary = BrandRed,
     onSecondary = Color.White,
+    secondaryContainer = Color(0xFF381E1E),
+    onSecondaryContainer = BrandRed,
     tertiary = BrandYellow,
-    onTertiary = BrandCharcoal,
-    background = Color(0xFF121212),
-    onBackground = Color(0xFFEEEEEE),
-    surface = Color(0xFF1E1E1E),
-    onSurface = Color(0xFFEEEEEE),
-    surfaceVariant = Color(0xFF2C2C2C),
-    onSurfaceVariant = Color(0xFFCCCCCC)
+    onTertiary = BrandDarkTextOnYellow,
+    background = BrandMainBackground,
+    onBackground = BrandTextPrimary,
+    surface = BrandCardSurface,
+    onSurface = BrandTextPrimary,
+    surfaceVariant = BrandSurfaceVariant,
+    onSurfaceVariant = BrandTextSecondary
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = BrandCharcoal,
-    onPrimary = Color.White,
+    primary = BrandYellow,
+    onPrimary = BrandDarkTextOnYellow,
     primaryContainer = BrandYellow,
-    onPrimaryContainer = BrandCharcoal,
+    onPrimaryContainer = BrandDarkTextOnYellow,
     secondary = BrandRed,
     onSecondary = Color.White,
-    secondaryContainer = Color(0xFFFFEBEB),
+    secondaryContainer = Color(0xFF381E1E),
     onSecondaryContainer = BrandRed,
     tertiary = BrandYellow,
-    onTertiary = BrandCharcoal,
-    background = BrandWarmBackground,
-    onBackground = BrandCharcoal,
-    surface = BrandSurfaceWhite,
-    onSurface = BrandCharcoal,
-    surfaceVariant = BrandSurface,
-    onSurfaceVariant = BrandTextMuted
+    onTertiary = BrandDarkTextOnYellow,
+    background = BrandMainBackground,
+    onBackground = BrandTextPrimary,
+    surface = BrandCardSurface,
+    onSurface = BrandTextPrimary,
+    surfaceVariant = BrandSurfaceVariant,
+    onSurfaceVariant = BrandTextSecondary
 )
 
 @Composable
 fun GermanA1Theme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = true, // Default to approved dark UI theme
     // Keep dynamicColor false to preserve locked brand identity on all devices
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit

@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.biswas.germana1.R
 import com.biswas.germana1.ui.theme.BrandCharcoal
+import com.biswas.germana1.ui.theme.BrandDarkTextOnYellow
 import com.biswas.germana1.ui.theme.BrandRed
 import com.biswas.germana1.ui.theme.BrandYellow
 
@@ -54,7 +55,7 @@ fun BrandLogoHeader(
                 Icon(
                     painter = painterResource(id = R.drawable.ic_brand_airplane),
                     contentDescription = "Germany Journey Airplane",
-                    tint = BrandCharcoal,
+                    tint = BrandDarkTextOnYellow,
                     modifier = Modifier.size(if (compact) 22.dp else 34.dp)
                 )
             }
@@ -66,7 +67,7 @@ fun BrandLogoHeader(
             text = "জার্মানি যাবো",
             style = if (compact) MaterialTheme.typography.titleLarge else MaterialTheme.typography.headlineLarge,
             fontWeight = FontWeight.Bold,
-            color = BrandCharcoal,
+            color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center
         )
 

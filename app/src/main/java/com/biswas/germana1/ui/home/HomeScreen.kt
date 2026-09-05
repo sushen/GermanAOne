@@ -40,6 +40,7 @@ import com.biswas.germana1.R
 import com.biswas.germana1.domain.auth.User
 import com.biswas.germana1.domain.model.Lesson
 import com.biswas.germana1.ui.theme.BrandCharcoal
+import com.biswas.germana1.ui.theme.BrandDarkTextOnYellow
 import com.biswas.germana1.ui.theme.BrandRed
 import com.biswas.germana1.ui.theme.BrandYellow
 
@@ -76,7 +77,7 @@ fun HomeScreen(
                                 Icon(
                                     painter = painterResource(id = R.drawable.ic_brand_airplane),
                                     contentDescription = null,
-                                    tint = BrandCharcoal,
+                                    tint = BrandDarkTextOnYellow,
                                     modifier = Modifier.size(18.dp)
                                 )
                             }
@@ -89,7 +90,7 @@ fun HomeScreen(
                                 text = "জার্মানি যাবো",
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold,
-                                color = BrandCharcoal
+                                color = MaterialTheme.colorScheme.onBackground
                             )
                             Text(
                                 text = "German A1 Language Course",
@@ -131,7 +132,7 @@ fun HomeScreen(
                         text = "পুনরায় স্বাগতম! 👋",
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold,
-                        color = BrandCharcoal
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
@@ -152,7 +153,7 @@ fun HomeScreen(
                 text = "পাঠসমূহ",
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
-                color = BrandCharcoal,
+                color = MaterialTheme.colorScheme.onBackground,
                 modifier = Modifier.align(Alignment.Start)
             )
 
@@ -180,7 +181,7 @@ fun HomeScreen(
                                 text = lesson.title,
                                 style = MaterialTheme.typography.titleMedium,
                                 fontWeight = FontWeight.Bold,
-                                color = BrandCharcoal
+                                color = MaterialTheme.colorScheme.onSurface
                             )
                             Spacer(modifier = Modifier.height(6.dp))
                             Text(
@@ -193,7 +194,7 @@ fun HomeScreen(
                                 onClick = { onSelectLesson(lesson) },
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = BrandYellow,
-                                    contentColor = BrandCharcoal
+                                    contentColor = BrandDarkTextOnYellow
                                 ),
                                 shape = RoundedCornerShape(12.dp),
                                 modifier = Modifier
@@ -203,7 +204,7 @@ fun HomeScreen(
                                 Text(
                                     text = "পাঠ শুরু করুন",
                                     fontWeight = FontWeight.Bold,
-                                    color = BrandCharcoal
+                                    color = BrandDarkTextOnYellow
                                 )
                             }
                         }
@@ -222,7 +223,7 @@ fun HomeScreen(
             ) {
                 Text(
                     text = if (currentUser?.isAnonymous == true) "অতিথি মোড থেকে বের হন" else "লগআউট",
-                    color = BrandCharcoal
+                    color = MaterialTheme.colorScheme.onBackground
                 )
             }
         }
