@@ -1,6 +1,10 @@
 package com.biswas.germana1.ui.lesson
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -8,22 +12,29 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.RadioButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
+import androidx.compose.material3.TabRowDefaults
+import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -32,11 +43,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.biswas.germana1.domain.model.Exercise
 import com.biswas.germana1.domain.model.ExerciseType
 import com.biswas.germana1.domain.model.Lesson
+import com.biswas.germana1.ui.theme.BrandDarkTextOnYellow
+import com.biswas.germana1.ui.theme.BrandRed
+import com.biswas.germana1.ui.theme.BrandSuccess
+import com.biswas.germana1.ui.theme.BrandYellow
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -46,17 +62,30 @@ fun LessonDetailScreen(
     modifier: Modifier = Modifier
 ) {
     var selectedTabIndex by remember { mutableIntStateOf(0) }
-    val tabs = listOf("Overview", "Vocabulary", "Grammar", "Dialogue", "Exercises")
+    val tabs = listOf("সংক্ষিপ্ত বিবরণ", "শব্দভাণ্ডার", "ব্যাকরণ", "কথোপকথন", "অনুশীলন")
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(lesson.title) },
+                title = {
+                    Text(
+                        text = lesson.title,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onBackground
+                    )
+                },
                 navigationIcon = {
                     TextButton(onClick = onBack) {
-                        Text("< Back")
+                        Text(
+                            text = "পেছনে",
+                            color = MaterialTheme.colorScheme.onBackground,
+                            fontWeight = FontWeight.Medium
+                        )
                     }
-                }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.background
+                )
             )
         },
         modifier = modifier
@@ -66,12 +95,30 @@ fun LessonDetailScreen(
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-            ScrollableTabRow(selectedTabIndex = selectedTabIndex) {
+            ScrollableTabRow(
+                selectedTabIndex = selectedTabIndex,
+                containerColor = MaterialTheme.colorScheme.background,
+                contentColor = MaterialTheme.colorScheme.onBackground,
+                indicator = { tabPositions ->
+                    if (selectedTabIndex < tabPositions.size) {
+                        TabRowDefaults.SecondaryIndicator(
+                            Modifier.tabIndicatorOffset(tabPositions[selectedTabIndex]),
+                            color = BrandYellow
+                        )
+                    }
+                }
+            ) {
                 tabs.forEachIndexed { index, title ->
                     Tab(
                         selected = selectedTabIndex == index,
                         onClick = { selectedTabIndex = index },
-                        text = { Text(title) }
+                        text = {
+                            Text(
+                                text = title,
+                                color = if (selectedTabIndex == index) BrandYellow else MaterialTheme.colorScheme.onSurfaceVariant,
+                                fontWeight = if (selectedTabIndex == index) FontWeight.Bold else FontWeight.Normal
+                            )
+                        }
                     )
                 }
             }
@@ -96,20 +143,30 @@ private fun OverviewTab(lesson: Lesson) {
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         item {
-            Text(text = lesson.description, style = MaterialTheme.typography.bodyLarge)
+            Text(
+                text = lesson.description,
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onBackground
+            )
         }
         item {
-            Text(text = "Objectives", style = MaterialTheme.typography.titleMedium)
+            Text(
+                text = "উদ্দেশ্যসমূহ",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onBackground
+            )
         }
         items(lesson.objectives) { objective ->
             Card(
                 modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
             ) {
                 Text(
                     text = "• $objective",
                     modifier = Modifier.padding(12.dp),
-                    style = MaterialTheme.typography.bodyMedium
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurface
                 )
             }
         }
@@ -125,21 +182,37 @@ private fun VocabularyTab(lesson: Lesson) {
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         items(lesson.vocabulary) { item ->
-            Card(modifier = Modifier.fillMaxWidth()) {
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+            ) {
                 Column(modifier = Modifier.padding(16.dp)) {
+                    // German target word visually prominent
                     Text(
-                        text = "${item.german} - ${item.english}",
-                        style = MaterialTheme.typography.titleMedium
+                        text = item.german,
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Spacer(modifier = Modifier.height(2.dp))
+                    Text(
+                        text = item.english,
+                        style = MaterialTheme.typography.bodyLarge,
+                        fontWeight = FontWeight.Medium,
+                        color = BrandRed
                     )
                     Text(
-                        text = "Pronunciation: [${item.pronunciation}]",
+                        text = "উচ্চারণ: [${item.pronunciation}]",
                         style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.secondary
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
-                    Spacer(modifier = Modifier.height(4.dp))
+                    Spacer(modifier = Modifier.height(6.dp))
                     Text(
-                        text = "Example: ${item.exampleSentence}",
-                        style = MaterialTheme.typography.bodyMedium
+                        text = "উদাহরণ: ${item.exampleSentence}",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 }
             }
@@ -156,17 +229,32 @@ private fun GrammarTab(lesson: Lesson) {
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items(lesson.grammarRules) { rule ->
-            Card(modifier = Modifier.fillMaxWidth()) {
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+            ) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text(text = rule.title, style = MaterialTheme.typography.titleMedium)
+                    Text(
+                        text = rule.title,
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = rule.explanation, style = MaterialTheme.typography.bodyMedium)
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = rule.explanation,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
                     rule.examples.forEach { example ->
                         Text(
                             text = "• $example",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.primary
+                            style = MaterialTheme.typography.bodyMedium,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 }
@@ -181,17 +269,31 @@ private fun DialogueTab(lesson: Lesson) {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         items(lesson.dialogues) { dialogue ->
-            Card(modifier = Modifier.fillMaxWidth()) {
-                Column(modifier = Modifier.padding(12.dp)) {
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+            ) {
+                Column(modifier = Modifier.padding(14.dp)) {
                     Text(
                         text = "${dialogue.speaker}:",
                         style = MaterialTheme.typography.labelLarge,
-                        color = MaterialTheme.colorScheme.primary
+                        fontWeight = FontWeight.Bold,
+                        color = BrandRed
                     )
-                    Text(text = dialogue.german, style = MaterialTheme.typography.bodyLarge)
+                    Spacer(modifier = Modifier.height(2.dp))
+                    // Prominent German sentence
+                    Text(
+                        text = dialogue.german,
+                        style = MaterialTheme.typography.bodyLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Spacer(modifier = Modifier.height(2.dp))
                     Text(
                         text = dialogue.english,
                         style = MaterialTheme.typography.bodyMedium,
@@ -224,25 +326,77 @@ private fun ExerciseCard(exercise: Exercise) {
 
     val isCorrect = userAnswer.trim().equals(exercise.correctAnswer.trim(), ignoreCase = true)
 
-    Card(modifier = Modifier.fillMaxWidth()) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = exercise.question, style = MaterialTheme.typography.titleMedium)
+            Text(
+                text = exercise.question,
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface
+            )
             Spacer(modifier = Modifier.height(12.dp))
 
             when (exercise.type) {
                 ExerciseType.MULTIPLE_CHOICE -> {
                     exercise.options.forEach { option ->
+                        val isOptionSelected = userAnswer == option
+
+                        val optionBgColor = when {
+                            submitted && isOptionSelected && isCorrect -> BrandSuccess.copy(alpha = 0.2f)
+                            submitted && isOptionSelected && !isCorrect -> BrandRed.copy(alpha = 0.2f)
+                            isOptionSelected -> BrandYellow.copy(alpha = 0.15f)
+                            else -> MaterialTheme.colorScheme.surfaceVariant
+                        }
+
+                        val optionBorderColor = when {
+                            submitted && isOptionSelected && isCorrect -> BrandSuccess
+                            submitted && isOptionSelected && !isCorrect -> BrandRed
+                            isOptionSelected -> BrandYellow
+                            else -> MaterialTheme.colorScheme.surfaceVariant
+                        }
+
+                        val optionTextColor = when {
+                            submitted && isOptionSelected && isCorrect -> BrandSuccess
+                            submitted && isOptionSelected && !isCorrect -> BrandRed
+                            isOptionSelected -> BrandYellow
+                            else -> MaterialTheme.colorScheme.onSurface
+                        }
+
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier.fillMaxWidth()
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 4.dp)
+                                .clip(RoundedCornerShape(12.dp))
+                                .background(optionBgColor)
+                                .border(1.dp, optionBorderColor, RoundedCornerShape(12.dp))
+                                .clickable(enabled = !submitted) {
+                                    userAnswer = option
+                                }
+                                .padding(horizontal = 12.dp, vertical = 8.dp)
                         ) {
                             RadioButton(
-                                selected = userAnswer == option,
+                                selected = isOptionSelected,
                                 onClick = {
                                     if (!submitted) userAnswer = option
-                                }
+                                },
+                                colors = RadioButtonDefaults.colors(
+                                    selectedColor = if (submitted && !isCorrect) BrandRed else BrandYellow,
+                                    unselectedColor = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
                             )
-                            Text(text = option, style = MaterialTheme.typography.bodyMedium)
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(
+                                text = option,
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontWeight = if (isOptionSelected) FontWeight.Bold else FontWeight.Medium,
+                                color = optionTextColor
+                            )
                         }
                     }
                 }
@@ -250,7 +404,14 @@ private fun ExerciseCard(exercise: Exercise) {
                     OutlinedTextField(
                         value = userAnswer,
                         onValueChange = { if (!submitted) userAnswer = it },
-                        label = { Text("Your Answer") },
+                        label = { Text("আপনার উত্তর") },
+                        shape = RoundedCornerShape(12.dp),
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = MaterialTheme.colorScheme.onSurface,
+                            unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
+                            focusedLabelColor = BrandYellow,
+                            unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                        ),
                         modifier = Modifier.fillMaxWidth(),
                         enabled = !submitted
                     )
@@ -263,23 +424,36 @@ private fun ExerciseCard(exercise: Exercise) {
                 Button(
                     onClick = { submitted = true },
                     enabled = userAnswer.isNotBlank(),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = BrandYellow,
+                        contentColor = BrandDarkTextOnYellow,
+                        disabledContainerColor = MaterialTheme.colorScheme.surfaceVariant,
+                        disabledContentColor = MaterialTheme.colorScheme.onSurfaceVariant
+                    ),
+                    shape = RoundedCornerShape(12.dp),
                     modifier = Modifier.align(Alignment.End)
                 ) {
-                    Text("Check")
+                    Text(
+                        text = "যাচাই করুন",
+                        fontWeight = FontWeight.Bold,
+                        color = if (userAnswer.isNotBlank()) BrandDarkTextOnYellow else MaterialTheme.colorScheme.onSurfaceVariant
+                    )
                 }
             } else {
-                val statusText = if (isCorrect) "✅ Correct!" else "❌ Incorrect. Correct answer: ${exercise.correctAnswer}"
-                val statusColor = if (isCorrect) Color(0xFF2E7D32) else MaterialTheme.colorScheme.error
+                val statusText = if (isCorrect) "✅ সঠিক! 🎉" else "❌ ভুল উত্তর। সঠিক উত্তর: ${exercise.correctAnswer}"
+                val statusColor = if (isCorrect) BrandSuccess else BrandRed
 
                 Text(
                     text = statusText,
                     color = statusColor,
-                    style = MaterialTheme.typography.bodyLarge
+                    style = MaterialTheme.typography.bodyLarge,
+                    fontWeight = FontWeight.Bold
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = "💡 ${exercise.explanation}",
-                    style = MaterialTheme.typography.bodyMedium
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurface
                 )
             }
         }

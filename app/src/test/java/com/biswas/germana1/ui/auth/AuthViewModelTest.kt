@@ -80,7 +80,7 @@ class AuthViewModelTest {
     fun login_emptyFields_setsErrorState() {
         viewModel.login("", "")
         assertTrue(viewModel.uiState.value is AuthUiState.Error)
-        assertEquals("Email and password must not be empty.", (viewModel.uiState.value as AuthUiState.Error).message)
+        assertEquals("ইমেইল এবং পাসওয়ার্ড খালি রাখা যাবে না।", (viewModel.uiState.value as AuthUiState.Error).message)
     }
 
     @Test
