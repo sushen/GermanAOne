@@ -408,6 +408,160 @@ class LessonRepositoryImpl : LessonRepository {
                     type = ExerciseType.TRANSLATION
                 )
             )
+        ),
+        Lesson(
+            id = "lesson_5",
+            title = "Lektion 5: আমার দৈনন্দিন জীবন (Mein Alltag)",
+            description = "দৈনন্দিন কাজের বিবরণ দেওয়া, সময় উল্লেখ করে কাজ করা, separable verb 'aufstehen' এবং দৈনন্দিন রুটিন সম্পর্কে বলা ও প্রশ্ন করা শিখুন।",
+            order = 5,
+            objectives = listOf(
+                "ঘুম থেকে ওঠা, নাশতা করা, কাজ/পড়াশোনা, দুপুরের খাবার, বাড়ি ফেরা ও ঘুমানোর কথা বলা।",
+                "নির্দিষ্ট সময় বোঝাতে 'um' (যেমন: um sieben Uhr) এবং দিনের অংশ বোঝাতে 'am Morgen / am Nachmittag / am Abend / in der Nacht' ব্যবহার করা।",
+                "Separable verb 'aufstehen' বাক্যে সঠিকভাবে ব্যবহার করা (Ich stehe um sieben Uhr auf)।",
+                "দৈনন্দিন জীবন সম্পর্কিত সহজ প্রশ্ন করা ও উত্তর দেওয়া।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("der Alltag", "দৈনন্দিন জীবন", "দের আল-তাক", "Das ist mein Alltag."),
+                VocabularyItem("der Morgen", "সকাল", "দের মোর-গেন", "Ich arbeite am Morgen."),
+                VocabularyItem("der Vormittag", "সকাল / দুপুরের আগের সময়", "দের ফোর-মি-তাক", "Am Vormittag lerne ich."),
+                VocabularyItem("der Mittag", "দুপুর", "দের মি-তাক", "Ich esse um 12:00 Uhr zu Mittag."),
+                VocabularyItem("der Nachmittag", "বিকেল / দুপুরের পরের সময়", "দের নাখ-মি-তাক", "Am Nachmittag trinke ich Tee."),
+                VocabularyItem("der Abend", "সন্ধ্যা / রাতের শুরুর সময়", "দের আ-বেন্ট", "Am Abend lerne ich Deutsch."),
+                VocabularyItem("die Nacht", "রাত", "দি নাখ্ত", "In der Nacht schlafe ich."),
+                VocabularyItem("aufstehen", "ঘুম থেকে ওঠা", "আউফ-স্টে-এন", "Ich stehe um sieben Uhr auf."),
+                VocabularyItem("frühstücken", "নাশতা করা", "ফ্রিউ-স্ট্যু-কেন", "Ich frühstücke um acht Uhr."),
+                VocabularyItem("essen", "খাওয়া / খাবার খাওয়া", "এস-সেন", "Ich esse einen Apfel."),
+                VocabularyItem("trinken", "পান করা", "ট্রিন-কেন", "Ich trinke Wasser."),
+                VocabularyItem("arbeiten", "কাজ করা", "আর-বাই-তেন", "Ich arbeite um neun Uhr."),
+                VocabularyItem("lernen", "শেখা / পড়াশোনা করা", "লের-নেন", "Ich lerne viel."),
+                VocabularyItem("Deutsch lernen", "জার্মান শেখা", "দইচ লের-নেন", "Ich lerne Deutsch am Abend."),
+                VocabularyItem("zur Schule gehen", "স্কুলে যাওয়া", "ত্সুর শু-লে গে-এন", "Er geht zur Schule."),
+                VocabularyItem("nach Hause gehen", "বাড়ি যাওয়া", "নাখ হাউ-জে গে-এন", "Ich gehe nach Hause."),
+                VocabularyItem("kochen", "রান্না করা", "কো-খেন", "Ich koche am Abend."),
+                VocabularyItem("lesen", "পড়া", "লে-জেন", "Ich lese ein Buch."),
+                VocabularyItem("fernsehen", "টিভি দেখা", "ফের্ন-জে-এন", "Ich sehe am Abend fern."),
+                VocabularyItem("schlafen", "ঘুমানো", "শ্লা-ফেন", "Ich schlafe um elf Uhr."),
+                VocabularyItem("ins Bett gehen", "বিছানায় যাওয়া", "ইনস বেট গে-এন", "Ich gehe um 23:00 Uhr ins Bett.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "বর্তমান কাল ও সাধারণ বাক্যের গঠন (Präsens)",
+                    explanation = "জার্মান ভাষায় সাধারণ বাক্য গঠনে subject-এর পর Verb বসে (Verb সবসময় ২ নম্বর পজিশনে থাকে):\n- Ich arbeite. (আমি কাজ করি।)\n- Ich lerne Deutsch. (আমি জার্মান শিখি।)",
+                    examples = listOf(
+                        "Ich arbeite. (আমি কাজ করি।)",
+                        "Ich lerne Deutsch. (আমি জার্মান শিখি।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "সময় প্রকাশের অব্যয় ('um' এবং 'am')",
+                    explanation = "১. 'um' ব্যবহার করে ঘড়ির নির্দিষ্ট সময় বোঝানো হয়:\n- um sieben Uhr (সাতটায়)\n- um acht Uhr (আটটায়)\n২. 'am' ব্যবহার করে দিনের বিভিন্ন অংশ বোঝানো হয়:\n- am Morgen (সকালে)\n- am Nachmittag (বিকেলে)\n- am Abend (সন্ধ্যায়)\n(ব্যতিক্রম: in der Nacht = রাতে)",
+                    examples = listOf(
+                        "Ich arbeite um neun Uhr. (আমি নয়টায় কাজ করি।)",
+                        "Ich lerne am Abend Deutsch. (আমি সন্ধ্যায় জার্মান শিখি।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "Separable Verb ('aufstehen')",
+                    explanation = "'aufstehen' একটি separable (পৃথকযোগ্য) verb। সাধারণ বাক্যে মূল Verb 'stehe' দ্বিতীয় স্থানে বসে এবং 'auf' অংশটি বাক্যের একেবারে শেষে চলে যায়:\n- Ich stehe um sieben Uhr auf.",
+                    examples = listOf(
+                        "Ich stehe um sieben Uhr auf. (আমি সাতটায় উঠি।)",
+                        "Wann stehst du auf? (তুমি কখন ওঠো?)"
+                    )
+                ),
+                GrammarRule(
+                    title = "দৈনন্দিন রুটিন ও সহজ বাক্য প্যাটার্ন",
+                    explanation = "দৈনন্দিন কাজ প্রকাশের সহজ প্যাটার্নসমূহ:\n- Ich + verb: Ich arbeite.\n- Ich + verb + time: Ich arbeite um neun Uhr.\n- Ich + activity + time: Ich frühstücke um acht Uhr.",
+                    examples = listOf(
+                        "Ich frühstücke um acht Uhr. (আমি আটটায় নাশতা করি।)",
+                        "Ich komme um 18:00 Uhr nach Hause. (আমি সন্ধ্যা ৬টায় বাড়ি ফিরি।)"
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Ich stehe um sieben Uhr auf.", "আমি সাতটায় উঠি।", "ইখ স্টে-হে উম জিবেন উর আউফ"),
+                ExampleSentence("Ich frühstücke um acht Uhr.", "আমি আটটায় নাশতা করি।", "ইখ ফ্রিউ-স্ট্যু-কে উম আখ্ত উর"),
+                ExampleSentence("Ich arbeite am Morgen.", "আমি সকালে কাজ করি।", "ইখ আর-বাই-টে আম মোর-গেন"),
+                ExampleSentence("Ich esse zu Mittag um 13:00 Uhr.", "আমি বেলা ১টায় দুপুরের খাবার খাই।", "ইখ এস-সে ত্সু মি-তাক..."),
+                ExampleSentence("Ich komme nach Hause.", "আমি বাড়িতে ফিরি।", "ইখ কো-মে নাখ হাউ-জে"),
+                ExampleSentence("Ich lerne am Abend Deutsch.", "আমি সন্ধ্যায় জার্মান শিখি।", "ইখ লের-নে আম আ-বেন্ট দইচ"),
+                ExampleSentence("Ich schlafe um elf Uhr.", "আমি রাত এগারোটায় ঘুমাই।", "ইখ শ্লা-ফে উম এলফ উর")
+            ),
+            dialogues = listOf(
+                DialogueEntry("A", "Wann stehst du auf?", "তুমি কখন ঘুম থেকে ওঠো?"),
+                DialogueEntry("B", "Ich stehe um sieben Uhr auf.", "আমি সাতটায় উঠি।"),
+                DialogueEntry("A", "Wann frühstückst du?", "তুমি কখন নাশতা করো?"),
+                DialogueEntry("B", "Ich frühstücke um acht Uhr.", "আমি আটটায় নাশতা করি।"),
+                DialogueEntry("A", "Arbeitest du am Morgen?", "তুমি কি সকালে কাজ করো?"),
+                DialogueEntry("B", "Ja. Ich arbeite um neun Uhr.", "হ্যাঁ। আমি নয়টায় কাজ করি।"),
+                DialogueEntry("A", "Und wann lernst du Deutsch?", "আর তুমি কখন জার্মান শিখো?"),
+                DialogueEntry("B", "Ich lerne Deutsch am Abend.", "আমি সন্ধ্যায় জার্মান শিখি।"),
+                DialogueEntry("A", "Wann gehst du ins Bett?", "তুমি কখন বিছানায় যাও?"),
+                DialogueEntry("B", "Ich gehe um elf Uhr ins Bett.", "আমি রাত এগারোটায় বিছানায় যাই।")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_5_1",
+                    question = "\"am Morgen\" এর বাংলা অর্থ কী?",
+                    options = listOf("সকালে", "রাতে", "বিকেলে", "দুপুরে"),
+                    correctAnswer = "সকালে",
+                    explanation = "'am Morgen' শব্দের অর্থ সকালে।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_5_2",
+                    question = "\"Ich stehe um sieben Uhr auf.\" এর বাংলা অর্থ কী?",
+                    options = listOf("আমি সাতটায় ঘুমাই।", "আমি সাতটায় উঠি।", "আমি সাতটায় কাজ করি।", "আমি সাতটায় নাশতা করি।"),
+                    correctAnswer = "আমি সাতটায় উঠি।",
+                    explanation = "'aufstehen' মানে ঘুম থেকে ওঠা, তাই সঠিক উত্তর 'আমি সাতটায় উঠি।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_5_3",
+                    question = "শূন্যস্থান পূরণ করুন: Ich stehe um sieben Uhr ___.",
+                    options = listOf("ein", "aus", "auf", "an"),
+                    correctAnswer = "auf",
+                    explanation = "'aufstehen' ক্রিয়াটির 'auf' অংশটি বাক্যের শেষে বসে।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_5_4",
+                    question = "\"Ich frühstücke um acht Uhr.\" এর বাংলা অর্থ কী?",
+                    correctAnswer = "আমি আটটায় নাশতা করি।",
+                    explanation = "'frühstücken' অর্থ নাশতা করা এবং 'um acht Uhr' অর্থ আটটায়।",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_5_5",
+                    question = "প্রশ্ন: Wann arbeitest du?",
+                    options = listOf("Ich arbeite um neun Uhr.", "Ich heiße Karim.", "Ich komme aus Bangladesch.", "Das ist meine Mutter."),
+                    correctAnswer = "Ich arbeite um neun Uhr.",
+                    explanation = "'Wann arbeitest du?' (তুমি কখন কাজ করো?) প্রশ্নের সঠিক উত্তর 'Ich arbeite um neun Uhr.'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_5_6",
+                    question = "নিচের বাক্যে কি পরিমাণ বা সময় উল্লেখ করা হয়েছে? \"Ich schlafe um elf Uhr.\"",
+                    options = listOf("07:00", "08:00", "11:00", "12:00"),
+                    correctAnswer = "11:00",
+                    explanation = "'um elf Uhr' মানে ১১:০০ বা ১১টায়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_5_7",
+                    question = "জার্মানে অনুবাদ করুন: আমি জার্মান শিখি।",
+                    correctAnswer = "Ich lerne Deutsch.",
+                    explanation = "'আমি জার্মান শিখি' এর জার্মান অনুবাদ হলো 'Ich lerne Deutsch.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_5_8",
+                    question = "শূন্যস্থান পূরণ করুন: Ich esse zu Mittag ___ 13:00 Uhr.",
+                    options = listOf("um", "am", "in", "aus"),
+                    correctAnswer = "um",
+                    explanation = "নির্দিষ্ট সময়ের পূর্বে 'um' অব্যয় ব্যবহৃত হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                )
+            )
         )
     )
 
