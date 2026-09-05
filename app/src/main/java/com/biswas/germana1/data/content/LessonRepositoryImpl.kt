@@ -743,6 +743,207 @@ class LessonRepositoryImpl : LessonRepository {
                     type = ExerciseType.TRANSLATION
                 )
             )
+        ),
+        Lesson(
+            id = "lesson_7",
+            title = "Lektion 7: কেনাকাটা (Einkaufen)",
+            description = "কেনাকাটা সংক্রান্ত প্রয়োজনীয় শব্দাবলী, পণ্যের দাম জিজ্ঞেস করা ও বলা, পেমেন্ট করা এবং দোকানদার ও গ্রাহকের মধ্যে সহজ কথপোকথন শিখুন।",
+            order = 7,
+            objectives = listOf(
+                "পণ্য বা জিনিসের দাম জিজ্ঞাসা করা (Wie viel kostet das? / Was kostet das?)।",
+                "ইউরোতে সহজ দাম প্রকাশ করা (Das kostet fünf Euro)।",
+                "কোনো পণ্য কেনা বা পছন্দের কথা বলা (Ich möchte das kaufen / Ich nehme das)।",
+                "পণ্য দামি (teuer) নাকি সস্তা (billig / günstig) তা প্রকাশ করা।",
+                "দোকানে ভদ্র ভাষায় কথাবার্তা বলা এবং বেসিক শপিং সংলাপ বোঝা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("kaufen", "কেনা", "কাউ-ফেন", "Ich möchte das kaufen."),
+                VocabularyItem("kosten", "দাম হওয়া / মূল্য হওয়া", "কস-তেন", "Was kostet das?"),
+                VocabularyItem("nehmen", "নেওয়া", "নে-মেন", "Ich nehme das."),
+                VocabularyItem("suchen", "খোঁজা", "জু-খেন", "Ich suche eine Tasche."),
+                VocabularyItem("brauchen", "প্রয়োজন হওয়া / দরকার হওয়া", "ব্রাউ-খেন", "Ich brauche das."),
+                VocabularyItem("bezahlen", "মূল্য পরিশোধ করা", "বে-ত্সাল-লেন", "Ich möchte bezahlen."),
+                VocabularyItem("das Geschäft", "দোকান", "দাস গে-শেফট", "Das Geschäft ist groß."),
+                VocabularyItem("der Laden", "দোকান", "দের লা-দেন", "Der Laden ist offen."),
+                VocabularyItem("der Preis", "দাম", "দের প্রাইস", "Der Preis ist gut."),
+                VocabularyItem("das Geld", "টাকা / অর্থ", "দাস গেল্ট", "Ich habe Geld."),
+                VocabularyItem("der Euro", "ইউরো", "দের অয়-রো", "Das kostet zehn Euro."),
+                VocabularyItem("die Kasse", "ক্যাশ কাউন্টার", "দি কাছ-সে", "Die Kasse ist dort."),
+                VocabularyItem("die Tasche", "ব্যাগ", "দি টাশ-শে", "Ich nehme die Tasche."),
+                VocabularyItem("das Produkt", "পণ্য", "দাস প্র-ডুক্ট", "Das Produkt ist gut."),
+                VocabularyItem("teuer", "দামি", "তয়-আর", "Das ist teuer."),
+                VocabularyItem("billig", "সস্তা", "বি-লিশ", "Das ist billig."),
+                VocabularyItem("günstig", "সাশ্রয়ী / কম দামের", "গ্যুন-স্টিশ", "Das ist günstig.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "দাম জিজ্ঞাসা করা ('Wie viel kostet das?' & 'Was kostet das?')",
+                    explanation = "কোনো জিনিসের দাম জানতে 'Wie viel kostet das?' বা 'Was kostet das?' ব্যবহার করা যায়। উভয় বাক্যের অর্থ 'এটার দাম কত?'।",
+                    examples = listOf(
+                        "Wie viel kostet das? (এটার দাম কত?)",
+                        "Was kostet das? (এটার দাম কত?)"
+                    )
+                ),
+                GrammarRule(
+                    title = "দাম বলা ('Das kostet ... Euro')",
+                    explanation = "কোনো জিনিসের দাম প্রকাশ করার জন্য 'Das kostet + [ইউরো/সংখ্যা]' ব্যবহার করা হয়।",
+                    examples = listOf(
+                        "Das kostet fünf Euro. (এটার দাম পাঁচ ইউরো।)",
+                        "Das kostet zehn Euro. (এটার দাম দশ ইউরো।)",
+                        "Der Preis ist zehn Euro. (দাম দশ ইউরো।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "পণ্য পছন্দ করা ও কেনা ('Ich möchte ... kaufen' & 'Ich nehme ...')",
+                    explanation = "কোনো কিছু কিনতে চাইলে ভদ্রভাবে বলতে পারেন 'Ich möchte das kaufen' (আমি এটা কিনতে চাই) অথবা 'Ich nehme das' (আমি এটা নেব)।",
+                    examples = listOf(
+                        "Ich möchte das kaufen. (আমি এটা কিনতে চাই।)",
+                        "Ich nehme das. (আমি এটা নেব।)",
+                        "Ich möchte diesen Kaffee. (আমি এই কফিটি চাই।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "দাম বিচার প্রকাশ করা ('teuer', 'billig', 'günstig')",
+                    explanation = "কোনো পণ্যের দাম সম্পর্কে মন্তব্য করতে:\n- teuer = দামি\n- billig = সস্তা\n- günstig = সাশ্রয়ী / কম দামের",
+                    examples = listOf(
+                        "Das ist teuer. (এটা দামি।)",
+                        "Das ist billig. (এটা সস্তা।)",
+                        "Das ist günstig. (এটা সাশ্রয়ী।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "দোকানে মার্জিত ভাষা (Höflichkeit beim Einkaufen)",
+                    explanation = "দোকানদার ও ক্রেতার মধ্যে কেনাকাটার সময় কিছু সাধারণ মার্জিত অভিব্যক্তি:\n- Guten Tag (শুভ দিন)\n- Ich möchte ... (আমি ... চাই)\n- Bitte (দয়া করে / এই নিন)\n- Danke (ধন্যবাদ)",
+                    examples = listOf(
+                        "Kann ich Ihnen helfen? (আমি কি আপনাকে সাহায্য করতে পারি?)",
+                        "Danke! (ধন্যবাদ!)"
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Wie viel kostet das?", "এটার দাম কত?", "ভি ফিল কস-তেত দাস"),
+                ExampleSentence("Was kostet das?", "এটার দাম কত?", "ভাস কস-তেত দাস"),
+                ExampleSentence("Das kostet fünf Euro.", "এটার দাম পাঁচ ইউরো।", "দাস কস-তেত ফিউনফ অয়-রো"),
+                ExampleSentence("Das kostet zehn Euro.", "এটার দাম দশ ইউরো।", "দাস কস-তেত ত্সেন অয়-রো"),
+                ExampleSentence("Der Preis ist zehn Euro.", "দাম দশ ইউরো।", "দের প্রাইস ইস্ট ত্সেন অয়-রো"),
+                ExampleSentence("Ich möchte das kaufen.", "আমি এটা কিনতে চাই।", "ইখ মেখ-টে দাস কাউ-ফেন"),
+                ExampleSentence("Ich nehme das.", "আমি এটা নেব।", "ইখ নে-মে দাস"),
+                ExampleSentence("Das ist teuer.", "এটা দামি।", "দাস ইস্ট তয়-আর"),
+                ExampleSentence("Das ist billig.", "এটা সস্তা।", "দাস ইস্ট বি-লিশ"),
+                ExampleSentence("Das ist günstig.", "এটা সাশ্রয়ী।", "দাস ইস্ট গ্যুন-স্টিশ")
+            ),
+            dialogues = listOf(
+                DialogueEntry("Verkäufer", "Guten Tag! Kann ich Ihnen helfen?", "শুভ দিন! আমি কি আপনাকে সাহায্য করতে পারি?"),
+                DialogueEntry("Kunde", "Ja, bitte. Was kostet das?", "জি, দয়া করে। এটার দাম কত?"),
+                DialogueEntry("Verkäufer", "Das kostet zehn Euro.", "এটার দাম দশ ইউরো।"),
+                DialogueEntry("Kunde", "Das ist teuer.", "এটা দামি।"),
+                DialogueEntry("Verkäufer", "Dieses kostet fünf Euro.", "এটির দাম পাঁচ ইউরো।"),
+                DialogueEntry("Kunde", "Okay. Ich nehme das.", "ঠিক আছে। আমি এটা নেব।"),
+                DialogueEntry("Verkäufer", "Bitte.", "এই নিন।"),
+                DialogueEntry("Kunde", "Danke!", "ধন্যবাদ!"),
+                DialogueEntry("Kunde", "Guten Tag! Was kostet die Tasche?", "শুভ দিন! ব্যাগটির দাম কত?"),
+                DialogueEntry("Verkäufer", "Die Tasche kostet zwanzig Euro.", "ব্যাগটির দাম বিশ ইউরো।"),
+                DialogueEntry("Kunde", "Oh, das ist teuer.", "ওহ, এটা দামি।"),
+                DialogueEntry("Verkäufer", "Dieses Produkt kostet zehn Euro.", "এই পণ্যটির দাম দশ ইউরো।"),
+                DialogueEntry("Kunde", "Gut. Ich nehme das.", "বেশ। আমি এটা নেব।"),
+                DialogueEntry("Verkäufer", "Bitte sehr!", "এই যে, নিন!"),
+                DialogueEntry("Kunde", "Danke schön!", "অনেক ধন্যবাদ!")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_7_1",
+                    question = "\"Wie viel kostet das?\" এর অর্থ কী?",
+                    options = listOf("এটা কী?", "এটার দাম কত?", "এটা কোথায়?", "এটা কার?"),
+                    correctAnswer = "এটার দাম কত?",
+                    explanation = "'Wie viel kostet das?' শব্দের অর্থ 'এটার দাম কত?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_2",
+                    question = "\"Das kostet fünf Euro.\" এর বাংলা অর্থ কী?",
+                    options = listOf("এটা পাঁচ ইউরো।", "এটার দাম পাঁচ ইউরো।", "আমি পাঁচ ইউরো চাই।", "আমার কাছে পাঁচ ইউরো আছে।"),
+                    correctAnswer = "এটার দাম পাঁচ ইউরো।",
+                    explanation = "'Das kostet fünf Euro.' অর্থ 'এটার দাম পাঁচ ইউরো।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_3",
+                    question = "শূন্যস্থান পূরণ করুন: Das ___ zehn Euro.",
+                    options = listOf("kostet", "kauft", "nimmt", "sucht"),
+                    correctAnswer = "kostet",
+                    explanation = "দাম প্রকাশ করতে 'kostet' ক্রিয়াটি ব্যবহৃত হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_4",
+                    question = "\"teuer\" এর অর্থ কী?",
+                    options = listOf("সস্তা", "দামি", "নতুন", "বড়"),
+                    correctAnswer = "দামি",
+                    explanation = "'teuer' শব্দের অর্থ দামি।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_5",
+                    question = "\"billig\" এর অর্থ কী?",
+                    options = listOf("দামি", "সস্তা", "সুন্দর", "ছোট"),
+                    correctAnswer = "সস্তা",
+                    explanation = "'billig' শব্দের অর্থ সস্তা।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_6",
+                    question = "জার্মানে অনুবাদ করুন: এটার দাম কত?",
+                    correctAnswer = "Wie viel kostet das?",
+                    explanation = "'এটার দাম কত?' এর জার্মান অনুবাদ হলো 'Wie viel kostet das?' (বা 'Was kostet das?')।",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_7_7",
+                    question = "জার্মানে অনুবাদ করুন: আমি এটা নেব।",
+                    correctAnswer = "Ich nehme das.",
+                    explanation = "'আমি এটা নেব' এর জার্মান অনুবাদ হলো 'Ich nehme das.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_7_8",
+                    question = "\"Ich möchte das kaufen.\" এর বাংলা অর্থ কী?",
+                    correctAnswer = "আমি এটা কিনতে চাই।",
+                    explanation = "'Ich möchte das kaufen.' অর্থ 'আমি এটা কিনতে চাই।'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_7_9",
+                    question = "জার্মান বাক্যে বলা হয়েছে: \"Das kostet zwanzig Euro.\" এটার দাম কত?",
+                    options = listOf("€5", "€10", "€20", "€50"),
+                    correctAnswer = "€20",
+                    explanation = "'zwanzig Euro' মানে ২০ ইউরো (€20)।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_10",
+                    question = "কথোপকথনটি পড়ুন:\nVerkäufer: Das kostet fünfzehn Euro.\n\nপ্রশ্ন: Wie viel kostet das?",
+                    options = listOf("Fünf Euro", "Zehn Euro", "Fünfzehn Euro", "Zwanzig Euro"),
+                    correctAnswer = "Fünfzehn Euro",
+                    explanation = "বিক্রেতা বলেছেন 'Das kostet fünfzehn Euro', অর্থাৎ ১৫ ইউরো।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_11",
+                    question = "\"günstig\" এর অর্থ কী?",
+                    options = listOf("দামি", "সাশ্রয়ী", "পুরাতন", "খারাপ"),
+                    correctAnswer = "সাশ্রয়ী",
+                    explanation = "'günstig' শব্দের অর্থ সাশ্রয়ী বা কম দামের।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_12",
+                    question = "শূন্যস্থান পূরণ করুন: Ich möchte das ___.",
+                    options = listOf("kaufen", "kostet", "ist", "preis"),
+                    correctAnswer = "kaufen",
+                    explanation = "'Ich möchte das kaufen' বাক্যটির অর্থ 'আমি এটা কিনতে চাই'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                )
+            )
         )
     )
 
