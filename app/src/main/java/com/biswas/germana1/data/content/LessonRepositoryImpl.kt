@@ -138,6 +138,138 @@ class LessonRepositoryImpl : LessonRepository {
                     type = ExerciseType.FILL_IN_BLANK
                 )
             )
+        ),
+        Lesson(
+            id = "lesson_3",
+            title = "Lektion 3: নিজের পরিচয় (Sich vorstellen)",
+            description = "নিজের নাম, দেশ, বসবাসের স্থান, বয়স এবং ভাষার কথা বলতে ও অন্যের পরিচয় জানতে শিখুন।",
+            order = 3,
+            objectives = listOf(
+                "নিজের নাম বলা এবং অন্যের নাম জিজ্ঞাসা করা।",
+                "নিজের নিজ দেশ (উৎস) বলা এবং অন্য জন কোথা থেকে এসেছে জিজ্ঞাসা করা।",
+                "কোথায় বসবাস করেন তা বলা এবং অন্যের বসবাসের স্থান জিজ্ঞাসা করা।",
+                "নিজের বয়স বলা এবং অন্যের বয়স জিজ্ঞাসা করা।",
+                "কোন কোন ভাষায় কথা বলেন তা প্রকাশ করা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("der Name", "নাম", "দের না-মে", "Mein Name ist Karim."),
+                VocabularyItem("heißen", "নাম হওয়া", "হাই-সেন", "Ich heiße Karim."),
+                VocabularyItem("kommen", "আসা", "কো-মেন", "Ich komme aus Bangladesch."),
+                VocabularyItem("aus", "থেকে", "আউস", "Er kommt aus Deutschland."),
+                VocabularyItem("Deutschland", "জার্মানি", "দইচ-লান্ট", "Deutschland ist in Europa."),
+                VocabularyItem("Bangladesch", "বাংলাদেশ", "বাংলা-দেশ", "Ich komme aus Bangladesch."),
+                VocabularyItem("wohnen", "বাস করা / থাকা", "ভো-নেন", "Ich wohne in Dhaka."),
+                VocabularyItem("in", "এ / মধ্যে", "ইন", "Sie wohnt in Berlin."),
+                VocabularyItem("das Alter", "বয়স", "দাস আল-টার", "Das Alter ist nur eine Zahl."),
+                VocabularyItem("Jahre", "বছর (বহুবচন)", "যা-রে", "Ich bin 20 Jahre alt."),
+                VocabularyItem("sprechen", "কথা বলা", "স্প্রে-খেন", "Ich spreche Deutsch."),
+                VocabularyItem("Deutsch", "জার্মান ভাষা", "দইচ", "Sprechen Sie Deutsch?"),
+                VocabularyItem("Englisch", "ইংরেজি ভাষা", "এং-লিশ", "Ich spreche Englisch.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "নাম বলা ও জিজ্ঞাসা ('heißen')",
+                    explanation = "'heißen' ক্রিয়া পদ ব্যবহার করে নাম বলা হয়।\n- Ich heiße ... (আমার নাম ...)\n- Wie heißt du? (তোমার নাম কী? - অনানুষ্ঠানিক)\n- Wie heißen Sie? (আপনার নাম কী? - আনুষ্ঠানিক)",
+                    examples = listOf("Ich heiße Karim.", "Wie heißt du?", "Wie heißen Sie?")
+                ),
+                GrammarRule(
+                    title = "উৎস বা দেশ প্রকাশ ('kommen' + 'aus')",
+                    explanation = "'kommen' ক্রিয়ার সাথে 'aus' প্রিপজিশন ব্যবহার করে কোন দেশ থেকে এসেছেন তা বোঝানো হয়।\n- Ich komme aus Bangladesch.\n- Woher kommst du? (তুমি কোথা থেকে এসেছ?)\n- Woher kommen Sie? (আপনি কোথা থেকে এসেছেন?)",
+                    examples = listOf("Ich komme aus Bangladesch.", "Woher kommst du?", "Woher kommen Sie?")
+                ),
+                GrammarRule(
+                    title = "বসবাসের স্থান প্রকাশ ('wohnen' + 'in')",
+                    explanation = "কোথায় থাকেন বা বাস করেন তা বলতে 'wohnen in' ব্যবহার করা হয়।\n- Ich wohne in Dhaka.\n- Wo wohnst du? (তুমি কোথায় থাকো?)\n- Wo wohnen Sie? (আপনি কোথায় থাকেন?)",
+                    examples = listOf("Ich wohne in Dhaka.", "Wo wohnst du?", "Wo wohnen Sie?")
+                ),
+                GrammarRule(
+                    title = "বয়স প্রকাশ ('sein' + 'Jahre alt')",
+                    explanation = "জার্মান ভাষায় বয়স প্রকাশের জন্য 'sein' (bin/bist/sind) ক্রিয়া এবং 'Jahre alt' ব্যবহার করা হয়।\n- Ich bin 20 Jahre alt. (আমার বয়স ২০ বছর।)\n- Wie alt bist du? (তোমার বয়স কত?)\n- Wie alt sind Sie? (আপনার বয়স কত?)",
+                    examples = listOf("Ich bin 20 Jahre alt.", "Wie alt bist du?", "Wie alt sind Sie?")
+                ),
+                GrammarRule(
+                    title = "ভাষা প্রকাশ ('sprechen')",
+                    explanation = "ভাষা বলার সময় 'sprechen' ক্রিয়াটি ব্যবহৃত হয় (du রূপ: sprichst)।\n- Ich spreche Bangla und Englisch.\n- Welche Sprachen sprichst du? (তুমি কোন ভাষাগুলো বলো?)",
+                    examples = listOf("Ich spreche Bangla und Englisch.", "Welche Sprachen sprichst du?")
+                ),
+                GrammarRule(
+                    title = "মৌলিক প্রশ্নসূচক শব্দ (W-Fragen)",
+                    explanation = "তথ্যাদি জানতে প্রশ্নসূচক শব্দ ব্যবহার করা হয়:\n- Wie (কী/কেমন)\n- Woher (কোথা থেকে)\n- Wo (কোথায়)\n- Welche (কোনটি/কোনগুলো)",
+                    examples = listOf("Wie heißt du?", "Woher kommst du?", "Wo wohnst du?", "Welche Sprachen sprichst du?")
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Ich heiße Karim und ich komme aus Bangladesch.", "আমার নাম করিম এবং আমি বাংলাদেশ থেকে এসেছি।", "ইখ হাই-সে করিম উন্ট ইখ কো-মে আউস বাংলা-দেশ"),
+                ExampleSentence("Ich wohne in Dhaka und ich bin 20 Jahre alt.", "আমি ঢাকায় থাকি এবং আমার বয়স ২০ বছর।", "ইখ ভো-নে ইন ঢাকা উন্ট ইখ বিন ২০ যা-রে আল্ট"),
+                ExampleSentence("Ich spreche Bangla, Englisch und ein bisschen Deutsch.", "আমি বাংলা, ইংরেজি এবং অল্প কিছু জার্মান বলি।", "ইখ স্প্রে-খে বাংলা, এং-লিশ উন্ট আইন বিস-খেন দইচ")
+            ),
+            dialogues = listOf(
+                DialogueEntry("Anna", "Hallo! Wie heißt du?", "হ্যালো! তোমার নাম কী?"),
+                DialogueEntry("Karim", "Hallo! Ich heiße Karim. Und du?", "হ্যালো! আমার নাম করিম। আর তোমার?"),
+                DialogueEntry("Anna", "Ich heiße Anna. Woher kommst du?", "আমার নাম আন্না। তুমি কোথা থেকে এসেছ?"),
+                DialogueEntry("Karim", "Ich komme aus Bangladesch. Und du?", "আমি বাংলাদেশ থেকে এসেছি। আর তুমি?"),
+                DialogueEntry("Anna", "Ich komme aus Deutschland. Wo wohnst du?", "আমি জার্মানি থেকে এসেছি। তুমি কোথায় থাকো?"),
+                DialogueEntry("Karim", "Ich wohne in Dhaka. Wie alt bist du?", "আমি ঢাকায় থাকি। তোমার বয়স কত?"),
+                DialogueEntry("Anna", "Ich bin 22 Jahre alt. Und du?", "আমার বয়স ২২ বছর। আর তোমার?"),
+                DialogueEntry("Karim", "Ich bin 20 Jahre alt.", "আমার বয়স ২০ বছর।"),
+                DialogueEntry("Anna", "Welche Sprachen sprichst du?", "তুমি কোন ভাষাগুলো বলো?"),
+                DialogueEntry("Karim", "Ich spreche Bangla, Englisch und Deutsch.", "আমি বাংলা, ইংরেজি এবং জার্মান বলি।")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_3_1",
+                    question = "জার্মান প্রশ্ন 'Wie heißt du?' - এর সঠিক বাংলা অর্থ কোনটি?",
+                    options = listOf("তোমার বয়স কত?", "তোমার নাম কী?", "তুমি কোথায় থাকো?", "তুমি কোথা থেকে এসেছ?"),
+                    correctAnswer = "তোমার নাম কী?",
+                    explanation = "'Wie heißt du?' এর বাংলা অর্থ 'তোমার নাম কী?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_3_2",
+                    question = "শূন্যস্থান পূরণ করুন: Ich komme ___ Bangladesch.",
+                    options = listOf("aus", "in", "bin", "heiße"),
+                    correctAnswer = "aus",
+                    explanation = "উৎসের দেশ বোঝাতে 'kommen' এর পর 'aus' প্রিপজিশন বসে।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_3_3",
+                    question = "জার্মানে অনুবাদ করুন: আমার বয়স ২০ বছর।",
+                    correctAnswer = "Ich bin 20 Jahre alt.",
+                    explanation = "বয়স প্রকাশ করতে 'Ich bin [সংখ্যা] Jahre alt' প্যাটার্ন ব্যবহৃত হয়।",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_3_4",
+                    question = "জার্মান প্রশ্ন 'Wo wohnst du?' - এর সঠিক অর্থ কী?",
+                    options = listOf("তোমার নাম কী?", "তুমি কোথায় থাকো?", "তুমি কেমন আছো?", "তোমার বয়স কত?"),
+                    correctAnswer = "তুমি কোথায় থাকো?",
+                    explanation = "'Wo wohnst du?' অর্থ 'তুমি কোথায় থাকো?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_3_5",
+                    question = "শূন্যস্থান পূরণ করুন: Welche Sprachen ________ du? (তুমি কোন ভাষাগুলো বলো?)",
+                    correctAnswer = "sprichst",
+                    explanation = "'du' এর ক্ষেত্রে 'sprechen' ক্রিয়াটি 'sprichst' রূপ ধারণ করে।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_3_6",
+                    question = "জার্মানে অনুবাদ করুন: আমি ঢাকায় থাকি।",
+                    correctAnswer = "Ich wohne in Dhaka.",
+                    explanation = "'wohnen in' দিয়ে বসবাসের স্থান প্রকাশ করা হয়।",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_3_7",
+                    question = "কারো কাছে আনুষ্ঠানিকভাবে তাঁর দেশ/উৎস সম্পর্কে জানতে কোনটি বলবেন?",
+                    options = listOf("Woher kommst du?", "Woher kommen Sie?", "Wie heißt du?"),
+                    correctAnswer = "Woher kommen Sie?",
+                    explanation = "মার্জিত বা আনুষ্ঠানিক প্রশ্নের ক্ষেত্রে 'Woher kommen Sie?' বলা হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                )
+            )
         )
     )
 
