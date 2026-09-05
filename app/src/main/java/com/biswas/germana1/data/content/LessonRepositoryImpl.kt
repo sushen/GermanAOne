@@ -562,6 +562,187 @@ class LessonRepositoryImpl : LessonRepository {
                     type = ExerciseType.MULTIPLE_CHOICE
                 )
             )
+        ),
+        Lesson(
+            id = "lesson_6",
+            title = "Lektion 6: খাবার ও পানীয় (Essen und Trinken)",
+            description = "খাবার ও পানীয় সম্পর্কিত মৌলিক শব্দাবলী, ক্রিয়া (essen, trinken, möchten), অর্ডার করার ভাষা এবং রেস্তোরাঁ/ক্যাফের সহজ কথোপকথন শিখুন।",
+            order = 6,
+            objectives = listOf(
+                "জার্মান ভাষায় বিভিন্ন খাবার ও পানীয়ের নাম (আর্টিকেল সহ) ব্যবহার করা।",
+                "খাওয়া ও পান করা প্রকাশের জন্য 'essen' এবং 'trinken' ক্রিয়ার প্রয়োগ শেখা।",
+                "ভদ্রভাবে কোনো কিছু চাইতে 'möchte' ব্যবহার করা।",
+                "ক্যাফে বা রেস্তোরাঁয় খাবার বা পানীয় অর্ডার করা।",
+                "খাবার ও পানীয় সম্পর্কিত সহজ প্রশ্নোত্তর ও রেস্তোরাঁর কথোপকথন বোঝা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("das Brot", "রুটি", "দাস ব্রোট", "Ich esse Brot."),
+                VocabularyItem("der Reis", "ভাত", "দের রাইস", "Ich esse Reis."),
+                VocabularyItem("der Apfel", "আপেল", "দের আপ-ফেল", "Ich esse einen Apfel."),
+                VocabularyItem("die Banane", "কলা", "দি বা-না-নে", "Ich esse eine Banane."),
+                VocabularyItem("das Ei", "ডিম", "দাস আই", "Das Ei ist frisch."),
+                VocabularyItem("die Suppe", "স্যুপ", "দি জু-পে", "Die Suppe ist heiß."),
+                VocabularyItem("der Salat", "সালাদ", "দের যা-লাট", "Ich möchte einen Salat."),
+                VocabularyItem("das Fleisch", "মাংস", "দাস ফ্লাইশ", "Ich esse kein Fleisch."),
+                VocabularyItem("der Fisch", "মাছ", "দের ফিশ", "Der Fisch schmeckt gut."),
+                VocabularyItem("der Käse", "চিজ / পনির", "দের কে-জে", "Ich mag Käse."),
+                VocabularyItem("das Frühstück", "নাশতা", "দাস ফ্রিউ-স্ট্যুক", "Das Frühstück ist fertig."),
+                VocabularyItem("das Mittagessen", "দুপুরের খাবার", "দাস মি-তাক-এস-সেন", "Das Mittagessen ist um 13:00 Uhr."),
+                VocabularyItem("das Abendessen", "রাতের খাবার", "দাস আ-বেন্ট-এস-সেন", "Das Abendessen ist um 20:00 Uhr."),
+                VocabularyItem("das Wasser", "পানি", "দাস ভাস-সার", "Ich trinke Wasser."),
+                VocabularyItem("der Tee", "চা", "দের টে", "Ich möchte Tee."),
+                VocabularyItem("der Kaffee", "কফি", "দের কা-ফে", "Ich trinke einen Kaffee."),
+                VocabularyItem("die Milch", "দুধ", "দি মিলখ", "Ich trinke Milch."),
+                VocabularyItem("der Saft", "জুস", "দের জাফট", "Ich möchte einen Saft."),
+                VocabularyItem("essen", "খাওয়া", "এস-সেন", "Was isst du?"),
+                VocabularyItem("trinken", "পান করা", "ট্রিন-কেন", "Was trinkst du?"),
+                VocabularyItem("möchten", "চাইতে / চাই", "মেখ-তেন", "Was möchten Sie?"),
+                VocabularyItem("bestellen", "অর্ডার করা", "বে-স্টেল-লেন", "Ich möchte bestellen."),
+                VocabularyItem("bitte", "দয়া করে / এই নিন", "বি-টে", "Einen Kaffee, bitte."),
+                VocabularyItem("danke", "ধন্যবাদ", "দান-কে", "Danke schön!")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "খাবার ও পানীয়ের রূপ ও ক্রিয়া ('essen' ও 'trinken')",
+                    explanation = "'essen' (খাওয়া) এবং 'trinken' (পান করা) ক্রিয়ার সাধারণ ব্যবহার:\n- Ich esse Brot. (আমি রুটি খাই।)\n- Was isst du? (তুমি কী খাও?)\n- Ich trinke Wasser. (আমি পানি পান করি।)\n- Was trinkst du? (তুমি কী পান করো?)",
+                    examples = listOf(
+                        "Ich esse Brot. (আমি রুটি খাই।)",
+                        "Was isst du? - Ich esse einen Apfel.",
+                        "Ich trinke Wasser. (আমি পানি পান করি।)",
+                        "Was trinkst du? - Ich trinke Tee."
+                    )
+                ),
+                GrammarRule(
+                    title = "ভদ্রভাবে চাওয়া বা প্রকাশ করা ('möchte')",
+                    explanation = "'möchte' ব্যবহার করে ভদ্রভাবে কিছু চাইতে বা কী নিতে চান তা প্রকাশ করা হয়।\nবাংলা ব্যাখ্যা: \"möchte\" ব্যবহার করে ভদ্রভাবে কিছু চাইতে বা কী নিতে চাই তা বলতে পারি।\n- Ich möchte Wasser. (আমি পানি চাই।)\n- Ich möchte Tee. (আমি চা চাই।)\n- Was möchtest du trinken? (তুমি কী পান করতে চাও?)\n- Was möchtest du essen? (তুমি কী খেতে চাও?)",
+                    examples = listOf(
+                        "Ich möchte Wasser. (আমি পানি চাই।)",
+                        "Ich möchte einen Kaffee. (আমি একটি কফি চাই।)",
+                        "Was möchtest du trinken? (তুমি কী পান করতে চাও?)",
+                        "Was möchtest du essen? (তুমি কী খেতে চাও?)"
+                    )
+                ),
+                GrammarRule(
+                    title = "ব্যবহারিক আর্টিকেল ('einen / ein / eine')",
+                    explanation = "খাবার বা পানীয় একবচনে নির্দেশের সময় কাজের অবজেক্ট বা আকুযাটিভ রূপে আর্টিকেল বসে:\n- Masculine (der Kaffee / der Apfel) -> einen: Ich möchte einen Kaffee.\n- Neuter (das Brot / das Ei) -> ein: Ich möchte ein Brot.\n- Feminine (die Suppe / die Banane) -> eine: Ich möchte eine Suppe.",
+                    examples = listOf(
+                        "Ich möchte einen Kaffee. [der Kaffee]",
+                        "Ich möchte ein Brot. [das Brot]",
+                        "Ich möchte eine Suppe. [die Suppe]"
+                    )
+                ),
+                GrammarRule(
+                    title = "অর্ডার করা ও পছন্দের প্রকাশ ('mögen')",
+                    explanation = "সহজভাবে নিজের পছন্দ প্রকাশ করতে 'mag' (mögen) ব্যবহৃত হয়:\n- Ich mag Kaffee. (আমি কফি পছন্দ করি।)\n- Ich mag Brot. (আমি রুটি পছন্দ করি।)\n- Ich mag Tee. (আমি চা পছন্দ করি।)",
+                    examples = listOf(
+                        "Ich mag Kaffee. (আমি কফি পছন্দ করি।)",
+                        "Ich mag Tee. (আমি চা পছন্দ করি।)"
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Ich esse Brot.", "আমি রুটি খাই।", "ইখ এস-সে ব্রোট"),
+                ExampleSentence("Ich trinke Wasser.", "আমি পানি পান করি।", "ইখ ট্রিন-কে ভাস-সার"),
+                ExampleSentence("Ich möchte einen Kaffee.", "আমি একটি কফি চাই।", "ইখ মেখ-টে আই-নেন কা-ফে"),
+                ExampleSentence("Ich möchte Tee.", "আমি চা চাই।", "ইখ মেখ-টে টে"),
+                ExampleSentence("Was möchtest du trinken?", "তুমি কী পান করতে চাও?", "ভাস মেখ-টেস্ট দু ট্রিন-কেন"),
+                ExampleSentence("Ich möchte Wasser.", "আমি পানি চাই।", "ইখ মেখ-টে ভাস-সার"),
+                ExampleSentence("Was möchtest du essen?", "তুমি কী খেতে চাও?", "ভাস মেখ-টেস্ট দু এস-সেন"),
+                ExampleSentence("Ich möchte einen Apfel.", "আমি একটি আপেল চাই।", "ইখ মেখ-টে আই-নেন আপ-ফেল")
+            ),
+            dialogues = listOf(
+                DialogueEntry("Kellner", "Guten Tag! Was möchten Sie?", "শুভ দিন! আপনি কী চান?"),
+                DialogueEntry("Kunde", "Ich möchte einen Kaffee, bitte.", "আমি একটি কফি চাই, দয়া করে।"),
+                DialogueEntry("Kellner", "Möchten Sie auch etwas essen?", "আপনি কি কিছু খেতেও চান?"),
+                DialogueEntry("Kunde", "Ja. Ich möchte ein Brot.", "হ্যাঁ। আমি একটি রুটি চাই।"),
+                DialogueEntry("Kellner", "Bitte.", "এই নিন।"),
+                DialogueEntry("Kunde", "Danke!", "ধন্যবাদ!"),
+                DialogueEntry("A", "Was möchtest du trinken?", "তুমি কী পান করতে চাও?"),
+                DialogueEntry("B", "Ich möchte Tee.", "আমি চা চাই।"),
+                DialogueEntry("A", "Möchtest du auch etwas essen?", "তুমি কি কিছু খেতেও চাও?"),
+                DialogueEntry("B", "Ja. Ich möchte einen Apfel.", "হ্যাঁ। আমি একটি আপেল চাই।"),
+                DialogueEntry("A", "Guten Appetit!", "উপভোগ করে খান!"),
+                DialogueEntry("B", "Danke!", "ধন্যবাদ!")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_6_1",
+                    question = "\"Ich trinke Wasser.\" এর বাংলা অর্থ কী?",
+                    options = listOf("আমি পানি পান করি।", "আমি পানি কিনি।", "আমি পানি খাই।", "আমি পানি চাই।"),
+                    correctAnswer = "আমি পানি পান করি।",
+                    explanation = "'trinken' অর্থ পান করা, তাই সঠিক অর্থ 'আমি পানি পান করি।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_6_2",
+                    question = "\"das Brot\" এর অর্থ কী?",
+                    options = listOf("পানি", "রুটি", "দুধ", "আপেল"),
+                    correctAnswer = "রুটি",
+                    explanation = "'das Brot' শব্দের অর্থ রুটি।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_6_3",
+                    question = "শূন্যস্থান পূরণ করুন: Ich ___ Wasser.",
+                    options = listOf("esse", "trinke", "möchte", "bin"),
+                    correctAnswer = "trinke",
+                    explanation = "পানি (Wasser) এর সাথে পান করা অর্থ বোঝাতে 'trinke' ক্রিয়া ব্যবহৃত হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_6_4",
+                    question = "শূন্যস্থান পূরণ করুন: Ich möchte ___ Kaffee.",
+                    options = listOf("eine", "einen", "ein", "die"),
+                    correctAnswer = "einen",
+                    explanation = "'der Kaffee' আকুযাটিভ রূপে 'einen Kaffee' হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_6_5",
+                    question = "\"Was möchtest du trinken?\" এর অর্থ কী?",
+                    options = listOf("তুমি কী খেতে চাও?", "তুমি কী পান করতে চাও?", "তুমি কোথায় থাকো?", "তুমি কখন ওঠো?"),
+                    correctAnswer = "তুমি কী পান করতে চাও?",
+                    explanation = "'trinken' অর্থ পান করা, তাই প্রশ্নটির অর্থ 'তুমি কী পান করতে চাও?'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_6_6",
+                    question = "জার্মানে অনুবাদ করুন: আমি চা চাই।",
+                    correctAnswer = "Ich möchte Tee.",
+                    explanation = "'আমি চা চাই' এর জার্মান অনুবাদ হলো 'Ich möchte Tee.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_6_7",
+                    question = "\"Ich esse einen Apfel.\" এর অর্থ কী?",
+                    correctAnswer = "আমি একটি আপেল খাই।",
+                    explanation = "'Ich esse einen Apfel.' অর্থ 'আমি একটি আপেল খাই।'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_6_8",
+                    question = "কথোপকথনটি পড়ুন:\nKellner: Was möchten Sie?\nKunde: Ich möchte einen Kaffee.\n\nপ্রশ্ন: Der Kunde möchte was?",
+                    options = listOf("Einen Tee", "Einen Kaffee", "Ein Brot", "Eine Suppe"),
+                    correctAnswer = "Einen Kaffee",
+                    explanation = "কথোপকথন অনুযায়ী কাস্টমার (Kunde) একটি কফি (einen Kaffee) চান।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_6_9",
+                    question = "শূন্যস্থান পূরণ করুন: Was ___ du essen?",
+                    options = listOf("möchtest", "möchten", "möchte", "mag"),
+                    correctAnswer = "möchtest",
+                    explanation = "'du' এর সাথে 'möchten' এর সঠিক রূপ 'möchtest'।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_6_10",
+                    question = "জার্মানে অনুবাদ করুন: আমি একটি কফি চাই।",
+                    correctAnswer = "Ich möchte einen Kaffee.",
+                    explanation = "'আমি একটি কফি চাই' এর জার্মান অনুবাদ হলো 'Ich möchte einen Kaffee.'",
+                    type = ExerciseType.TRANSLATION
+                )
+            )
         )
     )
 
