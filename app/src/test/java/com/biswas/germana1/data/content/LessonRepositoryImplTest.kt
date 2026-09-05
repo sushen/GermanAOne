@@ -19,7 +19,7 @@ class LessonRepositoryImplTest {
     @Test
     fun getLessons_returnsAllLessonsInOrder() {
         val lessons = repository.getLessons()
-        assertEquals(4, lessons.size)
+        assertEquals(5, lessons.size)
         assertEquals("lesson_1", lessons[0].id)
         assertEquals(1, lessons[0].order)
         assertEquals("lesson_2", lessons[1].id)
@@ -28,6 +28,8 @@ class LessonRepositoryImplTest {
         assertEquals(3, lessons[2].order)
         assertEquals("lesson_4", lessons[3].id)
         assertEquals(4, lessons[3].order)
+        assertEquals("lesson_5", lessons[4].id)
+        assertEquals(5, lessons[4].order)
     }
 
     @Test
@@ -83,6 +85,32 @@ class LessonRepositoryImplTest {
 
         assertTrue(containsMultipleChoice)
         assertTrue(containsFillInBlank)
+        assertTrue(containsTranslation)
+    }
+
+    @Test
+    fun getLessonById_returnsChapter5DetailsCorrectly() {
+        val lesson5 = repository.getLessonById("lesson_5")
+        assertNotNull(lesson5)
+        lesson5!!
+
+        assertEquals("Lektion 5: আমার দৈনন্দিন জীবন (Mein Alltag)", lesson5.title)
+        assertEquals(5, lesson5.order)
+
+        assertTrue(lesson5.objectives.isNotEmpty())
+        assertTrue(lesson5.vocabulary.isNotEmpty())
+        assertTrue(lesson5.grammarRules.isNotEmpty())
+        assertTrue(lesson5.exampleSentences.isNotEmpty())
+        assertTrue(lesson5.dialogues.isNotEmpty())
+        assertTrue(lesson5.exercises.isNotEmpty())
+
+        val containsAufstehenVocab = lesson5.vocabulary.any { it.german == "aufstehen" }
+        assertTrue(containsAufstehenVocab)
+
+        val containsMultipleChoice = lesson5.exercises.any { it.type == ExerciseType.MULTIPLE_CHOICE }
+        val containsTranslation = lesson5.exercises.any { it.type == ExerciseType.TRANSLATION }
+
+        assertTrue(containsMultipleChoice)
         assertTrue(containsTranslation)
     }
 }
