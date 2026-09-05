@@ -10,12 +10,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
@@ -32,11 +33,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.biswas.germana1.domain.model.Exercise
 import com.biswas.germana1.domain.model.ExerciseType
 import com.biswas.germana1.domain.model.Lesson
+import com.biswas.germana1.ui.theme.BrandCharcoal
+import com.biswas.germana1.ui.theme.BrandRed
+import com.biswas.germana1.ui.theme.BrandSuccess
+import com.biswas.germana1.ui.theme.BrandYellow
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -51,10 +56,20 @@ fun LessonDetailScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(lesson.title) },
+                title = {
+                    Text(
+                        text = lesson.title,
+                        fontWeight = FontWeight.Bold,
+                        color = BrandCharcoal
+                    )
+                },
                 navigationIcon = {
                     TextButton(onClick = onBack) {
-                        Text("পেছনে")
+                        Text(
+                            text = "পেছনে",
+                            color = BrandCharcoal,
+                            fontWeight = FontWeight.Medium
+                        )
                     }
                 }
             )
@@ -125,21 +140,37 @@ private fun VocabularyTab(lesson: Lesson) {
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         items(lesson.vocabulary) { item ->
-            Card(modifier = Modifier.fillMaxWidth()) {
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+            ) {
                 Column(modifier = Modifier.padding(16.dp)) {
+                    // German target word visually prominent
                     Text(
-                        text = "${item.german} - ${item.english}",
-                        style = MaterialTheme.typography.titleMedium
+                        text = item.german,
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = BrandCharcoal
+                    )
+                    Spacer(modifier = Modifier.height(2.dp))
+                    Text(
+                        text = item.english,
+                        style = MaterialTheme.typography.bodyLarge,
+                        fontWeight = FontWeight.Medium,
+                        color = BrandRed
                     )
                     Text(
                         text = "উচ্চারণ: [${item.pronunciation}]",
                         style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.secondary
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
-                    Spacer(modifier = Modifier.height(4.dp))
+                    Spacer(modifier = Modifier.height(6.dp))
                     Text(
                         text = "উদাহরণ: ${item.exampleSentence}",
-                        style = MaterialTheme.typography.bodyMedium
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = BrandCharcoal
                     )
                 }
             }
@@ -156,17 +187,32 @@ private fun GrammarTab(lesson: Lesson) {
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         items(lesson.grammarRules) { rule ->
-            Card(modifier = Modifier.fillMaxWidth()) {
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+            ) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text(text = rule.title, style = MaterialTheme.typography.titleMedium)
+                    Text(
+                        text = rule.title,
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = BrandCharcoal
+                    )
                     Spacer(modifier = Modifier.height(8.dp))
-                    Text(text = rule.explanation, style = MaterialTheme.typography.bodyMedium)
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = rule.explanation,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
                     rule.examples.forEach { example ->
                         Text(
                             text = "• $example",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.primary
+                            style = MaterialTheme.typography.bodyMedium,
+                            fontWeight = FontWeight.SemiBold,
+                            color = BrandCharcoal
                         )
                     }
                 }
@@ -181,17 +227,31 @@ private fun DialogueTab(lesson: Lesson) {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         items(lesson.dialogues) { dialogue ->
-            Card(modifier = Modifier.fillMaxWidth()) {
-                Column(modifier = Modifier.padding(12.dp)) {
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+            ) {
+                Column(modifier = Modifier.padding(14.dp)) {
                     Text(
                         text = "${dialogue.speaker}:",
                         style = MaterialTheme.typography.labelLarge,
-                        color = MaterialTheme.colorScheme.primary
+                        fontWeight = FontWeight.Bold,
+                        color = BrandRed
                     )
-                    Text(text = dialogue.german, style = MaterialTheme.typography.bodyLarge)
+                    Spacer(modifier = Modifier.height(2.dp))
+                    // Prominent German sentence
+                    Text(
+                        text = dialogue.german,
+                        style = MaterialTheme.typography.bodyLarge,
+                        fontWeight = FontWeight.Bold,
+                        color = BrandCharcoal
+                    )
+                    Spacer(modifier = Modifier.height(2.dp))
                     Text(
                         text = dialogue.english,
                         style = MaterialTheme.typography.bodyMedium,
@@ -224,9 +284,19 @@ private fun ExerciseCard(exercise: Exercise) {
 
     val isCorrect = userAnswer.trim().equals(exercise.correctAnswer.trim(), ignoreCase = true)
 
-    Card(modifier = Modifier.fillMaxWidth()) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = exercise.question, style = MaterialTheme.typography.titleMedium)
+            Text(
+                text = exercise.question,
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                color = BrandCharcoal
+            )
             Spacer(modifier = Modifier.height(12.dp))
 
             when (exercise.type) {
@@ -242,7 +312,12 @@ private fun ExerciseCard(exercise: Exercise) {
                                     if (!submitted) userAnswer = option
                                 }
                             )
-                            Text(text = option, style = MaterialTheme.typography.bodyMedium)
+                            Text(
+                                text = option,
+                                style = MaterialTheme.typography.bodyMedium,
+                                fontWeight = FontWeight.Medium,
+                                color = BrandCharcoal
+                            )
                         }
                     }
                 }
@@ -251,6 +326,7 @@ private fun ExerciseCard(exercise: Exercise) {
                         value = userAnswer,
                         onValueChange = { if (!submitted) userAnswer = it },
                         label = { Text("আপনার উত্তর") },
+                        shape = RoundedCornerShape(12.dp),
                         modifier = Modifier.fillMaxWidth(),
                         enabled = !submitted
                     )
@@ -263,23 +339,34 @@ private fun ExerciseCard(exercise: Exercise) {
                 Button(
                     onClick = { submitted = true },
                     enabled = userAnswer.isNotBlank(),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = BrandYellow,
+                        contentColor = BrandCharcoal
+                    ),
+                    shape = RoundedCornerShape(12.dp),
                     modifier = Modifier.align(Alignment.End)
                 ) {
-                    Text("যাচাই করুন")
+                    Text(
+                        text = "যাচাই করুন",
+                        fontWeight = FontWeight.Bold,
+                        color = BrandCharcoal
+                    )
                 }
             } else {
                 val statusText = if (isCorrect) "✅ সঠিক! 🎉" else "❌ ভুল উত্তর। সঠিক উত্তর: ${exercise.correctAnswer}"
-                val statusColor = if (isCorrect) Color(0xFF2E7D32) else MaterialTheme.colorScheme.error
+                val statusColor = if (isCorrect) BrandSuccess else BrandRed
 
                 Text(
                     text = statusText,
                     color = statusColor,
-                    style = MaterialTheme.typography.bodyLarge
+                    style = MaterialTheme.typography.bodyLarge,
+                    fontWeight = FontWeight.Bold
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
                     text = "💡 ${exercise.explanation}",
-                    style = MaterialTheme.typography.bodyMedium
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = BrandCharcoal
                 )
             }
         }
