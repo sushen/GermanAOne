@@ -1176,6 +1176,211 @@ class LessonRepositoryImpl : LessonRepository {
                     type = ExerciseType.MULTIPLE_CHOICE
                 )
             )
+        ),
+        Lesson(
+            id = "lesson_9",
+            title = "Lektion 9: সময়, তারিখ ও অ্যাপয়েন্টমেন্ট (Zeit, Datum & Termine)",
+            description = "সময় জিজ্ঞেস করা ও বলা, বার ও তারিখের বর্ণনা, অ্যাপয়েন্টমেন্ট তৈরি ও 'am' / 'um' এর সঠিক প্রয়োগ শিখুন।",
+            order = 9,
+            objectives = listOf(
+                "সময় জিজ্ঞাসা করা (Wie spät ist es?) এবং সময় বলা (Es ist ... Uhr / halb ...)।",
+                "ঘণ্টা ও মিনিট বোঝা ও প্রকাশ করা।",
+                "সপ্তাহের ৭টি বারের নাম চিনতে পারা ও ব্যবহার করা।",
+                "সহজ তারিখ প্রকাশ করা।",
+                "অ্যাপয়েন্টমেন্ট কখন তা বলতে পারা।",
+                "সহজ সময়সূচী (Schedule) বোঝা।",
+                "একটি সাধারণ অ্যাপয়েন্টমেন্ট তৈরি বা নিশ্চিত করা।",
+                "বার/তারিখের জন্য 'am' এবং ঘড়ির সময়ের জন্য 'um' এর ব্যবহার প্রয়োগ করা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("Montag", "সোমবার", "মোন-তাক", "Heute ist Montag."),
+                VocabularyItem("Dienstag", "মঙ্গলবার", "দিন্স-তাক", "Morgen ist Dienstag."),
+                VocabularyItem("Mittwoch", "বুধবার", "মিট-ভোখ", "Am Mittwoch arbeite ich."),
+                VocabularyItem("Donnerstag", "বৃহস্পতিবার", "ডনের্স-তাক", "Der Termin ist am Donnerstag."),
+                VocabularyItem("Freitag", "শুক্রবার", "ফ্রাই-তাক", "Am Freitag habe ich einen Termin."),
+                VocabularyItem("Samstag", "শনিবার", "জাম্স-তাক", "Am Samstag habe ich frei."),
+                VocabularyItem("Sonntag", "রবিবার", "জোন-তাক", "Sonntag ist ein Ruhetag."),
+                VocabularyItem("heute", "আজ", "হয়-টে", "Heute ist Montag."),
+                VocabularyItem("morgen", "আগামীকাল", "মোর-গেন", "Morgen ist Dienstag."),
+                VocabularyItem("gestern", "গতকাল", "গেস্-তার্ন", "Gestern war Sonntag."),
+                VocabularyItem("die Uhr", "ঘড়ি / সময়", "দি উর", "Wie spät ist es auf der Uhr?"),
+                VocabularyItem("die Stunde", "ঘণ্টা", "দি স্টুন-ডে", "Eine Stunde hat 60 Minuten."),
+                VocabularyItem("die Minute", "মিনিট", "দি মি-নু-টে", "Es ist zehn Uhr fünf Minute."),
+                VocabularyItem("die Zeit", "সময়", "দি সাইত", "Ich habe Zeit."),
+                VocabularyItem("halb", "সাড়ে / অর্ধেক", "হাল্প", "Es ist halb acht."),
+                VocabularyItem("Viertel", "এক-চতুর্থাংশ / ১৫ মিনিট", "ফির-টেল", "Es ist Viertel nach zehn."),
+                VocabularyItem("der Morgen", "সকাল", "দের মোর-গেন", "Am Morgen arbeite ich."),
+                VocabularyItem("der Vormittag", "সকাল / দুপুরের আগের সময়", "দের ফোর-মি-তাক", "Am Vormittag lerne ich."),
+                VocabularyItem("der Mittag", "দুপুর", "দের মি-তাক", "Der Termin ist am Mittag."),
+                VocabularyItem("der Nachmittag", "বিকেল", "দের নাখ-মি-তাক", "Am Nachmittag habe ich Zeit."),
+                VocabularyItem("der Abend", "সন্ধ্যা", "দের আ-বেন্ট", "Am Abend lerne ich Deutsch."),
+                VocabularyItem("die Nacht", "রাত", "দি নাখ্ত", "Gute Nacht!"),
+                VocabularyItem("das Datum", "তারিখ", "দাস ডা-টুম", "Wie ist das Datum heute?"),
+                VocabularyItem("der Geburtstag", "জন্মদিন", "দের গে-বুর্তস-তাক", "Mein Geburtstag ist am 10. Mai."),
+                VocabularyItem("der Termin", "অ্যাপয়েন্টমেন্ট / নির্ধারিত সময়", "দের টের-মিন", "Ich habe einen Termin."),
+                VocabularyItem("einen Termin haben", "অ্যাপয়েন্টমেন্ট থাকা", "আই-নেন টের-মিন হা-বেন", "Ich habe am Montag einen Termin."),
+                VocabularyItem("der Arzttermin", "ডাক্তারের অ্যাপয়েন্টমেন্ট", "দের আরৎস-টের-মিন", "Ich habe einen Arzttermin."),
+                VocabularyItem("der Kurs", "কোর্স", "দের কুর্স", "Der Deutschkurs beginnt um neun Uhr."),
+                VocabularyItem("beginnen", "শুরু হওয়া", "বে-গিন-নেন", "Der Kurs beginnt um neun Uhr.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "সময় জিজ্ঞাসা ও বলা (Uhrzeit)",
+                    explanation = "সময় জিজ্ঞাসা করার জন্য সহজ প্রশ্ন:\n- Wie spät ist es? (কয়টা বাজে?)\n- Wie viel Uhr ist es? (কয়টা বাজে?)\n\nসময় উত্তর দেওয়ার নিয়ম:\n- পূর্ণ ঘণ্টা: Es ist + [সংখ্যা] + Uhr. (যেমন: Es ist zehn Uhr = ১০:০০)\n- অর্ধেক ঘণ্টা (halb): জার্মানে 'halb' এর পর পরবর্তী ঘণ্টা বলা হয়! যেমন: halb acht = ৭:৩০ (৮টার অর্ধেক পথ)।\n- মিনিট সহ: Es ist zehn Uhr fünfzehn (১০:১৫) / Es ist acht Uhr dreißig (৮:৩০)।",
+                    examples = listOf(
+                        "Wie spät ist es? - Es ist zehn Uhr. (১০:০০)",
+                        "Es ist halb acht. (৭:৩০ - সাড়ে সাতটা)",
+                        "Es ist acht Uhr dreißig. (৮:৩০)"
+                    )
+                ),
+                GrammarRule(
+                    title = "'am' বনাম 'um' এর ব্যবহার",
+                    explanation = "সময় ও সময়সূচীর জন্য সহজ নিয়ম:\n- AM: বার (Days) এবং তারিখ (Dates)-এর সাথে 'am' ব্যবহৃত হয়। ('am' → কোন দিন / কোন তারিখে)\n  উদাহরণ: am Montag (সোমবারে), am 5. September (৫ই সেপ্টেম্বরে)\n- UM: ঘড়ির নির্দিষ্ট সময়ের (Clock times) সাথে 'um' ব্যবহৃত হয়। ('um' → কোন সময়ে)\n  উদাহরণ: um zehn Uhr (১০টায়), um 14 Uhr (১৪টায়)",
+                    examples = listOf(
+                        "am Montag (সোমবারে)",
+                        "am 5. September (৫ই সেপ্টেম্বরে)",
+                        "um zehn Uhr (১০টায়)",
+                        "Ich arbeite am Montag. (আমি সোমবারে কাজ করি।)",
+                        "Der Termin ist um zehn Uhr. (অ্যাপয়েন্টমেন্টটি ১০টায়।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "অ্যাপয়েন্টমেন্ট ও সময়সূচী (Termine und Kurs)",
+                    explanation = "অ্যাপয়েন্টমেন্ট নেওয়া বা সময়সূচী জানার সহজ বাক্য গঠন:\n- Ich habe einen Termin. (আমার একটি অ্যাপয়েন্টমেন্ট আছে।)\n- Ich habe am Montag einen Termin. (সোমবার আমার একটি অ্যাপয়েন্টমেন্ট আছে।)\n- Der Termin ist um zehn Uhr. (অ্যাপয়েন্টমেন্টটি ১০টায়।)\n- Der Kurs beginnt um neun Uhr. (কোর্সটি ৯টায় শুরু হয়।)",
+                    examples = listOf(
+                        "Ich habe am Dienstag einen Termin.",
+                        "Der Kurs beginnt um neun Uhr."
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Wie spät ist es?", "কয়টা বাজে?", "ভি শ্পেত ইস্ট এস"),
+                ExampleSentence("Es ist zehn Uhr.", "দশটা বাজে।", "এস ইস্ট ত্সেন উর"),
+                ExampleSentence("Es ist halb acht.", "সাড়ে সাতটা। (৭:৩০)", "এস ইস্ট হাল্প আখ্ত"),
+                ExampleSentence("Heute ist Montag.", "আজ সোমবার।", "হয়-টে ইস্ট মোন-তাক"),
+                ExampleSentence("Morgen ist Dienstag.", "আগামীকাল মঙ্গলবার।", "মোর-গেন ইস্ট দিন্স-তাক"),
+                ExampleSentence("Am Freitag habe ich einen Termin.", "শুক্রবার আমার একটি অ্যাপয়েন্টমেন্ট আছে।", "আম ফ্রাই-তাক হা-বে ইখ আই-নেন টের-মিন"),
+                ExampleSentence("Ich habe am Montag einen Termin.", "সোমবার আমার একটি অ্যাপয়েন্টমেন্ট আছে।", "ইখ হা-বে আম মোন-তাক আই-নেন টের-মিন"),
+                ExampleSentence("Der Termin ist um zehn Uhr.", "অ্যাপয়েন্টমেন্টটি দশটায়।", "দের টের-মিন ইস্ট উম ত্সেন উর"),
+                ExampleSentence("Heute ist der 5. September.", "আজ ৫ সেপ্টেম্বর।", "হয়-টে ইস্ট দের ফিউনফ-টে জেপ-টেম-বার"),
+                ExampleSentence("Mein Geburtstag ist am 10. Mai.", "আমার জন্মদিন ১০ মে।", "মাইন গে-বুর্তস-তাক ইস্ট আম ত্সেন-তেন মাই"),
+                ExampleSentence("Am Morgen arbeite ich.", "সকালে আমি কাজ করি।", "আম মোর-গেন আর-বাই-টে ইখ"),
+                ExampleSentence("Der Kurs beginnt um neun Uhr.", "কোর্সটি নয়টায় শুরু হয়।", "দের কুর্স বে-গিন্ট উম নয়ন উর")
+            ),
+            dialogues = listOf(
+                DialogueEntry("A", "Entschuldigung, wie spät ist es?", "ক্ষমা করবেন, কয়টা বাজে?"),
+                DialogueEntry("B", "Es ist zehn Uhr.", "দশটা বাজে।"),
+                DialogueEntry("A", "Danke!", "ধন্যবাদ!"),
+                DialogueEntry("B", "Bitte!", "স্বাগতম!"),
+                DialogueEntry("A", "Guten Tag. Ich möchte einen Termin.", "শুভ দিন। আমি একটি অ্যাপয়েন্টমেন্ট চাই।"),
+                DialogueEntry("B", "Gerne. Wann?", "অবশ্যই। কখন?"),
+                DialogueEntry("A", "Am Montag, bitte.", "সোমবারে, দয়া করে।"),
+                DialogueEntry("B", "Um zehn Uhr?", "দশটায়?"),
+                DialogueEntry("A", "Ja, das ist gut.", "হ্যাঁ, সেটা ভালো হয়।"),
+                DialogueEntry("B", "Gut. Bis Montag!", "বেশ। সোমবার দেখা হবে!"),
+                DialogueEntry("A", "Danke. Bis Montag!", "ধন্যবাদ। সোমবার দেখা হবে!"),
+                DialogueEntry("A", "Wann beginnt der Deutschkurs?", "জার্মান কোর্স কখন শুরু হয়?"),
+                DialogueEntry("B", "Am Dienstag um neun Uhr.", "মঙ্গলবার নয়টায়।"),
+                DialogueEntry("A", "Um neun Uhr?", "নয়টায়?"),
+                DialogueEntry("B", "Ja, genau.", "হ্যাঁ, একদম ঠিক।"),
+                DialogueEntry("A", "Danke!", "ধন্যবাদ!")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_9_1",
+                    question = "ঘড়িতে ১০:০০ বাজে। \"Wie spät ist es?\" প্রশ্নের সঠিক উত্তর কোনটি?",
+                    options = listOf("Es ist zehn Uhr.", "Es ist acht Uhr.", "Es ist zwei Uhr.", "Es ist fünf Uhr."),
+                    correctAnswer = "Es ist zehn Uhr.",
+                    explanation = "১০:০০ এর ক্ষেত্রে 'Es ist zehn Uhr.' বলা হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_2",
+                    question = "শূন্যস্থান পূরণ করুন: Der Termin ist ___ zehn Uhr.",
+                    options = listOf("um", "am", "in", "aus"),
+                    correctAnswer = "um",
+                    explanation = "ঘড়ির নির্দিষ্ট সময়ের পূর্বে 'um' অব্যয় ব্যবহৃত হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_3",
+                    question = "শূন্যস্থান পূরণ করুন: Ich habe ___ Montag einen Termin.",
+                    options = listOf("am", "um", "in", "aus"),
+                    correctAnswer = "am",
+                    explanation = "বার বা দিনের পূর্বে 'am' ব্যবহৃত হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_4",
+                    question = "\"Montag\" শব্দের অর্থ কী?",
+                    options = listOf("মঙ্গলবার", "সোমবার", "শুক্রবার", "রবিবার"),
+                    correctAnswer = "সোমবার",
+                    explanation = "'Montag' অর্থ 'সোমবার'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_5",
+                    question = "জার্মানে অনুবাদ করুন: আমার সোমবার একটি অ্যাপয়েন্টমেন্ট আছে।",
+                    correctAnswer = "Ich habe am Montag einen Termin.",
+                    explanation = "'আমার সোমবার একটি অ্যাপয়েন্টমেন্ট আছে' এর অনুবাদ হলো 'Ich habe am Montag einen Termin.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_9_6",
+                    question = "জার্মানে অনুবাদ করুন: অ্যাপয়েন্টমেন্টটি দশটায়।",
+                    correctAnswer = "Der Termin ist um zehn Uhr.",
+                    explanation = "'অ্যাপয়েন্টমেন্টটি দশটায়' এর অনুবাদ হলো 'Der Termin ist um zehn Uhr.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_9_7",
+                    question = "জার্মান ব্যাকরণে \"halb acht\" বলতে সময়ের কোন রূপটিকে বোঝায়?",
+                    options = listOf("০৭:৩০", "০৮:৩০", "০৮:০০", "০৭:০০"),
+                    correctAnswer = "০৭:৩০",
+                    explanation = "জার্মানে 'halb acht' মানে ৭:৩০ (৮টা বাজার অর্ধেক পথ)।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_8",
+                    question = "ঘড়িতে ০৯:১৫ বাজে। জার্মানে কীভাবে বলবেন?",
+                    options = listOf("Es ist neun Uhr fünfzehn.", "Es ist zehn Uhr.", "Es ist acht Uhr.", "Es ist halb neun."),
+                    correctAnswer = "Es ist neun Uhr fünfzehn.",
+                    explanation = "৯:১৫ হলো 'Es ist neun Uhr fünfzehn.'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_9",
+                    question = "You have a doctor's appointment on Monday at 10:00.\nWann ist der Termin?",
+                    options = listOf("Am Montag um zehn Uhr.", "Am Dienstag um zwei Uhr.", "Um zehn Uhr am Freitag.", "Am Sonntag."),
+                    correctAnswer = "Am Montag um zehn Uhr.",
+                    explanation = "সোমবারে (Am Montag) এবং ১০টায় (um zehn Uhr)।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_10",
+                    question = "You want to ask what time the German course starts. Which sentence is correct?",
+                    options = listOf("Wann beginnt der Deutschkurs?", "Wie heißt du?", "Wo wohne ich?", "Wie viel kostet das?"),
+                    correctAnswer = "Wann beginnt der Deutschkurs?",
+                    explanation = "'Wann beginnt der Deutschkurs?' মানে 'জার্মান কোর্স কখন শুরু হয়?'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_11",
+                    question = "You want to ask the current time. Which sentence is correct?",
+                    options = listOf("Wie spät ist es?", "Wo ist der Bahnhof?", "Wie geht es Ihnen?", "Was machst du?"),
+                    correctAnswer = "Wie spät ist es?",
+                    explanation = "'Wie spät ist es?' মানে 'কয়টা বাজে?'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_12",
+                    question = "শূন্যস্থান পূরণ করুন: Heute ist Montag. Morgen ist ___.",
+                    options = listOf("Dienstag", "Sonntag", "Freitag", "Gestern"),
+                    correctAnswer = "Dienstag",
+                    explanation = "আজ সোমবার হলে আগামীকাল মঙ্গলবার (Dienstag)।",
+                    type = ExerciseType.FILL_IN_BLANK
+                )
+            )
         )
     )
 
