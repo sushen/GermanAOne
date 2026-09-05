@@ -19,6 +19,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -37,7 +38,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.biswas.germana1.ui.components.BrandLogoHeader
-import com.biswas.germana1.ui.theme.BrandCharcoal
+import com.biswas.germana1.ui.theme.BrandDarkTextOnYellow
+import com.biswas.germana1.ui.theme.BrandRed
 import com.biswas.germana1.ui.theme.BrandYellow
 
 @Composable
@@ -100,7 +102,7 @@ fun RegisterScreen(
                     text = "রেজিস্ট্রেশন",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
-                    color = BrandCharcoal
+                    color = MaterialTheme.colorScheme.onSurface
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -115,6 +117,12 @@ fun RegisterScreen(
                     label = { Text("ইমেইল") },
                     singleLine = true,
                     shape = RoundedCornerShape(12.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        focusedLabelColor = BrandYellow,
+                        unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                    ),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Email,
                         imeAction = ImeAction.Next
@@ -134,6 +142,12 @@ fun RegisterScreen(
                     label = { Text("পাসওয়ার্ড") },
                     singleLine = true,
                     shape = RoundedCornerShape(12.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        focusedLabelColor = BrandYellow,
+                        unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                    ),
                     visualTransformation = PasswordVisualTransformation(),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Password,
@@ -154,6 +168,12 @@ fun RegisterScreen(
                     label = { Text("পাসওয়ার্ড নিশ্চিত করুন") },
                     singleLine = true,
                     shape = RoundedCornerShape(12.dp),
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
+                        focusedLabelColor = BrandYellow,
+                        unfocusedLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
+                    ),
                     visualTransformation = PasswordVisualTransformation(),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Password,
@@ -185,7 +205,7 @@ fun RegisterScreen(
                     enabled = uiState !is AuthUiState.Loading,
                     colors = ButtonDefaults.buttonColors(
                         containerColor = BrandYellow,
-                        contentColor = BrandCharcoal
+                        contentColor = BrandDarkTextOnYellow
                     ),
                     shape = RoundedCornerShape(12.dp),
                     modifier = Modifier
@@ -194,14 +214,14 @@ fun RegisterScreen(
                 ) {
                     if (uiState is AuthUiState.Loading) {
                         CircularProgressIndicator(
-                            color = BrandCharcoal,
+                            color = BrandDarkTextOnYellow,
                             modifier = Modifier.height(24.dp)
                         )
                     } else {
                         Text(
                             text = "রেজিস্টার",
                             fontWeight = FontWeight.Bold,
-                            color = BrandCharcoal
+                            color = BrandDarkTextOnYellow
                         )
                     }
                 }
@@ -216,7 +236,10 @@ fun RegisterScreen(
                         .fillMaxWidth()
                         .height(50.dp)
                 ) {
-                    Text(text = "অতিথি হিসেবে চালিয়ে যান", color = BrandCharcoal)
+                    Text(
+                        text = "অতিথি হিসেবে চালিয়ে যান",
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
                 }
 
                 Spacer(modifier = Modifier.height(12.dp))
@@ -227,7 +250,7 @@ fun RegisterScreen(
                 ) {
                     Text(
                         text = "ইতিমধ্যে একাউন্ট আছে? লগইন করুন",
-                        color = MaterialTheme.colorScheme.secondary,
+                        color = BrandRed,
                         fontWeight = FontWeight.Medium
                     )
                 }
