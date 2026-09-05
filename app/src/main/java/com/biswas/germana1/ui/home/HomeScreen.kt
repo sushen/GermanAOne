@@ -37,7 +37,19 @@ fun HomeScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Deutsch A1 Game") }
+                title = {
+                    Column {
+                        Text(
+                            text = "জার্মানি যাবো",
+                            style = MaterialTheme.typography.titleMedium
+                        )
+                        Text(
+                            text = "German A1 Language Course",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
             )
         },
         modifier = modifier
@@ -60,16 +72,16 @@ fun HomeScreen(
                     modifier = Modifier.padding(16.dp)
                 ) {
                     Text(
-                        text = "Willkommen zurück!",
+                        text = "পুনরায় স্বাগতম!",
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.onPrimaryContainer
                     )
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
                         text = when {
-                            currentUser?.isAnonymous == true -> "Guest Learner Mode"
+                            currentUser?.isAnonymous == true -> "অতিথি মোড"
                             currentUser?.email != null -> currentUser.email
-                            else -> "Guest Learner"
+                            else -> "অতিথি শিক্ষার্থী"
                         },
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onPrimaryContainer
@@ -80,7 +92,7 @@ fun HomeScreen(
             Spacer(modifier = Modifier.height(20.dp))
 
             Text(
-                text = "Lektionen & Courses",
+                text = "পাঠসমূহ",
                 style = MaterialTheme.typography.titleLarge,
                 modifier = Modifier.align(Alignment.Start)
             )
@@ -115,7 +127,7 @@ fun HomeScreen(
                                 onClick = { onSelectLesson(lesson) },
                                 modifier = Modifier.fillMaxWidth()
                             ) {
-                                Text("Start Lesson")
+                                Text("পাঠ শুরু করুন")
                             }
                         }
                     }
@@ -128,7 +140,7 @@ fun HomeScreen(
                 onClick = onLogout,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text(if (currentUser?.isAnonymous == true) "Exit Guest Mode" else "Log Out")
+                Text(if (currentUser?.isAnonymous == true) "অতিথি মোড থেকে বের হন" else "লগআউট")
             }
         }
     }

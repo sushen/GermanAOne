@@ -57,12 +57,18 @@ fun RegisterScreen(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Konto erstellen",
+            text = "জার্মানি যাবো",
             style = MaterialTheme.typography.headlineLarge,
             color = MaterialTheme.colorScheme.primary
         )
         Text(
-            text = "Create an account to track your progress",
+            text = "German A1 Language Course",
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.secondary
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            text = "একাউন্ট তৈরি করুন",
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
@@ -76,7 +82,7 @@ fun RegisterScreen(
                 validationError = null
                 viewModel.clearError()
             },
-            label = { Text("Email") },
+            label = { Text("ইমেইল") },
             singleLine = true,
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Email,
@@ -94,7 +100,7 @@ fun RegisterScreen(
                 validationError = null
                 viewModel.clearError()
             },
-            label = { Text("Password") },
+            label = { Text("পাসওয়ার্ড") },
             singleLine = true,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(
@@ -113,7 +119,7 @@ fun RegisterScreen(
                 validationError = null
                 viewModel.clearError()
             },
-            label = { Text("Confirm Password") },
+            label = { Text("পাসওয়ার্ড নিশ্চিত করুন") },
             singleLine = true,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(
@@ -138,7 +144,7 @@ fun RegisterScreen(
         Button(
             onClick = {
                 if (password != confirmPassword) {
-                    validationError = "Passwords do not match."
+                    validationError = "পাসওয়ার্ড মিলছে না।"
                 } else {
                     viewModel.register(email, password)
                 }
@@ -154,7 +160,7 @@ fun RegisterScreen(
                     modifier = Modifier.height(24.dp)
                 )
             } else {
-                Text(text = "Register")
+                Text(text = "রেজিস্টার")
             }
         }
 
@@ -167,7 +173,7 @@ fun RegisterScreen(
                 .fillMaxWidth()
                 .height(50.dp)
         ) {
-            Text(text = "Continue as Guest")
+            Text(text = "অতিথি হিসেবে চালিয়ে যান")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -176,7 +182,7 @@ fun RegisterScreen(
             onClick = onNavigateToLogin,
             enabled = uiState !is AuthUiState.Loading
         ) {
-            Text(text = "Already have an account? Log In")
+            Text(text = "ইতিমধ্যে একাউন্ট আছে? লগইন করুন")
         }
     }
 }

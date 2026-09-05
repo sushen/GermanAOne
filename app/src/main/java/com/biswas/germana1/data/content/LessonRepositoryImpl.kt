@@ -14,125 +14,125 @@ class LessonRepositoryImpl : LessonRepository {
     private val lessonsList = listOf(
         Lesson(
             id = "lesson_1",
-            title = "Lektion 1: German Alphabet, Pronunciation & Basic Greetings",
-            description = "Learn the alphabet, core pronunciation rules, and formal vs. informal greetings.",
+            title = "Lektion 1: জার্মান বর্ণমালা, উচ্চারণ ও মৌলিক সম্ভাষণ",
+            description = "জার্মান বর্ণমালা, উচ্চারণের মৌলিক নিয়ম এবং আনুষ্ঠানিক ও অনানুষ্ঠানিক সম্ভাষণ শিখুন।",
             order = 1,
             objectives = listOf(
-                "Pronounce the German alphabet and special letters (Ä, Ö, Ü, ß).",
-                "Understand fundamental pronunciation rules (W, V, Z, EI, IE).",
-                "Greet people formally (Sie) and informally (du).",
-                "Say goodbye and ask 'How are you?'."
+                "জার্মান বর্ণমালা এবং বিশেষ বর্ণসমূহ (Ä, Ö, Ü, ß) উচ্চারণ করা।",
+                "উচ্চারণের মৌলিক নিয়মাবলী (W, V, Z, EI, IE) বোঝা।",
+                "আনুষ্ঠানিকভাবে (Sie) এবং অনানুষ্ঠানিকভাবে (du) সম্ভাষণ জানানো।",
+                "বিদায় জানানো এবং 'কেমন আছেন?' জিজ্ঞাসা করা।"
             ),
             vocabulary = listOf(
-                VocabularyItem("Hallo", "Hello", "hah-loh", "Hallo, wie geht's?"),
-                VocabularyItem("Guten Morgen", "Good morning", "goo-ten mor-gen", "Guten Morgen, Herr Müller!"),
-                VocabularyItem("Guten Tag", "Good day / Hello", "goo-ten tahk", "Guten Tag!"),
-                VocabularyItem("Guten Abend", "Good evening", "goo-ten ah-bent", "Guten Abend, Frau Weber!"),
-                VocabularyItem("Gute Nacht", "Good night", "goo-te nakht", "Gute Nacht, schlaf gut!"),
-                VocabularyItem("Tschüss", "Bye (informal)", "tshooss", "Tschüss, bis morgen!"),
-                VocabularyItem("Auf Wiedersehen", "Goodbye (formal)", "owf vee-der-zay-en", "Auf Wiedersehen!"),
-                VocabularyItem("Wie geht es Ihnen?", "How are you? (formal)", "vee gayt es ee-nen", "Guten Tag, wie geht es Ihnen?"),
-                VocabularyItem("Wie geht's?", "How are you? (informal)", "vee gayts", "Hallo Nina, wie geht's?"),
-                VocabularyItem("Danke, gut!", "Thanks, good!", "dahn-ke goot", "Danke, gut! Und dir?")
+                VocabularyItem("Hallo", "হ্যালো / ওহে", "হা-লো", "Hallo, wie geht's?"),
+                VocabularyItem("Guten Morgen", "শুভ সকাল / সুপ্রভাত", "গু-টেন মোর-গেন", "Guten Morgen, Herr Müller!"),
+                VocabularyItem("Guten Tag", "শুভ দিন / হ্যালো", "গু-টেন তাক", "Guten Tag!"),
+                VocabularyItem("Guten Abend", "শুভ সন্ধ্যা", "গু-টেন আ-বেন্ট", "Guten Abend, Frau Weber!"),
+                VocabularyItem("Gute Nacht", "শুভ রাত্রি", "গু-টে নাখ্ত", "Gute Nacht, schlaf gut!"),
+                VocabularyItem("Tschüss", "বাই (অনানুষ্ঠানিক)", "চুস", "Tschüss, bis morgen!"),
+                VocabularyItem("Auf Wiedersehen", "বিদায় (আনুষ্ঠানিক)", "আউফ ভি-ডের-জে-এন", "Auf Wiedersehen!"),
+                VocabularyItem("Wie geht es Ihnen?", "আপনি কেমন আছেন? (আনুষ্ঠানিক)", "ভি গেত এস ই-ნენ", "Guten Tag, wie geht es Ihnen?"),
+                VocabularyItem("Wie geht's?", "তুমি কেমন আছো? (অনানুষ্ঠানিক)", "ভি গেৎস", "Hallo Nina, wie geht's?"),
+                VocabularyItem("Danke, gut!", "ধন্যবাদ, ভালো!", "দান-কে গুত", "Danke, gut! Und dir?")
             ),
             grammarRules = listOf(
                 GrammarRule(
-                    title = "Formal vs. Informal ('Sie' vs. 'du')",
-                    explanation = "'Sie' (capitalized) is used with adults, strangers, and bosses. 'du' is used with friends, family, and peers.",
-                    examples = listOf("Formal: Wie geht es Ihnen?", "Informal: Wie geht es dir? / Wie geht's?")
+                    title = "আনুষ্ঠানিক বনাম অনানুষ্ঠানিক ('Sie' বনাম 'du')",
+                    explanation = "'Sie' (বড় হাতের) বয়স্ক, অপরিচিত ব্যক্তি এবং বসের সাথে ব্যবহৃত হয়। 'du' বন্ধু, পরিবার এবং সমবয়সীদের সাথে ব্যবহৃত হয়।",
+                    examples = listOf("আনুষ্ঠানিক: Wie geht es Ihnen?", "অনানুষ্ঠানিক: Wie geht es dir? / Wie geht's?")
                 ),
                 GrammarRule(
-                    title = "Special German Letters & Pronunciation",
-                    explanation = "Ä (like bed), Ö (rounded lip 'eh'), Ü (rounded lip 'ee'), ß (ss sound). 'W' sounds like 'V', 'V' sounds like 'F', 'Z' sounds like 'TS'.",
-                    examples = listOf("Wie (pronounced vee)", "Vater (pronounced fah-ter)", "Zeit (pronounced tsayt)")
+                    title = "জার্মান বিশেষ বর্ণ ও উচ্চারণ",
+                    explanation = "Ä (যেমন bed), Ö (ঠোঁট গোল করে 'এ'), Ü (ঠোঁট গোল করে 'ই'), ß ('স' ধ্বনি)। 'W' এর উচ্চারণ 'V' (ভ)-এর মতো, 'V' এর উচ্চারণ 'F' (ফ)-এর মতো, 'Z' এর উচ্চারণ 'TS' (ৎস)-এর মতো।",
+                    examples = listOf("Wie (উচ্চারণ: ভি)", "Vater (উচ্চারণ: ফা-টার)", "Zeit (উচ্চারণ: ত্সাইত)")
                 )
             ),
             exampleSentences = listOf(
-                ExampleSentence("Guten Morgen, wie geht es Ihnen?", "Good morning, how are you? (Formal)", "goo-ten mor-gen, vee gayt es ee-nen"),
-                ExampleSentence("Hallo! Wie geht's?", "Hi! How's it going? (Informal)", "hah-loh! vee gayts"),
-                ExampleSentence("Danke, gut! Und Ihnen?", "Thanks, good! And you? (Formal)", "dahn-ke goot! oont ee-nen")
+                ExampleSentence("Guten Morgen, wie geht es Ihnen?", "শুভ সকাল, আপনি কেমন আছেন? (আনুষ্ঠানিক)", "গু-টেন মোর-গেন, ভি গেত এস ই-ნენ"),
+                ExampleSentence("Hallo! Wie geht's?", "হ্যালো! তুমি কেমন আছো? (অনানুষ্ঠানিক)", "হা-লো! ভি গেৎস"),
+                ExampleSentence("Danke, gut! Und Ihnen?", "ধন্যবাদ, ভালো! আর আপনি? (আনুষ্ঠানিক)", "দান-কে গুত! উন্ট ই-ნენ")
             ),
             dialogues = listOf(
-                DialogueEntry("Herr Berg", "Guten Morgen, Frau Schmidt!", "Good morning, Mrs. Schmidt!"),
-                DialogueEntry("Frau Schmidt", "Guten Morgen, Herr Berg! Wie geht es Ihnen?", "Good morning, Mr. Berg! How are you?"),
-                DialogueEntry("Herr Berg", "Danke, gut! Und Ihnen?", "Thanks, good! And you?"),
-                DialogueEntry("Frau Schmidt", "Auch gut, danke. Auf Wiedersehen!", "Also good, thank you. Goodbye!"),
-                DialogueEntry("Herr Berg", "Auf Wiedersehen!", "Goodbye!")
+                DialogueEntry("Herr Berg", "Guten Morgen, Frau Schmidt!", "শুভ সকাল, মিসেস স্মিট!"),
+                DialogueEntry("Frau Schmidt", "Guten Morgen, Herr Berg! Wie geht es Ihnen?", "শুভ সকাল, মি. বার্গ! আপনি কেমন আছেন?"),
+                DialogueEntry("Herr Berg", "Danke, gut! Und Ihnen?", "ধন্যবাদ, ভালো! আর আপনি?"),
+                DialogueEntry("Frau Schmidt", "Auch gut, danke. Auf Wiedersehen!", "আমিও ভালো, ধন্যবাদ। বিদায়!"),
+                DialogueEntry("Herr Berg", "Auf Wiedersehen!", "বিদায়!")
             ),
             exercises = listOf(
                 Exercise(
                     id = "ex_1_1",
-                    question = "Fill in the missing word: Guten ________! (Good morning!)",
+                    question = "শূন্যস্থান পূরণ করুন: Guten ________! (শুভ সকাল!)",
                     correctAnswer = "Morgen",
-                    explanation = "'Morgen' means morning in 'Guten Morgen'.",
+                    explanation = "'Guten Morgen' বাক্যে 'Morgen' শব্দের অর্থ সকাল।",
                     type = ExerciseType.FILL_IN_BLANK
                 ),
                 Exercise(
                     id = "ex_1_2",
-                    question = "Which greeting is used to address your boss formally?",
+                    question = "আপনার বসকে আনুষ্ঠানিকভাবে সম্ভাষণ জানাতে কোনটি ব্যবহার করবেন?",
                     options = listOf("Hallo, wie geht's?", "Guten Morgen, wie geht es Ihnen?", "Tschüss!"),
                     correctAnswer = "Guten Morgen, wie geht es Ihnen?",
-                    explanation = "'wie geht es Ihnen?' is the polite formal greeting.",
+                    explanation = "'wie geht es Ihnen?' হলো মার্জিত ও আনুষ্ঠানিক সম্ভাষণ।",
                     type = ExerciseType.MULTIPLE_CHOICE
                 ),
                 Exercise(
                     id = "ex_1_3",
-                    question = "Translate to German: Goodbye! (Formal)",
+                    question = "জার্মানে অনুবাদ করুন: বিদায়! (আনুষ্ঠানিক)",
                     correctAnswer = "Auf Wiedersehen",
-                    explanation = "'Auf Wiedersehen' is the formal way to say goodbye.",
+                    explanation = "'Auf Wiedersehen' হলো বিদায় জানানোর আনুষ্ঠানিক রূপ।",
                     type = ExerciseType.TRANSLATION
                 )
             )
         ),
         Lesson(
             id = "lesson_2",
-            title = "Lektion 2: Zahlen (German Numbers 0-10)",
-            description = "Master numbers 0 to 10 and practice phone number listening recognition.",
+            title = "Lektion 2: Zahlen (জার্মান সংখ্যা ০–১০)",
+            description = "০ থেকে ১০ পর্যন্ত সংখ্যা আয়ত্ত করুন এবং ফোন নম্বর শুনে চেনার অনুশীলন করুন।",
             order = 2,
             objectives = listOf(
-                "Count from 0 to 10 in German.",
-                "Understand and write down phone numbers pronounced in German."
+                "জার্মানে ০ থেকে ১০ পর্যন্ত গণনা করা।",
+                "জার্মানে উচ্চারিত ফোন নম্বর বোঝা ও লেখা।"
             ),
             vocabulary = listOf(
-                VocabularyItem("null", "0", "nool", "Null"),
-                VocabularyItem("eins", "1", "eyens", "Eins"),
-                VocabularyItem("zwei", "2", "tsvay", "Zwei"),
-                VocabularyItem("drei", "3", "dray", "Drei"),
-                VocabularyItem("vier", "4", "feer", "Vier"),
-                VocabularyItem("fünf", "5", "fuenf", "Fünf"),
-                VocabularyItem("sechs", "6", "zeks", "Sechs"),
-                VocabularyItem("sieben", "7", "zee-ben", "Sieben"),
-                VocabularyItem("acht", "8", "akht", "Acht"),
-                VocabularyItem("neun", "9", "noyn", "Neun"),
-                VocabularyItem("zehn", "10", "tsayn", "Zehn")
+                VocabularyItem("null", "০ (শূন্য)", "নুল", "Null"),
+                VocabularyItem("eins", "১ (এক)", "আইনস", "Eins"),
+                VocabularyItem("zwei", "২ (দুই)", "ত্সবাই", "Zwei"),
+                VocabularyItem("drei", "৩ (তিন)", "ড্রাই", "Drei"),
+                VocabularyItem("vier", "৪ (চার)", "ফিয়ার", "Vier"),
+                VocabularyItem("fünf", "৫ (পাঁচ)", "ফিউনফ", "Fünf"),
+                VocabularyItem("sechs", "৬ (ছয়)", "জেক্স", "Sechs"),
+                VocabularyItem("sieben", "৭ (সাত)", "জিবেন", "Sieben"),
+                VocabularyItem("acht", "৮ (আট)", "আখ্ত", "Acht"),
+                VocabularyItem("neun", "৯ (নয়)", "নয়ন", "Neun"),
+                VocabularyItem("zehn", "১০ (দশ)", "ত্সেন", "Zehn")
             ),
             grammarRules = listOf(
                 GrammarRule(
-                    title = "Number Pronunciation",
-                    explanation = "Notice 'zwei' starts with 'z' (ts sound) and 'vier' starts with 'v' (f sound).",
+                    title = "সংখ্যার উচ্চারণ",
+                    explanation = "খেয়াল করুন 'zwei' শুরু হয় 'z' (ৎস ধ্বনি) দিয়ে এবং 'vier' শুরু হয় 'v' (ফ ধ্বনি) দিয়ে।",
                     examples = listOf("0173 = null eins sieben drei")
                 )
             ),
             exampleSentences = listOf(
-                ExampleSentence("Meine Telefonnummer ist zero eins sieben zwei.", "My phone number is 0172.", "my-ne te-le-fon-noo-mer ist..."),
-                ExampleSentence("Ich habe drei Äpfel.", "I have three apples.", "eekh ha-be dray aep-fel")
+                ExampleSentence("Meine Telefonnummer ist zero eins sieben zwei.", "আমার ফোন নম্বর ০১৭২।", "মাই-নে টে-লে-ফোন-নুমের ইস্ট..."),
+                ExampleSentence("Ich habe drei Äpfel.", "আমার তিনটি আপেল আছে।", "ইখ হা-বে ড্রাই এপ-ফেল")
             ),
             dialogues = listOf(
-                DialogueEntry("Anna", "Wie ist deine Telefonnummer?", "What is your phone number?"),
-                DialogueEntry("Ben", "Null eins sieben drei, fünf vier zwei.", "0173 542.")
+                DialogueEntry("Anna", "Wie ist deine Telefonnummer?", "তোমার ফোন নম্বর কত?"),
+                DialogueEntry("Ben", "Null eins sieben drei, fünf vier zwei.", "০১৭৩ ৫৪২।")
             ),
             exercises = listOf(
                 Exercise(
                     id = "ex_2_1",
-                    question = "What is the German word for the number 4?",
+                    question = "জার্মানে সংখ্যা ৪ (চার)-এর জন্য ব্যবহৃত শব্দ কোনটি?",
                     options = listOf("drei", "vier", "fünf"),
                     correctAnswer = "vier",
-                    explanation = "'vier' is 4.",
+                    explanation = "'vier' মানে ৪ (চার)।",
                     type = ExerciseType.MULTIPLE_CHOICE
                 ),
                 Exercise(
                     id = "ex_2_2",
-                    question = "Translate 'null eins sieben drei' to digits:",
+                    question = "'null eins sieben drei' সংখ্যাটি ডিজিটে লিখুন:",
                     correctAnswer = "0173",
                     explanation = "null=0, eins=1, sieben=7, drei=3.",
                     type = ExerciseType.FILL_IN_BLANK
