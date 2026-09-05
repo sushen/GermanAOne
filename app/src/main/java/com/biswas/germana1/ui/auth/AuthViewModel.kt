@@ -37,7 +37,7 @@ class AuthViewModel(
 
     fun login(email: String, password: String) {
         if (email.isBlank() || password.isBlank()) {
-            _uiState.value = AuthUiState.Error("Email and password must not be empty.")
+            _uiState.value = AuthUiState.Error("ইমেইল এবং পাসওয়ার্ড খালি রাখা যাবে না।")
             return
         }
 

@@ -46,7 +46,7 @@ fun LessonDetailScreen(
     modifier: Modifier = Modifier
 ) {
     var selectedTabIndex by remember { mutableIntStateOf(0) }
-    val tabs = listOf("Overview", "Vocabulary", "Grammar", "Dialogue", "Exercises")
+    val tabs = listOf("সংক্ষিপ্ত বিবরণ", "শব্দভাণ্ডার", "ব্যাকরণ", "কথোপকথন", "অনুশীলন")
 
     Scaffold(
         topBar = {
@@ -54,7 +54,7 @@ fun LessonDetailScreen(
                 title = { Text(lesson.title) },
                 navigationIcon = {
                     TextButton(onClick = onBack) {
-                        Text("< Back")
+                        Text("পেছনে")
                     }
                 }
             )
@@ -99,7 +99,7 @@ private fun OverviewTab(lesson: Lesson) {
             Text(text = lesson.description, style = MaterialTheme.typography.bodyLarge)
         }
         item {
-            Text(text = "Objectives", style = MaterialTheme.typography.titleMedium)
+            Text(text = "উদ্দেশ্যসমূহ", style = MaterialTheme.typography.titleMedium)
         }
         items(lesson.objectives) { objective ->
             Card(
@@ -132,13 +132,13 @@ private fun VocabularyTab(lesson: Lesson) {
                         style = MaterialTheme.typography.titleMedium
                     )
                     Text(
-                        text = "Pronunciation: [${item.pronunciation}]",
+                        text = "উচ্চারণ: [${item.pronunciation}]",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.secondary
                     )
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
-                        text = "Example: ${item.exampleSentence}",
+                        text = "উদাহরণ: ${item.exampleSentence}",
                         style = MaterialTheme.typography.bodyMedium
                     )
                 }
@@ -250,7 +250,7 @@ private fun ExerciseCard(exercise: Exercise) {
                     OutlinedTextField(
                         value = userAnswer,
                         onValueChange = { if (!submitted) userAnswer = it },
-                        label = { Text("Your Answer") },
+                        label = { Text("আপনার উত্তর") },
                         modifier = Modifier.fillMaxWidth(),
                         enabled = !submitted
                     )
@@ -265,10 +265,10 @@ private fun ExerciseCard(exercise: Exercise) {
                     enabled = userAnswer.isNotBlank(),
                     modifier = Modifier.align(Alignment.End)
                 ) {
-                    Text("Check")
+                    Text("যাচাই করুন")
                 }
             } else {
-                val statusText = if (isCorrect) "✅ Correct!" else "❌ Incorrect. Correct answer: ${exercise.correctAnswer}"
+                val statusText = if (isCorrect) "✅ সঠিক! 🎉" else "❌ ভুল উত্তর। সঠিক উত্তর: ${exercise.correctAnswer}"
                 val statusColor = if (isCorrect) Color(0xFF2E7D32) else MaterialTheme.colorScheme.error
 
                 Text(

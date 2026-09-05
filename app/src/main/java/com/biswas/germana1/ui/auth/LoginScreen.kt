@@ -55,12 +55,18 @@ fun LoginScreen(
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "Willkommen!",
+            text = "জার্মানি যাবো",
             style = MaterialTheme.typography.headlineLarge,
             color = MaterialTheme.colorScheme.primary
         )
         Text(
-            text = "Learn German A1 with Games & Stories",
+            text = "German A1 Language Course",
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.secondary
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(
+            text = "স্বাগতম!",
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
@@ -73,7 +79,7 @@ fun LoginScreen(
                 email = it
                 viewModel.clearError()
             },
-            label = { Text("Email") },
+            label = { Text("ইমেইল") },
             singleLine = true,
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Email,
@@ -90,7 +96,7 @@ fun LoginScreen(
                 password = it
                 viewModel.clearError()
             },
-            label = { Text("Password") },
+            label = { Text("পাসওয়ার্ড") },
             singleLine = true,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(
@@ -124,7 +130,7 @@ fun LoginScreen(
                     modifier = Modifier.height(24.dp)
                 )
             } else {
-                Text(text = "Log In")
+                Text(text = "লগইন")
             }
         }
 
@@ -137,7 +143,7 @@ fun LoginScreen(
                 .fillMaxWidth()
                 .height(50.dp)
         ) {
-            Text(text = "Continue as Guest")
+            Text(text = "অতিথি হিসেবে চালিয়ে যান")
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -146,7 +152,7 @@ fun LoginScreen(
             onClick = onNavigateToRegister,
             enabled = uiState !is AuthUiState.Loading
         ) {
-            Text(text = "Don't have an account? Register")
+            Text(text = "একাউন্ট নেই? রেজিস্টার করুন")
         }
     }
 }
