@@ -1624,6 +1624,239 @@ class LessonRepositoryImpl : LessonRepository {
                     type = ExerciseType.FILL_IN_BLANK
                 )
             )
+        ),
+        Lesson(
+            id = "lesson_11",
+            title = "Lektion 11: কাজ ও পেশা (Arbeit & Beruf)",
+            description = "পেশা, কর্মস্থল, কাজের দিন ও সময় সম্পর্কিত মৌলিক জার্মান ভাষা শিখুন।",
+            order = 11,
+            objectives = listOf(
+                "সাধারণ পেশাসমূহের নাম চেনা ও বলা।",
+                "নিজের পেশা বলা এবং অন্যের পেশা সম্পর্কে জিজ্ঞাসা করা।",
+                "কোথায় কাজ করেন (কর্মস্থল) তা বলা।",
+                "সাধারণ কর্মস্থলের বিবরণ দেওয়া।",
+                "কাজের দিন (যেমন: সোমবার থেকে শুক্রবার) সম্পর্কে বলা।",
+                "কাজের সময় ও সময়সূচী জানা ও বলা (যেমন: Feierabend, beginnen)।",
+                "কর্মস্থল সম্পর্কিত সহজ প্রশ্ন ও উত্তর বোঝা।",
+                "পূর্ববর্তী অধ্যায়ের বার, সময় ও সংখ্যার সাথে কাজ সম্পর্কিত শব্দাবলীর সমন্বয় করা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("der Beruf", "পেশা", "দের বে-রুফ", "Was sind Sie von Beruf?"),
+                VocabularyItem("die Arbeit", "কাজ", "দি আর-বাইত", "Die Arbeit macht Spaß."),
+                VocabularyItem("der Arbeitsplatz", "কর্মস্থল", "দের আর-বাইতস-প্লাৎস", "Mein Arbeitsplatz ist neu."),
+                VocabularyItem("der Arzt", "ডাক্তার", "দের আর্ৎস", "Er ist Arzt."),
+                VocabularyItem("die Ärztin", "মহিলা ডাক্তার", "দি আর্ৎস-তিন", "Sie ist Ärztin."),
+                VocabularyItem("der Lehrer", "শিক্ষক", "দের লে-রের", "Er ist Lehrer."),
+                VocabularyItem("die Lehrerin", "মহিলা শিক্ষিকা", "দি লে-রে-রিন", "Sie ist Lehrerin."),
+                VocabularyItem("der Verkäufer", "বিক্রয়কর্মী", "দের ফের-কয়-ফার", "Er ist Verkäufer."),
+                VocabularyItem("die Verkäuferin", "মহিলা বিক্রয়কর্মী", "দি ফের-কয়-ফে-রিন", "Sie ist Verkäuferin."),
+                VocabularyItem("der Koch", "রাঁধুনি", "দের খোখ", "Der Koch kocht gut."),
+                VocabularyItem("die Köchin", "মহিলা রাঁধুনি", "দি খে-খিন", "Sie ist Köchin."),
+                VocabularyItem("der Fahrer", "চালক", "দের ফা-রের", "Er ist Fahrer."),
+                VocabularyItem("die Fahrerin", "মহিলা চালক", "দি ফা-রে-রিন", "Sie ist Fahrerin."),
+                VocabularyItem("der Mechaniker", "মেকানিক", "দের মে-খা-নি-কার", "Er ist Mechaniker."),
+                VocabularyItem("die Mechanikerin", "মহিলা মেকানিক", "দি মে-খা-নি-কে-রিন", "Sie ist Mechanikerin."),
+                VocabularyItem("der Ingenieur", "ইঞ্জিনিয়ার", "দের ইন-জে-নি-অর", "Er ist Ingenieur."),
+                VocabularyItem("die Ingenieurin", "মহিলা ইঞ্জিনিয়ার", "দি ইন-জে-নি-অ-রিন", "Sie ist Ingenieurin."),
+                VocabularyItem("der Student", "ছাত্র", "দের স্টু-ডেন্ট", "Er ist Student."),
+                VocabularyItem("die Studentin", "ছাত্রী", "দি স্টু-ডেন-তিন", "Sie ist Studentin."),
+                VocabularyItem("der Arbeiter", "শ্রমিক", "দের আর-বাই-টার", "Er ist Arbeiter."),
+                VocabularyItem("die Arbeiterin", "মহিলা শ্রমিক", "দি আর-বাই-টে-রিন", "Sie ist Arbeiterin."),
+                VocabularyItem("der Kellner", "ওয়েটার", "দের কেল-নার", "Der Kellner bringt Kaffee."),
+                VocabularyItem("die Kellnerin", "মহিলা ওয়েটার", "দি কেল-নে-রিন", "Sie ist Kellnerin."),
+                VocabularyItem("das Büro", "অফিস", "দাস ব্যু-রো", "Ich arbeite im Büro."),
+                VocabularyItem("die Schule", "স্কুল", "দি শু-লে", "Sie arbeitet in der Schule."),
+                VocabularyItem("das Krankenhaus", "হাসপাতাল", "দাস ক্রাংকেন-হাউস", "Er arbeitet im Krankenhaus."),
+                VocabularyItem("das Restaurant", "রেস্টুরেন্ট", "দাস রেস-তো-রং", "Ich arbeite in einem Restaurant."),
+                VocabularyItem("das Geschäft", "দোকান", "দাস গে-শেফট", "Sie arbeitet in einem Geschäft."),
+                VocabularyItem("die Firma", "কোম্পানি", "দি ফির-মা", "Er arbeitet in einer Firma."),
+                VocabularyItem("die Fabrik", "কারখানা", "দি ফা-ব্রিক", "Er arbeitet in einer Fabrik."),
+                VocabularyItem("der Supermarkt", "সুপারমার্কেট", "দের জুপার-মার্কট", "Sie arbeitet im Supermarkt."),
+                VocabularyItem("die Werkstatt", "ওয়ার্কশপ / মেরামতের স্থান", "দি ভের্ক-স্টাট", "Er arbeitet in einer Werkstatt."),
+                VocabularyItem("arbeiten", "কাজ করা", "আর-বাই-তেন", "Ich arbeite von Montag bis Freitag."),
+                VocabularyItem("beginnen", "শুরু করা", "বে-গিন-নেন", "Ich beginne um acht Uhr."),
+                VocabularyItem("der Feierabend", "কাজ শেষ হওয়ার সময় / কাজ শেষে অবসর", "দের ফাই-য়ার-আ-বেন্ট", "Um fünf Uhr habe ich Feierabend."),
+                VocabularyItem("von ... bis ...", "থেকে ... পর্যন্ত", "ফন ... বিস ...", "Ich arbeite von Montag bis Freitag.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "পেশা সম্পর্কে প্রশ্ন ও উত্তর (Was sind Sie von Beruf? / Was machst du beruflich?)",
+                    explanation = "কার কী পেশা তা জানতে দুটি প্রচলিত রূপ রয়েছে:\n- আনুষ্ঠানিক: Was sind Sie von Beruf? (আপনার পেশা কী?)\n- অনানুষ্ঠানিক: Was machst du beruflich? (তুমি কী কাজ করো?)\n\nনিজের পেশা প্রকাশের নিয়ম:\n- Ich bin + [পেশা] (জার্মানে পেশার আগে 'a/an' বসে না)।\n  উদাহরণ: Ich bin Lehrer. (আমি শিক্ষক।), Ich bin Ärztin. (আমি মহিলা ডাক্তার।)",
+                    examples = listOf(
+                        "Was sind Sie von Beruf? - Ich bin Ingenieur.",
+                        "Was machst du beruflich? - Ich bin Verkäuferin.",
+                        "Ich bin Student."
+                    )
+                ),
+                GrammarRule(
+                    title = "কর্মস্থল প্রকাশ করা ('arbeite in / im')",
+                    explanation = "আপনি কোথায় কাজ করেন তা বলতে 'arbeiten' ক্রিয়া এবং নির্দিষ্ট কর্মস্থল ব্যবহার করা হয়।\n- Wo arbeiten Sie? (আপনি কোথায় কাজ করেন?)\n- Wo arbeitest du? (তুমি কোথায় কাজ করো?)\n\nকর্মস্থলের সাধারণ প্যাটার্নসমূহ:\n- im Büro (অফিসে)\n- in der Schule (স্কুলে)\n- im Krankenhaus (হাসপাতালে)\n- in einem Restaurant (রেস্টুরেন্টে)\n- in einer Firma (কোম্পানিতে)",
+                    examples = listOf(
+                        "Wo arbeiten Sie? - Ich arbeite im Büro.",
+                        "Ich arbeite im Krankenhaus.",
+                        "Ich arbeite in einer Firma."
+                    )
+                ),
+                GrammarRule(
+                    title = "'arbeiten' ক্রিয়ার রূপ এবং সময়সূচী (arbeiten, beginnen, von... bis...)",
+                    explanation = "'arbeiten' ক্রিয়ার প্রয়োজনীয় রূপসমূহ:\n- ich arbeite\n- du arbeitest\n- er/sie arbeitet\n\nকাজের সময়সূচী প্রকাশের সহজ বাক্য রূপ:\n- Ich arbeite von Montag bis Freitag. (আমি সোমবার থেকে শুক্রবার কাজ করি।)\n- Ich beginne um acht Uhr. (আমি আটটায় কাজ শুরু করি।)\n- Um fünf Uhr habe ich Feierabend. (পাঁচটায় আমার কাজ শেষ হয়।)",
+                    examples = listOf(
+                        "Ich arbeite von Montag bis Freitag.",
+                        "Er arbeitet im Krankenhaus.",
+                        "Um fünf Uhr habe ich Feierabend."
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Was sind Sie von Beruf?", "আপনার পেশা কী?", "ভাস জিন্ট জি ফন বে-রুফ"),
+                ExampleSentence("Was machst du beruflich?", "তুমি কী কাজ করো?", "ভাস মাখস্ট দু বে-রুফ-লিশ"),
+                ExampleSentence("Ich bin Lehrer.", "আমি শিক্ষক।", "ইখ বিন লে-রের"),
+                ExampleSentence("Ich bin Verkäuferin.", "আমি বিক্রয়কর্মী।", "ইখ বিন ফের-কয়-ফে-রিন"),
+                ExampleSentence("Wo arbeiten Sie?", "আপনি কোথায় কাজ করেন?", "ভো আর-বাই-তেন জি"),
+                ExampleSentence("Ich arbeite in einem Büro.", "আমি একটি অফিসে কাজ করি।", "ইখ আর-বাই-টে ইন আই-নেম ব্যু-রো"),
+                ExampleSentence("Ich arbeite im Krankenhaus.", "আমি হাসপাতালে কাজ করি।", "ইখ আর-বাই-টে ইম ক্রাংকেন-হাউস"),
+                ExampleSentence("Ich arbeite von Montag bis Freitag.", "আমি সোমবার থেকে শুক্রবার কাজ করি।", "ইখ আর-বাই-টে ফন মোন-তাক বিস ফ্রাই-তাক"),
+                ExampleSentence("Ich beginne um acht Uhr.", "আমি আটটায় কাজ শুরু করি।", "ইখ বে-গিন-নে উম আখ্ত উর"),
+                ExampleSentence("Um fünf Uhr habe ich Feierabend.", "পাঁচটায় আমার কাজ শেষ হয়।", "উম ফিউনফ উর হা-বে ইখ ফাই-য়ার-আ-বেন্ট")
+            ),
+            dialogues = listOf(
+                DialogueEntry("A", "Guten Tag. Was sind Sie von Beruf?", "শুভ দিন। আপনার পেশা কী?"),
+                DialogueEntry("B", "Ich bin Ingenieur.", "আমি ইঞ্জিনিয়ার।"),
+                DialogueEntry("A", "Wo arbeiten Sie?", "আপনি কোথায় কাজ করেন?"),
+                DialogueEntry("B", "Ich arbeite in einer Firma.", "আমি একটি কোম্পানিতে কাজ করি।"),
+                DialogueEntry("A", "Ah, interessant!", "আহা, দারুণ!"),
+                DialogueEntry("B", "Danke.", "ধন্যবাদ।"),
+                DialogueEntry("A", "Was machst du beruflich?", "তুমি কী কাজ করো?"),
+                DialogueEntry("B", "Ich bin Verkäuferin.", "আমি বিক্রয়কর্মী।"),
+                DialogueEntry("A", "Wo arbeitest du?", "তুমি কোথায় কাজ করো?"),
+                DialogueEntry("B", "Ich arbeite in einem Geschäft.", "আমি একটি দোকানে কাজ করি।"),
+                DialogueEntry("A", "Arbeitest du jeden Tag?", "তুমি কি প্রতিদিন কাজ করো?"),
+                DialogueEntry("B", "Nein. Ich arbeite von Montag bis Freitag.", "না। আমি সোমবার থেকে শুক্রবার কাজ করি।"),
+                DialogueEntry("A", "Wann beginnst du?", "তুমি কখন শুরু করো?"),
+                DialogueEntry("B", "Ich beginne um acht Uhr.", "আমি আটটায় শুরু করি।"),
+                DialogueEntry("A", "Wann hast du Feierabend?", "তোমার কাজ কখন শেষ হয়?"),
+                DialogueEntry("B", "Um fünf Uhr.", "পাঁচটায়।"),
+                DialogueEntry("A", "Was sind Sie von Beruf?", "আপনার পেশা কী?"),
+                DialogueEntry("B", "Ich bin Ärztin.", "আমি মহিলা ডাক্তার।"),
+                DialogueEntry("A", "Wo arbeiten Sie?", "আপনি কোথায় কাজ করেন?"),
+                DialogueEntry("B", "Ich arbeite im Krankenhaus.", "আমি হাসপাতালে কাজ করি।"),
+                DialogueEntry("A", "Von wann bis wann arbeiten Sie?", "আপনি কখন থেকে কখন পর্যন্ত কাজ করেন?"),
+                DialogueEntry("B", "Von acht Uhr bis vier Uhr.", "আটটা থেকে চারটা পর্যন্ত।")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_11_1",
+                    question = "\"der Lehrer\" শব্দের বাংলা অর্থ কোনটি?",
+                    options = listOf("ডাক্তার", "শিক্ষক", "চালক", "রাঁধুনি"),
+                    correctAnswer = "শিক্ষক",
+                    explanation = "'der Lehrer' মানে শিক্ষক।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_2",
+                    question = "\"das Büro\" শব্দের সঠিক বাংলা অর্থ কোনটি?",
+                    options = listOf("হাসপাতাল", "অফিস", "স্কুল", "দোকান"),
+                    correctAnswer = "অফিস",
+                    explanation = "'das Büro' মানে অফিস।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_3",
+                    question = "শূন্যস্থান পূরণ করুন: Ich ______ in einem Büro.",
+                    options = emptyList(),
+                    correctAnswer = "arbeite",
+                    explanation = "'Ich' এর সাথে 'arbeiten' ক্রিয়া রূপ হলো 'arbeite'।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_11_4",
+                    question = "শূন্যস্থান পূরণ করুন: Ich arbeite von Montag ___ Freitag.",
+                    options = emptyList(),
+                    correctAnswer = "bis",
+                    explanation = "'von ... bis ...' মানে 'থেকে ... পর্যন্ত'।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_11_5",
+                    question = "জার্মানে অনুবাদ করুন: আমি একজন শিক্ষক।",
+                    options = emptyList(),
+                    correctAnswer = "Ich bin Lehrer.",
+                    explanation = "জার্মানে পেশা প্রকাশের সময় 'Ich bin Lehrer' বলা হয়।",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_11_6",
+                    question = "জার্মানে অনুবাদ করুন: আমি একটি অফিসে কাজ করি।",
+                    options = emptyList(),
+                    correctAnswer = "Ich arbeite in einem Büro.",
+                    explanation = "'আমি একটি অফিসে কাজ করি' এর সঠিক অনুবাদ হলো 'Ich arbeite in einem Büro.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_11_7",
+                    question = "জার্মানে অনুবাদ করুন: আপনি কোথায় কাজ করেন?",
+                    options = emptyList(),
+                    correctAnswer = "Wo arbeiten Sie?",
+                    explanation = "আনুষ্ঠানিক প্রশ্ন 'Wo arbeiten Sie?' এর অর্থ 'আপনি কোথায় কাজ করেন?'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_11_8",
+                    question = "You meet someone for the first time and want to ask their profession.",
+                    options = listOf("Was sind Sie von Beruf?", "Wo wohnst du?", "Wie alt bist du?", "Wie viel kostet das?"),
+                    correctAnswer = "Was sind Sie von Beruf?",
+                    explanation = "'Was sind Sie von Beruf?' হলো আনুষ্ঠানিকভাবে পেশা জিজ্ঞাসা করার বাক্য।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_9",
+                    question = "You are talking to a friend and ask what they do for work.",
+                    options = listOf("Was machst du beruflich?", "Wie spät ist es?", "Wo ist die Apotheke?", "Hast du Geschwister?"),
+                    correctAnswer = "Was machst du beruflich?",
+                    explanation = "'Was machst du beruflich?' হলো বন্ধুর কাছে কাজ সম্পর্কে জানার অনানুষ্ঠানিক রূপ।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_10",
+                    question = "You work in a hospital. Which sentence should you say?",
+                    options = listOf("Ich arbeite im Krankenhaus.", "Ich arbeite in der Schule.", "Ich arbeite im Büro.", "Ich arbeite im Supermarkt."),
+                    correctAnswer = "Ich arbeite im Krankenhaus.",
+                    explanation = "'im Krankenhaus' মানে হাসপাতালে।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_11",
+                    question = "You work from Monday to Friday. Which sentence is correct?",
+                    options = listOf("Ich arbeite von Montag bis Freitag.", "Ich arbeite am Sonntag.", "Ich bin Arzt.", "Das ist teuer."),
+                    correctAnswer = "Ich arbeite von Montag bis Freitag.",
+                    explanation = "'von Montag bis Freitag' মানে সোমবার থেকে শুক্রবার।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_12",
+                    question = "You start work at 8 o'clock. Which sentence is correct?",
+                    options = listOf("Ich beginne um acht Uhr.", "Ich schlafe um elf Uhr.", "Ich esse Brot.", "Ich fahre mit dem Bus."),
+                    correctAnswer = "Ich beginne um acht Uhr.",
+                    explanation = "'Ich beginne um acht Uhr.' মানে 'আমি আটটায় শুরু করি।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_13",
+                    question = "জার্মান শব্দ \"die Ärztin\"-এর বাংলা অর্থ কী?",
+                    options = listOf("শিক্ষিকা", "মহিলা ডাক্তার", "বিক্রয়কর্মী", "মহিলা চালক"),
+                    correctAnswer = "মহিলা ডাক্তার",
+                    explanation = "'die Ärztin' শব্দের অর্থ মহিলা ডাক্তার।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_14",
+                    question = "জার্মানে অনুবাদ করুন: পাঁচটায় আমার কাজ শেষ হয়।",
+                    options = emptyList(),
+                    correctAnswer = "Um fünf Uhr habe ich Feierabend.",
+                    explanation = "'Um fünf Uhr habe ich Feierabend.' মানে পাঁচটায় আমার কাজ শেষ হয়।",
+                    type = ExerciseType.TRANSLATION
+                )
+            )
         )
     )
 

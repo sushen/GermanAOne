@@ -19,7 +19,7 @@ class LessonRepositoryImplTest {
     @Test
     fun getLessons_returnsAllLessonsInOrder() {
         val lessons = repository.getLessons()
-        assertEquals(10, lessons.size)
+        assertEquals(11, lessons.size)
         assertEquals("lesson_1", lessons[0].id)
         assertEquals(1, lessons[0].order)
         assertEquals("lesson_2", lessons[1].id)
@@ -40,6 +40,8 @@ class LessonRepositoryImplTest {
         assertEquals(9, lessons[8].order)
         assertEquals("lesson_10", lessons[9].id)
         assertEquals(10, lessons[9].order)
+        assertEquals("lesson_11", lessons[10].id)
+        assertEquals(11, lessons[10].order)
     }
 
     @Test
@@ -295,6 +297,46 @@ class LessonRepositoryImplTest {
         val containsMultipleChoice = lesson8.exercises.any { it.type == ExerciseType.MULTIPLE_CHOICE }
         val containsFillInBlank = lesson8.exercises.any { it.type == ExerciseType.FILL_IN_BLANK }
         val containsTranslation = lesson8.exercises.any { it.type == ExerciseType.TRANSLATION }
+
+        assertTrue(containsMultipleChoice)
+        assertTrue(containsFillInBlank)
+        assertTrue(containsTranslation)
+    }
+
+    @Test
+    fun getLessonById_returnsChapter11DetailsCorrectly() {
+        val lesson11 = repository.getLessonById("lesson_11")
+        assertNotNull(lesson11)
+        lesson11!!
+
+        assertEquals("Lektion 11: কাজ ও পেশা (Arbeit & Beruf)", lesson11.title)
+        assertEquals(11, lesson11.order)
+
+        assertTrue(lesson11.objectives.isNotEmpty())
+        assertTrue(lesson11.vocabulary.isNotEmpty())
+        assertTrue(lesson11.grammarRules.isNotEmpty())
+        assertTrue(lesson11.exampleSentences.isNotEmpty())
+        assertTrue(lesson11.dialogues.isNotEmpty())
+        assertTrue(lesson11.exercises.isNotEmpty())
+
+        val containsBerufVocab = lesson11.vocabulary.any { it.german == "der Beruf" }
+        assertTrue(containsBerufVocab)
+
+        val containsLehrerVocab = lesson11.vocabulary.any { it.german == "der Lehrer" }
+        assertTrue(containsLehrerVocab)
+
+        val containsBueroVocab = lesson11.vocabulary.any { it.german == "das Büro" }
+        assertTrue(containsBueroVocab)
+
+        val containsFeierabendVocab = lesson11.vocabulary.any { it.german == "der Feierabend" }
+        assertTrue(containsFeierabendVocab)
+
+        val containsArbeitenGrammar = lesson11.grammarRules.any { it.title.contains("arbeiten") || it.title.contains("পেশা") }
+        assertTrue(containsArbeitenGrammar)
+
+        val containsMultipleChoice = lesson11.exercises.any { it.type == ExerciseType.MULTIPLE_CHOICE }
+        val containsFillInBlank = lesson11.exercises.any { it.type == ExerciseType.FILL_IN_BLANK }
+        val containsTranslation = lesson11.exercises.any { it.type == ExerciseType.TRANSLATION }
 
         assertTrue(containsMultipleChoice)
         assertTrue(containsFillInBlank)
