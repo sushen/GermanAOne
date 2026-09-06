@@ -1381,6 +1381,249 @@ class LessonRepositoryImpl : LessonRepository {
                     type = ExerciseType.FILL_IN_BLANK
                 )
             )
+        ),
+        Lesson(
+            id = "lesson_10",
+            title = "Lektion 10: স্বাস্থ্য ও শরীর (Gesundheit & Körper)",
+            description = "শরীরের বিভিন্ন অঙ্গপ্রতঙ্গের নাম, শারীরিক অনুভূতি ও অসুস্থতার বিবরণ প্রকাশ, ডাক্তার ও ফার্মেসিতে সাধারণ কথাপোকথন এবং জরুরি পরিস্থিতিতে সাহায্য চাওয়ার জার্মান ভাষা শিখুন।",
+            order = 10,
+            objectives = listOf(
+                "শরীরের প্রধান অঙ্গপ্রতঙ্গসমূহের নাম জার্মান ভাষায় বলা।",
+                "কারো শরীর বা অনুভূতি কেমন তা জিজ্ঞেস করা এবং নিজের অনুভূতি প্রকাশ করা (Wie geht es Ihnen? / Mir geht es gut)।",
+                "শরীরের কোথাও ব্যথা হলে বা অসুস্থ হলে তা প্রকাশ করা (Ich habe Kopfschmerzen / Mein Bauch tut weh)।",
+                "সাধারণ উপসর্গ (জ্বর, কাশি, সর্দি ইত্যাদি) বর্ণনা করা।",
+                "ডাক্তার ও ফার্মেসিতে সহজ কথাবার্তা বলা এবং ওষুধের কথা জিজ্ঞেস করা।",
+                "জরুরি মুহূর্তে ডাক্তার বা সাহায্য চাওয়ার প্রাথমিক বাক্য ব্যবহার করা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("der Kopf", "মাথা", "দের কফ", "Mein Kopf tut weh."),
+                VocabularyItem("das Gesicht", "মুখমণ্ডল", "দাস গে-যিখ্ত", "Das Gesicht ist sauber."),
+                VocabularyItem("das Auge", "চোখ", "দাস আউ-গে", "Das Auge tut weh."),
+                VocabularyItem("das Ohr", "কান", "দাস ওর", "Das Ohr tut weh."),
+                VocabularyItem("die Nase", "নাক", "দি না-জে", "Die Nase ist rot."),
+                VocabularyItem("der Mund", "মুখ", "দের মুন্ট", "Der Mund ist offen."),
+                VocabularyItem("der Zahn", "দাঁত", "দের ত্সান", "Mein Zahn tut weh."),
+                VocabularyItem("der Hals", "গলা", "দের হাল্স", "Mein Hals tut weh."),
+                VocabularyItem("der Arm", "বাহু", "দের আর্ম", "Der Arm tut weh."),
+                VocabularyItem("die Hand", "হাত", "দি হান্ট", "Meine Hand tut weh."),
+                VocabularyItem("der Finger", "আঙুল", "দের ফিঙ-গার", "Der Finger tut weh."),
+                VocabularyItem("der Rücken", "পিঠ", "দের র্যু-কেন", "Mein Rücken tut weh."),
+                VocabularyItem("der Bauch", "পেট", "দের বাউখ", "Mein Bauch tut weh."),
+                VocabularyItem("das Bein", "পা", "দাস বাইন", "Das Bein tut weh."),
+                VocabularyItem("der Fuß", "পা / পদতল", "দের ফুস", "Mein Fuß tut weh."),
+                VocabularyItem("die Gesundheit", "স্বাস্থ্য", "দি গে-জুন্ট-হাইত", "Gesundheit ist wichtig."),
+                VocabularyItem("der Arzt", "ডাক্তার", "দের আর্ৎস", "Ich brauche einen Arzt."),
+                VocabularyItem("die Ärztin", "মহিলা ডাক্তার", "দি আর্ৎস-তিন", "Die Ärztin hilft mir."),
+                VocabularyItem("die Apotheke", "ফার্মেসি", "দি আ-পো-তে-কে", "Wo ist die Apotheke?"),
+                VocabularyItem("das Krankenhaus", "হাসপাতাল", "দাস ক্রাংকেন-হাউস", "Wo ist das Krankenhaus?"),
+                VocabularyItem("die Medizin", "ওষুধ", "দি মে-দি-ত্সিন", "Ich brauche Medizin."),
+                VocabularyItem("das Medikament", "ওষুধ", "দাস মে-দি-কা-মেন্ট", "Das Medikament hilft."),
+                VocabularyItem("die Krankheit", "অসুস্থতা / রোগ", "দি ক্রাংক-হাইত", "Die Krankheit ist nicht schwer."),
+                VocabularyItem("der Schmerz", "ব্যথা", "দের শ্মের্ৎস", "Ich habe Schmerzen."),
+                VocabularyItem("das Fieber", "জ্বর", "দাস ফি-বার", "Ich habe Fieber."),
+                VocabularyItem("der Husten", "কাশি", "দের হুস-তেন", "Ich habe Husten."),
+                VocabularyItem("der Schnupfen", "সর্দি", "দের শ্নুপ-ফেন", "Ich habe Schnupfen."),
+                VocabularyItem("die Kopfschmerzen", "মাথাব্যথা", "দি কফ-শ্মের্ৎসেন", "Ich habe Kopfschmerzen."),
+                VocabularyItem("die Bauchschmerzen", "পেটব্যথা", "দি বাউখ-শ্মের্ৎসেন", "Ich habe Bauchschmerzen."),
+                VocabularyItem("die Zahnschmerzen", "দাঁতের ব্যথা", "দি ত্সান-শ্মের্ৎসেন", "Ich habe Zahnschmerzen.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "শারীরিক অবস্থা ও অনুভূতি প্রকাশ ('Wie geht es dir / Ihnen?' & 'Mir geht es ...')",
+                    explanation = "কারো শারীরিক অবস্থা বা কেমন আছেন তা জানতে:\n- Wie geht es dir? (তুমি কেমন আছ? - অনানুষ্ঠানিক)\n- Wie geht es Ihnen? (আপনি কেমন আছেন? - মার্জিত/আনুষ্ঠানিক)\n\nনিজের অনুভূতি প্রকাশ করতে:\n- Mir geht es gut. (আমি ভালো আছি।)\n- Mir geht es sehr gut. (আমি খুব ভালো আছি।)\n- Mir geht es nicht gut. (আমি ভালো নেই।)\n- Es geht mir schlecht. (আমি খারাপ বোধ করছি।)",
+                    examples = listOf(
+                        "Wie geht es Ihnen? - Mir geht es gut, danke.",
+                        "Wie geht es dir? - Mir geht es nicht gut.",
+                        "Es geht mir schlecht."
+                    )
+                ),
+                GrammarRule(
+                    title = "অসুস্থতা ও উপসর্গ প্রকাশে 'haben' ক্রিয়ার ব্যবহার",
+                    explanation = "বিভিন্ন শারীরিক সমস্যা বা লক্ষণ প্রকাশ করতে 'haben' ক্রিয়া ব্যবহৃত হয় (ich habe, du hast, er/sie hat):\n- Ich habe Kopfschmerzen. (আমার মাথাব্যথা আছে।)\n- Ich habe Bauchschmerzen. (আমার পেটব্যথা আছে।)\n- Ich habe Zahnschmerzen. (আমার দাঁতের ব্যথা আছে।)\n- Ich habe Fieber. (আমার জ্বর আছে।)\n- Ich habe Husten. (আমার কাশি আছে।)\n- Ich habe Schnupfen. (আমার সর্দি হয়েছে।)",
+                    examples = listOf(
+                        "Ich habe Kopfschmerzen. (আমার মাথাব্যথা আছে।)",
+                        "Du hast Fieber. (তোমার জ্বর আছে।)",
+                        "Er hat Husten. (তার কাশি আছে।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "শরীরের অঙ্গপ্রতঙ্গে পজেসিভ প্রোনাউন ('mein / meine')",
+                    explanation = "নিজের কোনো অঙ্গের কথা বলতে পজেসিভ প্রোনাউন 'mein' (masculine/neuter) এবং 'meine' (feminine) ব্যবহৃত হয়:\n- mein Kopf (আমার মাথা) [der Kopf]\n- mein Bauch (আমার পেট) [der Bauch]\n- mein Rücken (আমার পিঠ) [der Rücken]\n- mein Zahn (আমার দাঁত) [der Zahn]\n- meine Hand (আমার হাত) [die Hand]",
+                    examples = listOf(
+                        "mein Kopf (আমার মাথা)",
+                        "mein Bauch (আমার পেট)",
+                        "meine Hand (আমার হাত)"
+                    )
+                ),
+                GrammarRule(
+                    title = "ব্যথা অনুভূতি প্রকাশে 'tut weh'",
+                    explanation = "শরীরের কোনো নির্দিষ্ট স্থানে ব্যথা হলে 'Mein [অঙ্গ] + tut weh' প্যাটার্ন ব্যবহার করা হয়। এখানে 'tut weh' মানে 'ব্যথা করছে' বা 'ব্যথা করছে এমন অনুভূতি'।\n- Mein Kopf tut weh. (আমার মাথা ব্যথা করছে।)\n- Mein Bauch tut weh. (আমার পেট ব্যথা করছে।)\n- Mein Rücken tut weh. (আমার পিঠ ব্যথা করছে।)\n- Mein Zahn tut weh. (আমার দাঁত ব্যথা করছে।)",
+                    examples = listOf(
+                        "Mein Kopf tut weh. (আমার মাথা ব্যথা করছে।)",
+                        "Mein Bauch tut weh. (আমার পেট ব্যথা করছে।)",
+                        "Mein Rücken tut weh. (আমার পিঠ ব্যথা করছে।)"
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Wie geht es Ihnen?", "আপনি কেমন আছেন?", "ভি গেত এস ই-ნენ"),
+                ExampleSentence("Wie geht es dir?", "তুমি কেমন আছ?", "ভি গেত এস ডির"),
+                ExampleSentence("Mir geht es gut.", "আমি ভালো আছি।", "মির গেত এস গুত"),
+                ExampleSentence("Mir geht es nicht gut.", "আমি ভালো নেই।", "মির গেত এস নিখ্ত গুত"),
+                ExampleSentence("Ich habe Kopfschmerzen.", "আমার মাথাব্যথা আছে।", "ইখ হা-বে কফ-শ্মের্ৎসেন"),
+                ExampleSentence("Ich habe Bauchschmerzen.", "আমার পেটব্যথা আছে।", "ইখ হা-বে বাউখ-শ্মের্ৎসেন"),
+                ExampleSentence("Mein Kopf tut weh.", "আমার মাথা ব্যথা করছে।", "মাইন কফ তুৎ ভে"),
+                ExampleSentence("Mein Bauch tut weh.", "আমার পেট ব্যথা করছে।", "মাইন বাউখ তুৎ ভে"),
+                ExampleSentence("Ich habe Fieber.", "আমার জ্বর আছে।", "ইখ হা-বে ফি-বার"),
+                ExampleSentence("Wo ist die Apotheke?", "ফার্মেসি কোথায়?", "ভো ইস্ট দি আ-পো-তে-কে"),
+                ExampleSentence("Ich brauche einen Arzt.", "আমার একজন ডাক্তার দরকার।", "ইখ ব্রাউ-খে আই-নেন আর্ৎস"),
+                ExampleSentence("Gute Besserung!", "দ্রুত সুস্থ হয়ে ওঠো / সুস্থতা কামনা করি।", "গু-টে বেস-সে-রুং")
+            ),
+            dialogues = listOf(
+                DialogueEntry("A", "Hallo! Wie geht es dir?", "হ্যালো! তুমি কেমন আছ?"),
+                DialogueEntry("B", "Mir geht es nicht gut.", "আমি ভালো নেই।"),
+                DialogueEntry("A", "Was hast du?", "তোমার কী হয়েছে?"),
+                DialogueEntry("B", "Ich habe Kopfschmerzen.", "আমার মাথাব্যথা আছে।"),
+                DialogueEntry("A", "Oh, gute Besserung!", "ওহ, দ্রুত সুস্থ হয়ে ওঠো!"),
+                DialogueEntry("B", "Danke!", "ধন্যবাদ!"),
+                DialogueEntry("Arzt", "Guten Tag. Wie geht es Ihnen?", "শুভ দিন। আপনি কেমন আছেন?"),
+                DialogueEntry("Patient", "Mir geht es nicht gut.", "আমি ভালো নেই।"),
+                DialogueEntry("Arzt", "Was haben Sie?", "আপনার কী সমস্যা?"),
+                DialogueEntry("Patient", "Ich habe Bauchschmerzen.", "আমার পেটব্যথা আছে।"),
+                DialogueEntry("Arzt", "Seit wann?", "কবে থেকে?"),
+                DialogueEntry("Patient", "Seit heute.", "আজ থেকে।"),
+                DialogueEntry("Kunde", "Guten Tag. Ich habe Kopfschmerzen.", "শুভ দিন। আমার মাথাব্যথা আছে।"),
+                DialogueEntry("Apotheker", "Guten Tag.", "শুভ দিন।"),
+                DialogueEntry("Kunde", "Ich brauche etwas.", "আমার কিছু ওষুধ দরকার।"),
+                DialogueEntry("Apotheker", "Natürlich.", "অবশ্যই।"),
+                DialogueEntry("Kunde", "Danke.", "ধন্যবাদ।"),
+                DialogueEntry("A", "Hilfe!", "সাহায্য!"),
+                DialogueEntry("B", "Ich brauche einen Arzt.", "আমার একজন ডাক্তার দরকার।"),
+                DialogueEntry("A", "Rufen Sie einen Arzt!", "একজন ডাক্তার ডাকুন!"),
+                DialogueEntry("B", "Wo ist das Krankenhaus?", "হাসপাতাল কোথায়?")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_10_1",
+                    question = "\"Kopfschmerzen\"-এর সঠিক বাংলা অর্থ কোনটি?",
+                    options = listOf("পেটব্যথা", "মাথাব্যথা", "দাঁতের ব্যথা", "কাশি"),
+                    correctAnswer = "মাথাব্যথা",
+                    explanation = "'Kopfschmerzen' শব্দের অর্থ মাথাব্যথা।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_2",
+                    question = "শূন্যস্থান পূরণ করুন: Ich habe ________.",
+                    options = emptyList(),
+                    correctAnswer = "Kopfschmerzen",
+                    explanation = "'Ich habe Kopfschmerzen' অর্থ 'আমার মাথাব্যথা আছে'।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_10_3",
+                    question = "\"Wo ist die Apotheke?\"-এর অর্থ কী?",
+                    options = listOf("ডাক্তার কোথায়?", "হাসপাতাল কোথায়?", "ফার্মেসি কোথায়?", "দোকান কোথায়?"),
+                    correctAnswer = "ফার্মেসি কোথায়?",
+                    explanation = "'Wo ist die Apotheke?' অর্থ 'ফার্মেসি কোথায়?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_4",
+                    question = "জার্মানে অনুবাদ করুন: আমি ভালো নেই।",
+                    options = emptyList(),
+                    correctAnswer = "Mir geht es nicht gut.",
+                    explanation = "'আমি ভালো নেই'-এর সঠিক জার্মান অনুবাদ হলো 'Mir geht es nicht gut.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_10_5",
+                    question = "জার্মানে অনুবাদ করুন: আমার মাথাব্যথা আছে।",
+                    options = emptyList(),
+                    correctAnswer = "Ich habe Kopfschmerzen.",
+                    explanation = "'আমার মাথাব্যথা আছে'-এর অনুবাদ হলো 'Ich habe Kopfschmerzen.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_10_6",
+                    question = "জার্মান শব্দ \"der Kopf\"-এর বাংলা অর্থ কী?",
+                    options = listOf("হাত", "মাথা", "চোখ", "পেট"),
+                    correctAnswer = "মাথা",
+                    explanation = "'der Kopf' মানে মাথা।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_7",
+                    question = "জার্মান শব্দ \"die Hand\"-এর বাংলা অর্থ কী?",
+                    options = emptyList(),
+                    correctAnswer = "হাত",
+                    explanation = "'die Hand' মানে হাত।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_10_8",
+                    question = "জার্মান শব্দ \"das Auge\"-এর বাংলা অর্থ কী?",
+                    options = listOf("কান", "চোখ", "নাক", "মুখ"),
+                    correctAnswer = "চোখ",
+                    explanation = "'das Auge' মানে চোখ।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_9",
+                    question = "জার্মান শব্দ \"der Bauch\"-এর বাংলা অর্থ কী?",
+                    options = listOf("পিঠ", "পা", "পেট", "গলা"),
+                    correctAnswer = "পেট",
+                    explanation = "'der Bauch' মানে পেট।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_10",
+                    question = "You are not feeling well. Which sentence should you use?",
+                    options = listOf("Mir geht es gut.", "Mir geht es nicht gut.", "Guten Tag.", "Wie heißt du?"),
+                    correctAnswer = "Mir geht es nicht gut.",
+                    explanation = "'Mir geht es nicht gut.' ব্যবহার করা হয় ভালো না লাগলে।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_11",
+                    question = "You have a stomach ache. Which sentence is correct?",
+                    options = listOf("Ich habe Bauchschmerzen.", "Ich habe Kopfschmerzen.", "Ich habe Fieber.", "Ich habe Zahnschmerzen."),
+                    correctAnswer = "Ich habe Bauchschmerzen.",
+                    explanation = "'Bauchschmerzen' মানে পেটব্যথা।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_12",
+                    question = "You want to find a pharmacy. Which question should you ask?",
+                    options = listOf("Wo ist der Bahnhof?", "Wo ist die Apotheke?", "Wo ist das Hotel?", "Wo ist die Bank?"),
+                    correctAnswer = "Wo ist die Apotheke?",
+                    explanation = "'die Apotheke' মানে ফার্মেসি।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_13",
+                    question = "You need a doctor. Which sentence is correct?",
+                    options = listOf("Ich brauche einen Arzt.", "Ich habe ein Brot.", "Ich fahre mit dem Bus.", "Das ist teuer."),
+                    correctAnswer = "Ich brauche einen Arzt.",
+                    explanation = "'Ich brauche einen Arzt.' মানে 'আমার একজন ডাক্তার দরকার।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_14",
+                    question = "Your stomach hurts. Which sentence is correct?",
+                    options = listOf("Mein Kopf tut weh.", "Mein Bauch tut weh.", "Mein Zahn tut weh.", "Mein Rücken tut weh."),
+                    correctAnswer = "Mein Bauch tut weh.",
+                    explanation = "'Mein Bauch tut weh.' মানে 'আমার পেট ব্যথা করছে।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_15",
+                    question = "শূন্যস্থান পূরণ করুন: Mein Kopf tut ___.",
+                    options = emptyList(),
+                    correctAnswer = "weh",
+                    explanation = "'tut weh' জোড়া অভিব্যক্তিটি ব্যথা করা প্রকাশ করে।",
+                    type = ExerciseType.FILL_IN_BLANK
+                )
+            )
         )
     )
 
