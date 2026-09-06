@@ -1857,6 +1857,321 @@ class LessonRepositoryImpl : LessonRepository {
                     type = ExerciseType.TRANSLATION
                 )
             )
+        ),
+        Lesson(
+            id = "lesson_12",
+            title = "Lektion 12: অবসর, পরিকল্পনা ও দৈনন্দিন কথোপকথন (Freizeit, Pläne & Alltag)",
+            description = "অবসর সময়, শখ, পরিকল্পনা করা, আমন্ত্রণ জানানো ও গ্রহণ/প্রত্যাখ্যান করা, আবহাওয়া এবং দৈনন্দিন জীবনের সাধারণ সামাজিক কথোপকথন শিখুন।",
+            order = 12,
+            objectives = listOf(
+                "সহজ শখ ও অবসর সময় সম্পর্কে বলা (Hobbies & Freizeit)।",
+                "সপ্তাহান্তের পরিকল্পনা বলা ও জিজ্ঞেস করা (Pläne am Wochenende)।",
+                "কাউকে কিছু করার আমন্ত্রণ জানানো (Einladungen)।",
+                "মার্জিতভাবে আমন্ত্রণ গ্রহণ ও প্রত্যাখ্যান করা (Zusagen & Absagen)।",
+                "আবহাওয়া সম্পর্কে সহজ প্রশ্ন করা ও বর্ণনা দেয়া (Wetter)।",
+                "পূর্ববর্তী অধ্যায় সমূহের (১–১১) জানা বিষয়াবলী সমন্বয় করে দৈনন্দিন কথোপকথনে প্রয়োগ করা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("die Freizeit", "অবসর সময়", "দি ফ্রাই-সাইত", "In der Freizeit lese ich."),
+                VocabularyItem("das Wochenende", "সপ্তাহান্ত", "দাস ভো-খেন-এন্ডে", "Was machst du am Wochenende?"),
+                VocabularyItem("das Hobby", "শখ", "দাস হো-বি", "Mein Hobby ist Musik."),
+                VocabularyItem("der Sport", "খেলাধুলা", "দের শ্পোর্ট", "Ich mache Sport."),
+                VocabularyItem("die Musik", "সঙ্গীত", "দি মু-জিক", "Ich höre gerne Musik."),
+                VocabularyItem("der Film", "সিনেমা", "দের ফিল্ম", "Der Film ist gut."),
+                VocabularyItem("das Buch", "বই", "দাস বুখ", "Ich lese ein Buch."),
+                VocabularyItem("das Fußballspiel", "ফুটবল খেলা", "দাস ফুস-বাল-শ্পিল", "Das Fußballspiel ist am Samstag."),
+                VocabularyItem("der Spaziergang", "হাঁটা / পদচারণা", "দের শ্পা-সির-গাং", "Ich mache einen Spaziergang."),
+                VocabularyItem("spielen", "খেলা", "শ্পি-লেন", "Ich spiele Fußball."),
+                VocabularyItem("lesen", "পড়া", "লে-জেন", "Ich lese gern."),
+                VocabularyItem("hören", "শোনা", "হে-রেন", "Ich höre Musik."),
+                VocabularyItem("sehen", "দেখা", "জে-েন", "Ich sehe fern."),
+                VocabularyItem("schwimmen", "সাঁতার কাটা", "শ্মি-মেন", "Ich schwimme gern."),
+                VocabularyItem("tanzen", "নাচা", "তান-সেন", "Sie tanzt gern."),
+                VocabularyItem("kochen", "রান্না করা", "কো-খেন", "Ich koche gern."),
+                VocabularyItem("reisen", "ভ্রমণ করা", "রাই-জেন", "Ich reise gern."),
+                VocabularyItem("treffen", "দেখা করা", "ত্রে-ফেন", "Ich treffe meine Freunde."),
+                VocabularyItem("spazieren gehen", "হাঁটতে যাওয়া", "শ্পা-সি-রেন গে-এন", "Ich gehe im Park spazieren."),
+                VocabularyItem("das Wetter", "আবহাওয়া", "দাস ভে-টার", "Wie ist das Wetter?"),
+                VocabularyItem("die Sonne", "সূর্য", "দি জো-নে", "Die Sonne scheint."),
+                VocabularyItem("der Regen", "বৃষ্টি", "দের রে-গেন", "Der Regen kommt."),
+                VocabularyItem("der Schnee", "তুষার", "দের শ্নে", "Der Schnee fällt."),
+                VocabularyItem("der Wind", "বাতাস", "দের ভিন্ট", "Der Wind ist stark."),
+                VocabularyItem("sonnig", "রৌদ্রোজ্জ্বল", "জো-নিশ", "Es ist sonnig."),
+                VocabularyItem("warm", "উষ্ণ", "ভार्म", "Es ist warm."),
+                VocabularyItem("kalt", "ঠান্ডা", "কাল্ট", "Es ist kalt."),
+                VocabularyItem("heiß", "গরম", "হাইস", "Es ist heiß."),
+                VocabularyItem("schön", "সুন্দর", "শেন", "Es ist schön."),
+                VocabularyItem("schlecht", "খারাপ", "শ্লেখ্ত", "Das Wetter ist schlecht."),
+                VocabularyItem("regnerisch", "বৃষ্টিময়", "রেগ-নে-রিশ", "Es ist regnerisch.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "পছন্দের প্রকাশ ('gern / gerne')",
+                    explanation = "কোনো কাজ করতে পছন্দ করা বোঝাতে Verb-এর পর 'gern' বা 'gerne' ব্যবহার করা হয়।\n- Ich höre gern Musik. (আমি গান শুনতে পছন্দ করি।)\n- Ich lese gern. (আমি পড়তে পছন্দ করি।)\n- Ich spiele gern Fußball. (আমি ফুটবল খেলতে পছন্দ করি।)",
+                    examples = listOf(
+                        "Mein Hobby ist Musik. (আমার শখ সঙ্গীত।)",
+                        "Ich höre gern Musik. (আমি গান শুনতে পছন্দ করি।)",
+                        "Ich lese gern. (আমি পড়তে পছন্দ করি।)",
+                        "Ich spiele gern Fußball. (আমি ফুটবল খেলতে পছন্দ করি।)",
+                        "Ich schwimme gern. (আমি সাঁতার কাটতে পছন্দ করি।)",
+                        "Ich koche gern. (আমি রান্না করতে পছন্দ করি।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "সপ্তাহান্ত ও দৈনন্দিন সময়সূচী ('am')",
+                    explanation = "সপ্তাহান্ত বা দিনের নাম উল্লেখ করে পরিকল্পনা বলতে 'am' প্রিপজিশন ব্যবহৃত হয়:\n- am Wochenende (সপ্তাহান্তে)\n- am Samstag (শনিবার)\n- am Sonntag (রবিবার)\n- heute (আজ) / morgen (আগামীকাল)",
+                    examples = listOf(
+                        "Am Samstag spiele ich Fußball. (শনিবার আমি ফুটবল খেলি।)",
+                        "Am Sonntag lese ich. (রবিবার আমি পড়ি।)",
+                        "Am Wochenende treffe ich meine Freunde. (সপ্তাহান্তে আমি বন্ধুদের সঙ্গে দেখা করি।)",
+                        "Was machst du am Wochenende? (তুমি সপ্তাহান্তে কী করো?)"
+                    )
+                ),
+                GrammarRule(
+                    title = "পরিকল্পনা ও ইচ্ছা প্রকাশ ('Was machen wir?' / 'möchte')",
+                    explanation = "সহজ বাক্যে ভবিষ্যতের পরিকল্পনা বা ইচ্ছা প্রকাশ করতে বর্তমান কাল ও 'möchte' ব্যবহৃত হয়:\n- Was machen wir? (আমরা কী করব?)\n- Was machen wir morgen? (আমরা আগামীকাল কী করব?)\n- Was möchtest du machen? (তুমি কী করতে চাও?)\n- Ich möchte ins Kino gehen. (আমি সিনেমা দেখতে যেতে চাই।)\n- Ich möchte im Park spazieren gehen. (আমি পার্কে হাঁটতে যেতে চাই।)",
+                    examples = listOf(
+                        "Was machen wir morgen?",
+                        "Ich möchte ins Kino gehen.",
+                        "Ich möchte im Park spazieren gehen."
+                    )
+                ),
+                GrammarRule(
+                    title = "আমন্ত্রণ জানানো ('Möchtest du ...?')",
+                    explanation = "কাউকে কোথাও যাওয়া বা কিছু করার প্রস্তাব দিতে 'Möchtest du ...?' ব্যবহৃত হয়:\n- Möchtest du mitkommen? (তুমি কি সঙ্গে আসতে চাও?)\n- Möchtest du Kaffee trinken? (তুমি কি কফি খেতে চাও?)\n- Möchtest du ins Kino gehen? (তুমি কি সিনেমা দেখতে যেতে চাও?)",
+                    examples = listOf(
+                        "Möchtest du mitkommen? (তুমি কি সঙ্গে আসতে চাও?)",
+                        "Möchtest du Kaffee trinken?",
+                        "Möchtest du ins Kino gehen?"
+                    )
+                ),
+                GrammarRule(
+                    title = "আমন্ত্রণ গ্রহণ ও প্রত্যাখ্যান (Zusagen & Absagen)",
+                    explanation = "আমন্ত্রণ গ্রহণ করতে:\n- Ja, gerne! (হ্যাঁ, অবশ্যই!)\n- Ja, gern. (হ্যাঁ, ভালো লাগবে।)\n- Sehr gerne! (অবশ্যই!)\n- Das ist eine gute Idee! (এটা একটি ভালো ধারণা!)\n\nমার্জিতভাবে প্রত্যাখ্যান করতে:\n- Leider kann ich nicht. (দুঃখিত, আমি পারব না।)\n- Leider habe ich keine Zeit. (দুঃখিত, আমার সময় নেই।)\n- Vielleicht morgen. (হয়তো আগামীকাল।)",
+                    examples = listOf(
+                        "Ja, gerne! (হ্যাঁ, অবশ্যই!)",
+                        "Das ist eine gute Idee!",
+                        "Leider kann ich nicht.",
+                        "Leider habe ich keine Zeit."
+                    )
+                ),
+                GrammarRule(
+                    title = "আবহাওয়া বর্ণনা (Das Wetter)",
+                    explanation = "আবহাওয়া সম্পর্কে প্রশ্ন ও উত্তর:\n- Wie ist das Wetter? (আবহাওয়া কেমন?)\n- Es ist schön. (আবহাওয়া সুন্দর।)\n- Es ist kalt / warm / heiß. (ঠান্ডা / উষ্ণ / গরম।)\n- Es regnet. (বৃষ্টি হচ্ছে।)\n- Die Sonne scheint. (সূর্য কিরণ দিচ্ছে।)",
+                    examples = listOf(
+                        "Wie ist das Wetter?",
+                        "Es ist schön.",
+                        "Es regnet.",
+                        "Die Sonne scheint."
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Was machst du am Wochenende?", "তুমি সপ্তাহান্তে কী করো?", "ভাস মাখস্ট দু আম ভো-খেন-এন্ডে"),
+                ExampleSentence("Ich spiele Fußball.", "আমি ফুটবল খেলি।", "ইখ শ্পিলে ফুস-বাল"),
+                ExampleSentence("Ich höre Musik.", "আমি গান শুনি।", "ইখ হে-রে মু-জিক"),
+                ExampleSentence("Ich sehe fern.", "আমি টিভি দেখি।", "ইখ জে-হে ফের্ন"),
+                ExampleSentence("Möchtest du mitkommen?", "তুমি কি সঙ্গে আসতে চাও?", "মেখ-টেস্ট দু মিট-কো-মেন"),
+                ExampleSentence("Ja, gerne!", "হ্যাঁ, অবশ্যই!", "যা গের-নে"),
+                ExampleSentence("Leider kann ich nicht.", "দুঃখিত, আমি পারব না।", "লাই-ডের কান ইখ নিখ্ত"),
+                ExampleSentence("Was machen wir morgen?", "আমরা আগামীকাল কী করব?", "ভাস মা-খেন ভির মোর-গেন"),
+                ExampleSentence("Wie ist das Wetter?", "আবহাওয়া কেমন?", "ভি ইস্ট দাস ভে-টার"),
+                ExampleSentence("Es ist schön.", "আবহাওয়া সুন্দর।", "এস ইস্ট শেন"),
+                ExampleSentence("Es regnet.", "বৃষ্টি হচ্ছে।", "এস রেগ-নেট")
+            ),
+            dialogues = listOf(
+                DialogueEntry("A", "Was machst du am Wochenende?", "তুমি সপ্তাহান্তে কী করো?"),
+                DialogueEntry("B", "Am Samstag spiele ich Fußball.", "শনিবার আমি ফুটবল খেলি।"),
+                DialogueEntry("A", "Und am Sonntag?", "আর রবিবার?"),
+                DialogueEntry("B", "Am Sonntag lese ich.", "রবিবার আমি পড়ি।"),
+                DialogueEntry("A", "Schön!", "সুন্দর!"),
+                DialogueEntry("A", "Hallo! Möchtest du mitkommen?", "হ্যালো! তুমি কি সঙ্গে আসতে চাও?"),
+                DialogueEntry("B", "Wohin?", "কোথায়?"),
+                DialogueEntry("A", "Ins Kino.", "সিনেমা দেখতে।"),
+                DialogueEntry("B", "Ja, gerne!", "হ্যাঁ, অবশ্যই!"),
+                DialogueEntry("A", "Super!", "দারুণ!"),
+                DialogueEntry("A", "Möchtest du heute mit uns essen?", "তুমি কি আজ আমাদের সঙ্গে খেতে চাও?"),
+                DialogueEntry("B", "Leider kann ich nicht.", "দুঃখিত, আমি পারব না।"),
+                DialogueEntry("A", "Warum?", "কেন?"),
+                DialogueEntry("B", "Ich habe einen Termin.", "আমার একটি অ্যাপয়েন্টমেন্ট আছে।"),
+                DialogueEntry("A", "Okay. Vielleicht morgen?", "ঠিক আছে। হয়তো আগামীকাল?"),
+                DialogueEntry("B", "Ja, gerne!", "হ্যাঁ, অবশ্যই!"),
+                DialogueEntry("A", "Wie ist das Wetter heute?", "আজ আবহাওয়া কেমন?"),
+                DialogueEntry("B", "Es ist kalt und regnerisch.", "ঠান্ডা এবং বৃষ্টিময়।"),
+                DialogueEntry("A", "Oh!", "ওহ!"),
+                DialogueEntry("B", "Ja.", "হ্যাঁ।"),
+                DialogueEntry("A", "Hallo! Wie geht es dir?", "হ্যালো! তুমি কেমন আছো?"),
+                DialogueEntry("B", "Gut, danke. Und dir?", "ভালো, ধন্যবাদ। আর তুমি?"),
+                DialogueEntry("A", "Auch gut.", "আমিও ভালো।"),
+                DialogueEntry("B", "Was machst du am Samstag?", "তুমি শনিবারে কী করছ?"),
+                DialogueEntry("A", "Ich möchte in die Stadt gehen.", "আমি শহরে যেতে চাই।"),
+                DialogueEntry("B", "Möchtest du mitkommen?", "তুমি কি সঙ্গে আসতে চাও?"),
+                DialogueEntry("A", "Ja, gerne!", "হ্যাঁ, অবশ্যই!"),
+                DialogueEntry("B", "Super. Um zehn Uhr?", "দারুণ। ১০টায়?"),
+                DialogueEntry("A", "Ja, um zehn Uhr.", "হ্যাঁ, ১০টায়।")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_12_1",
+                    question = "\"das Wochenende\" শব্দের বাংলা অর্থ কী?",
+                    options = listOf("সপ্তাহ", "সপ্তাহান্ত", "সকাল", "ছুটি"),
+                    correctAnswer = "সপ্তাহান্ত",
+                    explanation = "'das Wochenende' মানে সপ্তাহান্ত (Weekend)।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_2",
+                    question = "\"Ich höre gern Musik.\" বাক্যের সঠিক বাংলা অর্থ কোনটি?",
+                    options = listOf("আমি গান শুনতে পছন্দ করি।", "আমি গান গাইতে পছন্দ করি।", "আমি সিনেমা দেখতে পছন্দ করি।", "আমি বই পড়তে পছন্দ করি।"),
+                    correctAnswer = "আমি গান শুনতে পছন্দ করি।",
+                    explanation = "'hören' মানে শোনা এবং 'Musik' মানে গান/সঙ্গীত, তাই সঠিক অর্থ 'আমি গান শুনতে পছন্দ করি।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_3",
+                    question = "শূন্যস্থান পূরণ করুন: Was machst du ___ Wochenende?",
+                    options = listOf("am", "um", "in", "aus"),
+                    correctAnswer = "am",
+                    explanation = "'Wochenende' এর পূর্বে 'am' ব্যবহৃত হয় (am Wochenende)।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_4",
+                    question = "শূন্যস্থান পূরণ করুন: Möchtest du ________?",
+                    options = emptyList(),
+                    correctAnswer = "mitkommen",
+                    explanation = "'Möchtest du mitkommen?' অর্থ 'তুমি কি সঙ্গে আসতে চাও?'।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_12_5",
+                    question = "জার্মানে অনুবাদ করুন: তুমি কি সঙ্গে আসতে চাও?",
+                    options = emptyList(),
+                    correctAnswer = "Möchtest du mitkommen?",
+                    explanation = "'তুমি কি সঙ্গে আসতে চাও?' এর জার্মান রূপ হলো 'Möchtest du mitkommen?'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_12_6",
+                    question = "জার্মানে অনুবাদ করুন: আমি ফুটবল খেলতে পছন্দ করি।",
+                    options = emptyList(),
+                    correctAnswer = "Ich spiele gern Fußball.",
+                    explanation = "'আমি ফুটবল খেলতে পছন্দ করি' এর অনুবাদ হলো 'Ich spiele gern Fußball.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_12_7",
+                    question = "জার্মানে অনুবাদ করুন: আবহাওয়া কেমন?",
+                    options = emptyList(),
+                    correctAnswer = "Wie ist das Wetter?",
+                    explanation = "'আবহাওয়া কেমন?' এর অনুবাদ হলো 'Wie ist das Wetter?'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_12_8",
+                    question = "You want to ask a friend about their weekend plans. Which question should you ask?",
+                    options = listOf("Was machst du am Wochenende?", "Wie viel kostet das?", "Wo wohnst du?", "Was sind Sie von Beruf?"),
+                    correctAnswer = "Was machst du am Wochenende?",
+                    explanation = "'Was machst du am Wochenende?' এর মাধ্যমে সপ্তাহান্তের পরিকল্পনা জানতে চাওয়া হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_9",
+                    question = "You want to invite a friend to the cinema. Which sentence is correct?",
+                    options = listOf("Möchtest du ins Kino gehen?", "Wie spät ist es?", "Ich habe Kopfschmerzen.", "Wo ist die Bank?"),
+                    correctAnswer = "Möchtest du ins Kino gehen?",
+                    explanation = "'Möchtest du ins Kino gehen?' মানে 'তুমি কি সিনেমা দেখতে যেতে চাও?'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_10",
+                    question = "You accept an invitation happily. What do you say?",
+                    options = listOf("Ja, gerne!", "Leider kann ich nicht.", "Nein, danke.", "Ich habe keine Zeit."),
+                    correctAnswer = "Ja, gerne!",
+                    explanation = "'Ja, gerne!' মানে 'হ্যাঁ, অবশ্যই!' যা আমন্ত্রণ সানন্দে গ্রহণের বাক্য।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_11",
+                    question = "You cannot go because you have an appointment. What do you say?",
+                    options = listOf("Leider kann ich nicht. Ich habe einen Termin.", "Ja, gerne!", "Das ist eine gute Idee!", "Es ist schön."),
+                    correctAnswer = "Leider kann ich nicht. Ich habe einen Termin.",
+                    explanation = "'Leider kann ich nicht. Ich habe einen Termin.' মানে 'দুঃখিত, আমি পারব না। আমার একটি অ্যাপয়েন্টমেন্ট আছে।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_12",
+                    question = "You want to ask about the weather today. What do you say?",
+                    options = listOf("Wie ist das Wetter?", "Wie heißen Sie?", "Wo ist der Bahnhof?", "Was machst du beruflich?"),
+                    correctAnswer = "Wie ist das Wetter?",
+                    explanation = "'Wie ist das Wetter?' অর্থ 'আবহাওয়া কেমন?'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_13",
+                    question = "[FINAL A1 REVIEW - Greetings]: Someone says 'Guten Tag! Wie geht es Ihnen?'. How do you politely respond?",
+                    options = listOf("Danke, gut! Und Ihnen?", "Tschüss!", "Ich bin 20 Jahre alt.", "Das kostet fünf Euro."),
+                    correctAnswer = "Danke, gut! Und Ihnen?",
+                    explanation = "'Danke, gut! Und Ihnen?' হলো মার্জিত উত্তর।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_14",
+                    question = "[FINAL A1 REVIEW - Personal Intro]: Someone asks 'Wie heißen Sie?'. How do you answer?",
+                    options = listOf("Ich heiße ...", "Ich komme aus Bangladesch.", "Ich wohne in Dhaka.", "Ich habe einen Bruder."),
+                    correctAnswer = "Ich heiße ...",
+                    explanation = "'Ich heiße ...' হলো নিজের নাম বলার সঠিক প্রকাশ।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_15",
+                    question = "[FINAL A1 REVIEW - Shopping]: How do you ask 'How much does this cost?' in German?",
+                    options = listOf("Wie viel kostet das?", "Wo ist das Krankenhaus?", "Wann beginnt der Kurs?", "Was machst du am Samstag?"),
+                    correctAnswer = "Wie viel kostet das?",
+                    explanation = "'Wie viel kostet das?' মানে 'এটার দাম কত?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_16",
+                    question = "[FINAL A1 REVIEW - City & Transport]: How do you ask 'Where is the train station?'",
+                    options = listOf("Wo ist der Bahnhof?", "Wie spät ist es?", "Hast du Schmerzen?", "Was möchten Sie trinken?"),
+                    correctAnswer = "Wo ist der Bahnhof?",
+                    explanation = "'Wo ist der Bahnhof?' মানে 'রেলস্টেশন কোথায়?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_17",
+                    question = "[FINAL A1 REVIEW - Health]: You have a headache. What do you say?",
+                    options = listOf("Ich habe Kopfschmerzen.", "Ich habe Hunger.", "Ich fahre mit dem Bus.", "Ich bin Verkäufer."),
+                    correctAnswer = "Ich habe Kopfschmerzen.",
+                    explanation = "'Ich habe Kopfschmerzen.' মানে 'আমার মাথাব্যথা আছে।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_18",
+                    question = "[FINAL A1 REVIEW - Work]: Someone asks 'Was sind Sie von Beruf?'. How do you reply if you are a teacher?",
+                    options = listOf("Ich bin Lehrer.", "Ich lerne Deutsch.", "Ich gehe nach Hause.", "Ich esse ein Brot."),
+                    correctAnswer = "Ich bin Lehrer.",
+                    explanation = "'Ich bin Lehrer.' মানে 'আমি শিক্ষক।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_19",
+                    question = "[FINAL PRACTICAL CHALLENGE]: Arrange a meeting time. 'Um wie viel Uhr treffen wir uns?' - '___ zehn Uhr.'",
+                    options = listOf("Um", "Am", "In", "Aus"),
+                    correctAnswer = "Um",
+                    explanation = "নির্দিষ্ট সময় প্রকাশের জন্য 'Um' অব্যয় ব্যবহৃত হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_20",
+                    question = "[FINAL PRACTICAL CHALLENGE]: Complete the dialogue.\nA: Was machst du am Samstag?\nB: Ich möchte in die Stadt gehen. Möchtest du mitkommen?\nA: Ja, ________!",
+                    options = listOf("gerne", "schlecht", "kalt", "teuer"),
+                    correctAnswer = "gerne",
+                    explanation = "'Ja, gerne!' মানে 'হ্যাঁ, অবশ্যই!'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                )
+            )
         )
     )
 
