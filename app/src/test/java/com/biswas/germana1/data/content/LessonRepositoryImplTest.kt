@@ -19,7 +19,7 @@ class LessonRepositoryImplTest {
     @Test
     fun getLessons_returnsAllLessonsInOrder() {
         val lessons = repository.getLessons()
-        assertEquals(11, lessons.size)
+        assertEquals(12, lessons.size)
         assertEquals("lesson_1", lessons[0].id)
         assertEquals(1, lessons[0].order)
         assertEquals("lesson_2", lessons[1].id)
@@ -42,6 +42,8 @@ class LessonRepositoryImplTest {
         assertEquals(10, lessons[9].order)
         assertEquals("lesson_11", lessons[10].id)
         assertEquals(11, lessons[10].order)
+        assertEquals("lesson_12", lessons[11].id)
+        assertEquals(12, lessons[11].order)
     }
 
     @Test
@@ -337,6 +339,49 @@ class LessonRepositoryImplTest {
         val containsMultipleChoice = lesson11.exercises.any { it.type == ExerciseType.MULTIPLE_CHOICE }
         val containsFillInBlank = lesson11.exercises.any { it.type == ExerciseType.FILL_IN_BLANK }
         val containsTranslation = lesson11.exercises.any { it.type == ExerciseType.TRANSLATION }
+
+        assertTrue(containsMultipleChoice)
+        assertTrue(containsFillInBlank)
+        assertTrue(containsTranslation)
+    }
+
+    @Test
+    fun getLessonById_returnsChapter12DetailsCorrectly() {
+        val lesson12 = repository.getLessonById("lesson_12")
+        assertNotNull(lesson12)
+        lesson12!!
+
+        assertEquals("Lektion 12: অবসর, পরিকল্পনা ও দৈনন্দিন কথোপকথন (Freizeit, Pläne & Alltag)", lesson12.title)
+        assertEquals(12, lesson12.order)
+
+        assertTrue(lesson12.objectives.isNotEmpty())
+        assertTrue(lesson12.vocabulary.isNotEmpty())
+        assertTrue(lesson12.grammarRules.isNotEmpty())
+        assertTrue(lesson12.exampleSentences.isNotEmpty())
+        assertTrue(lesson12.dialogues.isNotEmpty())
+        assertTrue(lesson12.exercises.isNotEmpty())
+
+        val containsFreizeitVocab = lesson12.vocabulary.any { it.german == "die Freizeit" }
+        assertTrue(containsFreizeitVocab)
+
+        val containsWochenendeVocab = lesson12.vocabulary.any { it.german == "das Wochenende" }
+        assertTrue(containsWochenendeVocab)
+
+        val containsWetterVocab = lesson12.vocabulary.any { it.german == "das Wetter" }
+        assertTrue(containsWetterVocab)
+
+        val containsSonneVocab = lesson12.vocabulary.any { it.german == "die Sonne" }
+        assertTrue(containsSonneVocab)
+
+        val containsGernGrammar = lesson12.grammarRules.any { it.title.contains("gern") }
+        assertTrue(containsGernGrammar)
+
+        val containsEinladungenGrammar = lesson12.grammarRules.any { it.title.contains("আমন্ত্রণ") }
+        assertTrue(containsEinladungenGrammar)
+
+        val containsMultipleChoice = lesson12.exercises.any { it.type == ExerciseType.MULTIPLE_CHOICE }
+        val containsFillInBlank = lesson12.exercises.any { it.type == ExerciseType.FILL_IN_BLANK }
+        val containsTranslation = lesson12.exercises.any { it.type == ExerciseType.TRANSLATION }
 
         assertTrue(containsMultipleChoice)
         assertTrue(containsFillInBlank)
