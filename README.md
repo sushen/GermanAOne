@@ -1,3 +1,5 @@
+<img width="1536" height="1024" alt="German Learning App Brand Board" src="https://github.com/user-attachments/assets/0deedd73-e65f-4f68-bdb7-ecfaa292cad3" />
+
 # German A1 Language-Learning Conversational Game
 
 An Android application built with Kotlin and Jetpack Compose designed to teach German at the A1 level through interactive lessons, vocabulary, grammar rules, dialogues, and exercises with an extensible, data-driven content architecture.
