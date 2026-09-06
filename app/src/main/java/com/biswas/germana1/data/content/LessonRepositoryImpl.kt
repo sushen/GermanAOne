@@ -743,6 +743,1435 @@ class LessonRepositoryImpl : LessonRepository {
                     type = ExerciseType.TRANSLATION
                 )
             )
+        ),
+        Lesson(
+            id = "lesson_7",
+            title = "Lektion 7: কেনাকাটা (Einkaufen)",
+            description = "দোকান বা সুপারমার্কেটে কেনাকাটা করা, পণ্যের দাম জিজ্ঞাসা করা, দাম বলা এবং কেনাকাটা সম্পর্কিত সহজ কথোপকথন শিখুন।",
+            order = 7,
+            objectives = listOf(
+                "দোকানে পণ্যের দাম কীভাবে জিজ্ঞাসা করতে হয় তা শেখা (Wie viel kostet das? / Was kostet das?)।",
+                "পণ্যের দাম প্রকাশ করা (Das kostet ... Euro)।",
+                "পণ্য পছন্দ করা ও কেনার ইচ্ছা প্রকাশ করা (Ich möchte das kaufen / Ich nehme das)।",
+                "দাম সম্পর্কে মন্তব্য করা (teuer, billig, günstig)।",
+                "কেনাকাটা সংক্রান্ত দৈনন্দিন কথোপকথন বোঝা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("einkaufen", "কেনাকাটা করা", "আইন-কাউ-ফেন", "Ich gehe einkaufen."),
+                VocabularyItem("kaufen", "কেনা", "কাউ-ফেন", "Ich möchte das kaufen."),
+                VocabularyItem("der Supermarkt", "সুপারমার্কেট", "দের জুপার-মার্কট", "Ich gehe in den Supermarkt."),
+                VocabularyItem("das Geschäft", "দোকান", "দাস গে-শেফট", "Das Geschäft ist offen."),
+                VocabularyItem("der Preis", "দাম / মূল্য", "দের প্রাইস", "Der Preis ist gut."),
+                VocabularyItem("kosten", "দাম হওয়া", "কস-তেন", "Was kostet das?"),
+                VocabularyItem("Euro", "ইউরো", "অয়-রো", "Das kostet fünf Euro."),
+                VocabularyItem("Cent", " সেন্ট", "সেন্ট", "Das kostet 50 Cent."),
+                VocabularyItem("teuer", "দামি / ব্যয়বহুল", "তয়-আর", "Das ist teuer."),
+                VocabularyItem("billig", "সস্তা", "বি-লিশ", "Das ist billig."),
+                VocabularyItem("günstig", "সাশ্রয়ী / কম দামের", "গ্যুন-স্টিশ", "Das ist günstig."),
+                VocabularyItem("nehmen", "নেওয়া", "নে-মেন", "Ich nehme das."),
+                VocabularyItem("brauchen", "প্রয়োজন হওয়া", "ব্রাউ-খেন", "Ich brauche Brot."),
+                VocabularyItem("die Tasche", "ব্যাগ / থলে", "দি তা-শে", "Ich brauche eine Tasche."),
+                VocabularyItem("das Geld", "টাকা / অর্থ", "দাস গেল্ট", "Ich habe Geld.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "দাম জিজ্ঞাসা করা ('Wie viel kostet ...?' / 'Was kostet ...?')",
+                    explanation = "কোনো জিনিসের দাম জানতে 'Wie viel kostet das?' বা 'Was kostet das?' ব্যবহার করা যায়। উভয় বাক্যের অর্থ 'এটার দাম কত?'।",
+                    examples = listOf(
+                        "Wie viel kostet das? (এটার দাম কত?)",
+                        "Was kostet das? (এটার দাম কত?)"
+                    )
+                ),
+                GrammarRule(
+                    title = "দাম বলা ('Das kostet ... Euro')",
+                    explanation = "কোনো জিনিসের দাম প্রকাশ করার জন্য 'Das kostet + [ইউরো/সংখ্যা]' ব্যবহার করা হয়।",
+                    examples = listOf(
+                        "Das kostet fünf Euro. (এটার দাম পাঁচ ইউরো।)",
+                        "Das kostet zehn Euro. (এটার দাম দশ ইউরো।)",
+                        "Der Preis ist zehn Euro. (দাম দশ ইউরো।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "পণ্য পছন্দ করা ও কেনা ('Ich möchte ... kaufen' & 'Ich nehme ...')",
+                    explanation = "কোনো কিছু কিনতে চাইলে ভদ্রভাবে বলতে পারেন 'Ich möchte das kaufen' (আমি এটা কিনতে চাই) অথবা 'Ich nehme das' (আমি এটা নেব)।",
+                    examples = listOf(
+                        "Ich möchte das kaufen. (আমি এটা কিনতে চাই।)",
+                        "Ich nehme das. (আমি এটা নেব।)",
+                        "Ich möchte diesen Kaffee. (আমি এই কফিটি চাই।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "দাম বিচার প্রকাশ করা ('teuer', 'billig', 'günstig')",
+                    explanation = "কোনো পণ্যের দাম সম্পর্কে মন্তব্য করতে:\n- teuer = দামি\n- billig = সস্তা\n- günstig = সাশ্রয়ী / কম দামের",
+                    examples = listOf(
+                        "Das ist teuer. (এটা দামি।)",
+                        "Das ist billig. (এটা সস্তা।)",
+                        "Das ist günstig. (এটা সাশ্রয়ী।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "দোকানে মার্জিত ভাষা (Höflichkeit beim Einkaufen)",
+                    explanation = "দোকানদার ও ক্রেতার মধ্যে কেনাকাটার সময় কিছু সাধারণ মার্জিত অভিব্যক্তি:\n- Guten Tag (শুভ দিন)\n- Ich möchte ... (আমি ... চাই)\n- Bitte (দয়া করে / এই নিন)\n- Danke (ধন্যবাদ)",
+                    examples = listOf(
+                        "Kann ich Ihnen helfen? (আমি কি আপনাকে সাহায্য করতে পারি?)",
+                        "Danke! (ধন্যবাদ!)"
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Wie viel kostet das?", "এটার দাম কত?", "ভি ফিল কস-তেত দাস"),
+                ExampleSentence("Was kostet das?", "এটার দাম কত?", "ভাস কস-তেত দাস"),
+                ExampleSentence("Das kostet fünf Euro.", "এটার দাম পাঁচ ইউরো।", "দাস কস-তেত ফিউনফ অয়-রো"),
+                ExampleSentence("Das kostet zehn Euro.", "এটার দাম দশ ইউরো।", "দাস কস-তেত ত্সেন অয়-রো"),
+                ExampleSentence("Der Preis ist zehn Euro.", "দাম দশ ইউরো।", "দের প্রাইস ইস্ট ত্সেন অয়-রো"),
+                ExampleSentence("Ich möchte das kaufen.", "আমি এটা কিনতে চাই।", "ইখ মেখ-টে দাস কাউ-ফেন"),
+                ExampleSentence("Ich nehme das.", "আমি এটা নেব।", "ইখ নে-মে দাস"),
+                ExampleSentence("Das ist teuer.", "এটা দামি।", "দাস ইস্ট তয়-আর"),
+                ExampleSentence("Das ist billig.", "এটা সস্তা।", "দাস ইস্ট বি-লিশ"),
+                ExampleSentence("Das ist günstig.", "এটা সাশ্রয়ী।", "দাস ইস্ট গ্যুন-স্টিশ")
+            ),
+            dialogues = listOf(
+                DialogueEntry("Verkäufer", "Guten Tag! Kann ich Ihnen helfen?", "শুভ দিন! আমি কি আপনাকে সাহায্য করতে পারি?"),
+                DialogueEntry("Kunde", "Ja, bitte. Was kostet das?", "জি, দয়া করে। এটার দাম কত?"),
+                DialogueEntry("Verkäufer", "Das kostet zehn Euro.", "এটার দাম দশ ইউরো।"),
+                DialogueEntry("Kunde", "Das ist teuer.", "এটা দামি।"),
+                DialogueEntry("Verkäufer", "Dieses kostet fünf Euro.", "এটির দাম পাঁচ ইউরো।"),
+                DialogueEntry("Kunde", "Okay. Ich nehme das.", "ঠিক আছে। আমি এটা নেব।"),
+                DialogueEntry("Verkäufer", "Bitte.", "এই নিন।"),
+                DialogueEntry("Kunde", "Danke!", "ধন্যবাদ!"),
+                DialogueEntry("Kunde", "Guten Tag! Was kostet die Tasche?", "শুভ দিন! ব্যাগটির দাম কত?"),
+                DialogueEntry("Verkäufer", "Die Tasche kostet zwanzig Euro.", "ব্যাগটির দাম বিশ ইউরো।"),
+                DialogueEntry("Kunde", "Oh, das ist teuer.", "ওহ, এটা দামি।"),
+                DialogueEntry("Verkäufer", "Dieses Produkt kostet zehn Euro.", "এই পণ্যটির দাম দশ ইউরো।"),
+                DialogueEntry("Kunde", "Gut. Ich nehme das.", "বেশ। আমি এটা নেব।"),
+                DialogueEntry("Verkäufer", "Bitte sehr!", "এই যে, নিন!"),
+                DialogueEntry("Kunde", "Danke schön!", "অনেক ধন্যবাদ!")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_7_1",
+                    question = "\"Wie viel kostet das?\" এর অর্থ কী?",
+                    options = listOf("এটা কী?", "এটার দাম কত?", "এটা কোথায়?", "এটা কার?"),
+                    correctAnswer = "এটার দাম কত?",
+                    explanation = "'Wie viel kostet das?' শব্দের অর্থ 'এটার দাম কত?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_2",
+                    question = "\"Das kostet fünf Euro.\" এর বাংলা অর্থ কী?",
+                    options = listOf("এটা পাঁচ ইউরো।", "এটার দাম পাঁচ ইউরো।", "আমি পাঁচ ইউরো চাই।", "আমার কাছে পাঁচ ইউরো আছে।"),
+                    correctAnswer = "এটার দাম পাঁচ ইউরো।",
+                    explanation = "'Das kostet fünf Euro.' অর্থ 'এটার দাম পাঁচ ইউরো।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_3",
+                    question = "শূন্যস্থান পূরণ করুন: Das ___ zehn Euro.",
+                    options = listOf("kostet", "kauft", "nimmt", "sucht"),
+                    correctAnswer = "kostet",
+                    explanation = "দাম প্রকাশ করতে 'kostet' ক্রিয়াটি ব্যবহৃত হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_4",
+                    question = "\"teuer\" এর অর্থ কী?",
+                    options = listOf("সস্তা", "দামি", "নতুন", "বড়"),
+                    correctAnswer = "দামি",
+                    explanation = "'teuer' শব্দের অর্থ দামি।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_5",
+                    question = "\"billig\" এর অর্থ কী?",
+                    options = listOf("দামি", "সস্তা", "সুন্দর", "ছোট"),
+                    correctAnswer = "সস্তা",
+                    explanation = "'billig' শব্দের অর্থ সস্তা।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_6",
+                    question = "জার্মানে অনুবাদ করুন: এটার দাম কত?",
+                    correctAnswer = "Wie viel kostet das?",
+                    explanation = "'এটার দাম কত?' এর জার্মান অনুবাদ হলো 'Wie viel kostet das?' (বা 'Was kostet das?')।",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_7_7",
+                    question = "জার্মানে অনুবাদ করুন: আমি এটা নেব।",
+                    correctAnswer = "Ich nehme das.",
+                    explanation = "'আমি এটা নেব' এর জার্মান অনুবাদ হলো 'Ich nehme das.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_7_8",
+                    question = "\"Ich möchte das kaufen.\" এর বাংলা অর্থ কী?",
+                    correctAnswer = "আমি এটা কিনতে চাই।",
+                    explanation = "'Ich möchte das kaufen.' অর্থ 'আমি এটা কিনতে চাই।'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_7_9",
+                    question = "জার্মান বাক্যে বলা হয়েছে: \"Das kostet zwanzig Euro.\" এটার দাম কত?",
+                    options = listOf("€5", "€10", "€20", "€50"),
+                    correctAnswer = "€20",
+                    explanation = "'zwanzig Euro' মানে ২০ ইউরো (€20)।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_10",
+                    question = "কথোপকথনটি পড়ুন:\nVerkäufer: Das kostet fünfzehn Euro.\n\nপ্রশ্ন: Wie viel kostet das?",
+                    options = listOf("Fünf Euro", "Zehn Euro", "Fünfzehn Euro", "Zwanzig Euro"),
+                    correctAnswer = "Fünfzehn Euro",
+                    explanation = "বিক্রেতা বলেছেন 'Das kostet fünfzehn Euro', অর্থাৎ ১৫ ইউরো।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_11",
+                    question = "\"günstig\" এর অর্থ কী?",
+                    options = listOf("দামি", "সাশ্রয়ী", "পুরাতন", "খারাপ"),
+                    correctAnswer = "সাশ্রয়ী",
+                    explanation = "'günstig' শব্দের অর্থ সাশ্রয়ী বা কম দামের।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_7_12",
+                    question = "শূন্যস্থান পূরণ করুন: Ich möchte das ___.",
+                    options = listOf("kaufen", "kostet", "ist", "preis"),
+                    correctAnswer = "kaufen",
+                    explanation = "'Ich möchte das kaufen' বাক্যটির অর্থ 'আমি এটা কিনতে চাই'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                )
+            )
+        ),
+        Lesson(
+            id = "lesson_8",
+            title = "Lektion 8: শহরে চলাফেরা (Unterwegs in der Stadt)",
+            description = "শহরে চলাফেরা করা, বিভিন্ন স্থানের অবস্থান জিজ্ঞাসা করা, দিকনির্দেশনা বোঝা এবং সাধারণ গণপরিবহন সম্পর্কিত জার্মান ভাষা শিখুন।",
+            order = 8,
+            objectives = listOf(
+                "কোথায় একটি স্থান আছে তা জিজ্ঞাসা করা (Wo ist ...?)।",
+                "কোনো স্থানের অবস্থান প্রকাশ করা (hier, dort, neben, gegenüber)।",
+                "সাধারণ দিকনির্দেশনা বোঝা (geradeaus, links, rechts)।",
+                "বাম, ডান এবং সোজা যাওয়ার নির্দেশ বোঝা ও ব্যবহার করা।",
+                "শহরের গুরুত্বপূর্ণ স্থানসমূহ চেনা (Bahnhof, Bank, Apotheke, Supermarkt ইত্যাদি)।",
+                "গণপরিবহন সম্পর্কিত মূল শব্দমালা জানা (Bus, Zug, Bahn, Taxi, Fahrrad)।",
+                "বাস, ট্রেন বা ট্রাম সম্পর্কে জিজ্ঞাসা করা।",
+                "দিকনির্দেশনা সংক্রান্ত বাস্তব সংক্ষিপ্ত কথোপকথন বোঝা।",
+                "অবস্থান ও পরিবহন সম্পর্কিত সহজ A1 বাক্য তৈরি করা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("die Stadt", "শহর", "দি স্টাট", "Berlin ist eine große Stadt."),
+                VocabularyItem("der Bahnhof", "রেলস্টেশন", "দের বান-হোফ", "Wo ist der Bahnhof?"),
+                VocabularyItem("die Bushaltestelle", "বাসস্টপ", "দি বুশ-হাল-টে-স্টেল-লে", "Die Bushaltestelle ist dort."),
+                VocabularyItem("der Flughafen", "বিমানবন্দর", "দের ফ্লুগ-হা-ফেন", "Der Flughafen ist groß."),
+                VocabularyItem("die Bank", "ব্যাংক", "দি ব্যাংক", "Die Bank ist geöffnet."),
+                VocabularyItem("die Post", "ডাকঘর", "দি পোস্ট", "Wo ist die Post?"),
+                VocabularyItem("der Supermarkt", "সুপারমার্কেট", "দের জুপার-মার্কট", "Der Supermarkt ist nah."),
+                VocabularyItem("das Geschäft", "দোকান", "দাস গে-শেফট", "Das Geschäft ist hier."),
+                VocabularyItem("die Apotheke", "ফার্মেসি", "দি আ-পো-তে-কে", "Die Apotheke ist neben der Bank."),
+                VocabularyItem("das Hotel", "হোটেল", "দাস হো-টেল", "Das Hotel ist dort."),
+                VocabularyItem("das Restaurant", "রেস্টুরেন্ট", "দাস রেস-তো-রং", "Das Restaurant ist gut."),
+                VocabularyItem("das Café", "ক্যাফে", "দাস কা-ফে", "Das Café ist gemütlich."),
+                VocabularyItem("die Schule", "স্কুল", "দি শু-লে", "Die Schule ist groß."),
+                VocabularyItem("der Park", "পার্ক", "দের পার্ক", "Der Park ist schön."),
+                VocabularyItem("das Krankenhaus", "হাসপাতাল", "দাস ক্রাংকেন-হাউস", "Das Krankenhaus ist weit."),
+                VocabularyItem("die Straße", "রাস্তা", "দি শ্ট্রা-সে", "Die Straße ist lang."),
+                VocabularyItem("der Platz", "চত্বর / স্কোয়ার", "দের প্লাৎস", "Der Platz ist schön."),
+                VocabularyItem("geradeaus", "সোজা", "গে-রা-দে-আউস", "Gehen Sie geradeaus."),
+                VocabularyItem("links", "বামে", "লিংকস", "Gehen Sie nach links."),
+                VocabularyItem("rechts", "ডানে", "রেখটস", "Gehen Sie nach rechts."),
+                VocabularyItem("hier", "এখানে", "হিয়ার", "Die Bank ist hier."),
+                VocabularyItem("dort", "সেখানে", "ডর্ট", "Der Bahnhof ist dort."),
+                VocabularyItem("vorne", "সামনে", "ফর-নে", "Das Taxi ist vorne."),
+                VocabularyItem("hinten", "পেছনে", "হিন-তেন", "Der Bus ist hinten."),
+                VocabularyItem("neben", "পাশে", "নে-বেন", "Das Café ist neben dem Hotel."),
+                VocabularyItem("gegenüber", "বিপরীতে", "গে-গেন-উই-বার", "Die Apotheke ist gegenüber der Bank."),
+                VocabularyItem("der Bus", "বাস", "দের বুস", "Ich fahre mit dem Bus."),
+                VocabularyItem("die Bahn", "ট্রেন/রেল", "দি বান", "Die Bahn kommt pünktlich."),
+                VocabularyItem("der Zug", "ট্রেন", "দের ত্সুগ", "Ich fahre mit dem Zug."),
+                VocabularyItem("die Straßenbahn", "ট্রাম", "দি শ্ট্রা-সেন-বান", "Die Straßenbahn kommt."),
+                VocabularyItem("das Taxi", "ট্যাক্সি", "দাস ট্যাক্সি", "Ich fahre mit dem Taxi."),
+                VocabularyItem("das Auto", "গাড়ি", "দাস আউ-টো", "Das Auto ist neu."),
+                VocabularyItem("das Fahrrad", "সাইকেল", "দাস ফার-রাট", "Ich fahre Fahrrad."),
+                VocabularyItem("zu Fuß", "হেঁটে", "ত্সু ফুস", "Ich gehe zu Fuß."),
+                VocabularyItem("fahren", "যাতায়াত করা / যাওয়া", "ফা-রেন", "Ich fahre mit dem Bus."),
+                VocabularyItem("gehen", "যাওয়া / হাঁটা", "গে-এন", "Gehen Sie geradeaus."),
+                VocabularyItem("kommen", "আসা", "কো-মেন", "Wie komme ich zum Bahnhof?"),
+                VocabularyItem("nehmen", "নেওয়া / ব্যবহার করা", "নে-মেন", "Ich nehme ein Taxi.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "স্থান জিজ্ঞাসা করা ('Wo ist ...?')",
+                    explanation = "কোনো স্থান কোথায় অবস্থিত তা জানতে 'Wo ist ...?' প্রশ্নটি ব্যবহার করা হয়。\n- Wo ist der Bahnhof? (রেলস্টেশন কোথায়?)\n- Wo ist die Bank? (ব্যাংক কোথায়?)\n- Wo ist das Hotel? (হোটেল কোথায়?)",
+                    examples = listOf(
+                        "Wo ist der Bahnhof? (রেলস্টেশন কোথায়?)",
+                        "Wo ist die Bank? (ব্যাংক কোথায়?)",
+                        "Wo ist die Apotheke? (ফার্মেসি কোথায়?)",
+                        "Wo ist das Hotel? (হোটেল কোথায়?)"
+                    )
+                ),
+                GrammarRule(
+                    title = "গন্তব্যে পৌঁছানোর উপায় ('Wie komme ich ...?')",
+                    explanation = "কোনো নির্দিষ্ট স্থানে কীভাবে পৌঁছাবেন তা জানতে নির্দিষ্ট অভিব্যক্তি 'Wie komme ich zum/zur ...?' ব্যবহার করা হয়。\n- Wie komme ich zum Bahnhof? (আমি কীভাবে রেলস্টেশনে যাব?)\n- Wie komme ich zur Bank? (আমি কীভাবে ব্যাংকে যাব?)",
+                    examples = listOf(
+                        "Wie komme ich zum Bahnhof? (আমি কীভাবে রেলস্টেশনে যাব?)",
+                        "Wie komme ich zur Bank? (আমি কীভাবে ব্যাংকে যাব?)"
+                    )
+                ),
+                GrammarRule(
+                    title = "অবস্থান প্রকাশ ('hier', 'dort', 'neben', 'gegenüber')",
+                    explanation = "কোনো স্থানের অবস্থান নির্দেশ করার জন্য নিম্নোক্ত শব্দসমূহ ব্যবহার করা হয়:\n- hier (এখানে)\n- dort (সেখানে)\n- neben (পাশে)\n- gegenüber (বিপরীতে)",
+                    examples = listOf(
+                        "Der Bahnhof ist dort. (রেলস্টেশন সেখানে।)",
+                        "Die Bank ist hier. (ব্যাংক এখানে।)",
+                        "Das Café ist neben dem Hotel. (ক্যাফেটি হোটেলের পাশে।)",
+                        "Die Apotheke ist gegenüber der Bank. (ফার্মেসিটি ব্যাংকের বিপরীতে।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "দিকনির্দেশনা নির্দেশ করা ('Gehen Sie ...')",
+                    explanation = "ভদ্রভাবে কাউকেও দিকনির্দেশ দিতে 'Gehen Sie ...' দিয়ে বাক্য গঠন করা হয়:\n- Gehen Sie geradeaus. (সোজা যান।)\n- Gehen Sie nach links. (বামে যান।)\n- Gehen Sie nach rechts. (ডানে যান।)",
+                    examples = listOf(
+                        "Gehen Sie geradeaus. (সোজা যান।)",
+                        "Gehen Sie nach links. (বামে যান。)",
+                        "Gehen Sie nach rechts. (ডানে যান।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "পরিবহন মাধ্যম প্রকাশ ('mit dem/der' & 'zu Fuß')",
+                    explanation = "কোনো যানবহন ব্যবহার করে কোথাও যাওয়া বোঝাতে 'mit dem/der [যানবাহন]' এবং হেঁটে যাওয়া বোঝাতে 'zu Fuß' ব্যবহৃত হয়:\n- Ich fahre mit dem Bus. (আমি বাসে যাই।)\n- Ich fahre mit dem Zug. (আমি ট্রেনে যাই。)\n- Ich fahre mit dem Taxi. (আমি ট্যাক্সিতে যাই।)\n- Ich gehe zu Fuß. (আমি হেঁটে যাই।)",
+                    examples = listOf(
+                        "Ich fahre mit dem Bus. (আমি বাসে যাই।)",
+                        "Ich fahre mit dem Zug. (আমি ট্রেনে যাই।)",
+                        "Ich fahre mit dem Taxi. (আমি ট্যাক্সিতে যাই।)",
+                        "Ich gehe zu Fuß. (আমি হেঁটে যাই।)"
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Wo ist der Bahnhof?", "রেলস্টেশন কোথায়?", "ভো ইস্ট দের বান-হোফ"),
+                ExampleSentence("Wo ist die Bank?", "ব্যাংক কোথায়?", "ভো ইস্ট দি ব্যাংক"),
+                ExampleSentence("Wie komme ich zum Bahnhof?", "আমি কীভাবে রেলস্টেশনে যাব?", "ভি কো-মে ইখ ত্সুম বান-হোফ"),
+                ExampleSentence("Gehen Sie geradeaus.", "সোজা যান।", "গে-এন জি গে-রা-দে-আউস"),
+                ExampleSentence("Gehen Sie nach links.", "বামে যান।", "গে-এন জি নাখ লিংকস"),
+                ExampleSentence("Gehen Sie nach rechts.", "ডানে যান।", "গে-এন জি নাখ রেখটস"),
+                ExampleSentence("Der Bahnhof ist dort.", "রেলস্টেশন সেখানে।", "দের বান-হোফ ইস্ট ডর্ট"),
+                ExampleSentence("Die Bank ist hier.", "ব্যাংক এখানে।", "দি ব্যাংক ইস্ট হিয়ার"),
+                ExampleSentence("Das Café ist neben dem Hotel.", "ক্যাফেটি হোটেলের পাশে।", "দাস কা-ফে ইস্ট নে-বেন দেম হো-টেল"),
+                ExampleSentence("Die Apotheke ist gegenüber der Bank.", "ফার্মেসিটি ব্যাংকের বিপরীতে।", "দি আ-পো-তে-কে ইস্ট গে-গেন-উই-বার দের ব্যাংক"),
+                ExampleSentence("Ich fahre mit dem Bus.", "আমি বাসে যাই।", "ইখ ফা-রে মিট দেম বুস"),
+                ExampleSentence("Ich gehe zu Fuß.", "আমি হেঁটে যাই।", "ইখ গে-হে ত্সু ফুস")
+            ),
+            dialogues = listOf(
+                DialogueEntry("A", "Entschuldigung, wo ist der Bahnhof?", "ক্ষমা করবেন, রেলস্টেশন কোথায়?"),
+                DialogueEntry("B", "Der Bahnhof ist dort.", "রেলস্টেশন সেখানে।"),
+                DialogueEntry("A", "Wie komme ich zum Bahnhof?", "আমি কীভাবে রেলস্টেশনে যাব?"),
+                DialogueEntry("B", "Gehen Sie geradeaus und dann nach rechts.", "সোজা যান এবং তারপর ডানে যান।"),
+                DialogueEntry("A", "Danke!", "ধন্যবাদ!"),
+                DialogueEntry("B", "Bitte!", "স্বাগতম!"),
+                DialogueEntry("A", "Entschuldigung, wo ist die Apotheke?", "ক্ষমা করবেন, ফার্মেসি কোথায়?"),
+                DialogueEntry("B", "Die Apotheke ist neben der Bank.", "ফার্মেসিটি ব্যাংকের পাশে।"),
+                DialogueEntry("A", "Ist die Bank dort?", "ব্যাংকটি কি সেখানে?"),
+                DialogueEntry("B", "Ja, genau.", "হ্যাঁ, একদম ঠিক।"),
+                DialogueEntry("A", "Danke schön!", "অনেক ধন্যবাদ!"),
+                DialogueEntry("B", "Bitte schön!", "আপনাকেও ধন্যবাদ!"),
+                DialogueEntry("A", "Wie komme ich zum Bahnhof?", "আমি কীভাবে রেলস্টেশনে যাব?"),
+                DialogueEntry("B", "Sie können mit dem Bus fahren.", "আপনি বাসে যেতে পারেন।"),
+                DialogueEntry("A", "Wo ist die Bushaltestelle?", "বাসস্টপ কোথায়?"),
+                DialogueEntry("B", "Die Bushaltestelle ist dort.", "বাসস্টপ সেখানে।"),
+                DialogueEntry("A", "Danke!", "ধন্যবাদ!")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_8_1",
+                    question = "\"Wo ist der Bahnhof?\" এর সঠিক বাংলা অর্থ কোনটি?",
+                    options = listOf("রেলস্টেশন কোথায়?", "বাসস্টপ কোথায়?", "হোটেল কোথায়?", "ব্যাংক কোথায়?"),
+                    correctAnswer = "রেলস্টেশন কোথায়?",
+                    explanation = "'der Bahnhof' মানে রেলস্টেশন, তাই সঠিক অর্থ 'রেলস্টেশন কোথায়?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_8_2",
+                    question = "শূন্যস্থান পূরণ করুন: Gehen Sie ________.",
+                    options = listOf("geradeaus", "Bahnhof", "Wasser", "Apfel"),
+                    correctAnswer = "geradeaus",
+                    explanation = "'Gehen Sie geradeaus' বাক্যটির অর্থ 'সোজা যান'।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_8_3",
+                    question = "\"rechts\" শব্দের সঠিক বাংলা অর্থ কোনটি?",
+                    options = listOf("বামে", "ডানে", "সোজা", "পেছনে"),
+                    correctAnswer = "ডানে",
+                    explanation = "'rechts' মানে ডানে।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_8_4",
+                    question = "জার্মানে অনুবাদ করুন: আমি বাসে যাই।",
+                    correctAnswer = "Ich fahre mit dem Bus.",
+                    explanation = "'আমি বাসে যাই' এর জার্মান অনুবাদ হলো 'Ich fahre mit dem Bus.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_8_5",
+                    question = "You are in Berlin and want to find the train station.\n\"Entschuldigung, ______ ist der Bahnhof?\"",
+                    options = listOf("wo", "wie", "was", "wer"),
+                    correctAnswer = "wo",
+                    explanation = "কোনো স্থানের অবস্থান জানতে 'wo' (কোথায়) ব্যবহৃত হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_8_6",
+                    question = "শূন্যস্থান পূরণ করুন: Gehen Sie ________ und dann nach links.",
+                    options = listOf("geradeaus", "Tee", "Brot", "Sohn"),
+                    correctAnswer = "geradeaus",
+                    explanation = "দিকনির্দেশনায় 'geradeaus' (সোজা) ব্যবহৃত হয়।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_8_7",
+                    question = "জার্মানে অনুবাদ করুন: ফার্মেসিটি ব্যাংকের পাশে।",
+                    correctAnswer = "Die Apotheke ist neben der Bank.",
+                    explanation = "'ফার্মেসিটি ব্যাংকের পাশে' এর জার্মান অনুবাদ হলো 'Die Apotheke ist neben der Bank.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_8_8",
+                    question = "\"links\" শব্দের অর্থ কী?",
+                    options = listOf("বামে", "ডানে", "সামনে", "পেছনে"),
+                    correctAnswer = "বামে",
+                    explanation = "'links' শব্দের অর্থ 'বামে'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_8_9",
+                    question = "\"die Bushaltestelle\" শব্দের বাংলা অর্থ কী?",
+                    options = listOf("রেলস্টেশন", "বাসস্টপ", "বিমানবন্দর", "চত্বর"),
+                    correctAnswer = "বাসস্টপ",
+                    explanation = "'die Bushaltestelle' শব্দের অর্থ 'বাসস্টপ'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_8_10",
+                    question = "জার্মানে অনুবাদ করুন: আমি হেঁটে যাই।",
+                    correctAnswer = "Ich gehe zu Fuß.",
+                    explanation = "'আমি হেঁটে যাই' এর জার্মান অনুবাদ হলো 'Ich gehe zu Fuß.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_8_11",
+                    question = "\"Wie komme ich zum Bahnhof?\" এর অর্থ কী?",
+                    options = listOf("আমি কীভাবে রেলস্টেশনে যাব?", "রেলস্টেশন কোথায়?", "বাসটি কখন আসবে?", "হোটেলটি কোথায়?"),
+                    correctAnswer = "আমি কীভাবে রেলস্টেশনে যাব?",
+                    explanation = "'Wie komme ich zum Bahnhof?' এর বাংলা অর্থ 'আমি কীভাবে রেলস্টেশনে যাব?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_8_12",
+                    question = "\"Gehen Sie nach rechts.\" এর অর্থ কী?",
+                    options = listOf("বামে যান।", "ডানে যান।", "সোজা যান।", "থামুন।"),
+                    correctAnswer = "ডানে যান।",
+                    explanation = "'Gehen Sie nach rechts' বাক্যটির অর্থ 'ডানে যান।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                )
+            )
+        ),
+        Lesson(
+            id = "lesson_9",
+            title = "Lektion 9: সময়, তারিখ ও অ্যাপয়েন্টমেন্ট (Zeit, Datum & Termine)",
+            description = "সময় জিজ্ঞেস করা ও বলা, বার ও তারিখের বর্ণনা, অ্যাপয়েন্টমেন্ট তৈরি ও 'am' / 'um' এর সঠিক প্রয়োগ শিখুন।",
+            order = 9,
+            objectives = listOf(
+                "সময় জিজ্ঞাসা করা (Wie spät ist es?) এবং সময় বলা (Es ist ... Uhr / halb ...)।",
+                "ঘণ্টা ও মিনিট বোঝা ও প্রকাশ করা।",
+                "সপ্তাহের ৭টি বারের নাম চিনতে পারা ও ব্যবহার করা।",
+                "সহজ তারিখ প্রকাশ করা।",
+                "অ্যাপয়েন্টমেন্ট কখন তা বলতে পারা।",
+                "সহজ সময়সূচী (Schedule) বোঝা।",
+                "একটি সাধারণ অ্যাপয়েন্টমেন্ট তৈরি বা নিশ্চিত করা।",
+                "বার/তারিখের জন্য 'am' এবং ঘড়ির সময়ের জন্য 'um' এর ব্যবহার প্রয়োগ করা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("Montag", "সোমবার", "মোন-তাক", "Heute ist Montag."),
+                VocabularyItem("Dienstag", "মঙ্গলবার", "দিন্স-তাক", "Morgen ist Dienstag."),
+                VocabularyItem("Mittwoch", "বুধবার", "মিট-ভোখ", "Am Mittwoch arbeite ich."),
+                VocabularyItem("Donnerstag", "বৃহস্পতিবার", "ডনের্স-তাক", "Der Termin ist am Donnerstag."),
+                VocabularyItem("Freitag", "শুক্রবার", "ফ্রাই-তাক", "Am Freitag habe ich einen Termin."),
+                VocabularyItem("Samstag", "শনিবার", "জাম্স-তাক", "Am Samstag habe ich frei."),
+                VocabularyItem("Sonntag", "রবিবার", "জোন-তাক", "Sonntag ist ein Ruhetag."),
+                VocabularyItem("heute", "আজ", "হয়-টে", "Heute ist Montag."),
+                VocabularyItem("morgen", "আগামীকাল", "মোর-গেন", "Morgen ist Dienstag."),
+                VocabularyItem("gestern", "গতকাল", "গেস্-তার্ন", "Gestern war Sonntag."),
+                VocabularyItem("die Uhr", "ঘড়ি / সময়", "দি উর", "Wie spät ist es auf der Uhr?"),
+                VocabularyItem("die Stunde", "ঘণ্টা", "দি স্টুন-ডে", "Eine Stunde hat 60 Minuten."),
+                VocabularyItem("die Minute", "মিনিট", "দি মি-নু-টে", "Es ist zehn Uhr fünf Minute."),
+                VocabularyItem("die Zeit", "সময়", "দি সাইত", "Ich habe Zeit."),
+                VocabularyItem("halb", "সাড়ে / অর্ধেক", "হাল্প", "Es ist halb acht."),
+                VocabularyItem("Viertel", "এক-চতুর্থাংশ / ১৫ মিনিট", "ফির-টেল", "Es ist Viertel nach zehn."),
+                VocabularyItem("der Morgen", "সকাল", "দের মোর-গেন", "Am Morgen arbeite ich."),
+                VocabularyItem("der Vormittag", "সকাল / দুপুরের আগের সময়", "দের ফোর-মি-তাক", "Am Vormittag lerne ich."),
+                VocabularyItem("der Mittag", "দুপুর", "দের মি-তাক", "Der Termin ist am Mittag."),
+                VocabularyItem("der Nachmittag", "বিকেল", "দের নাখ-মি-তাক", "Am Nachmittag habe ich Zeit."),
+                VocabularyItem("der Abend", "সন্ধ্যা", "দের আ-বেন্ট", "Am Abend lerne ich Deutsch."),
+                VocabularyItem("die Nacht", "রাত", "দি নাখ্ত", "Gute Nacht!"),
+                VocabularyItem("das Datum", "তারিখ", "দাস ডা-টুম", "Wie ist das Datum heute?"),
+                VocabularyItem("der Geburtstag", "জন্মদিন", "দের গে-বুর্তস-তাক", "Mein Geburtstag ist am 10. Mai."),
+                VocabularyItem("der Termin", "অ্যাপয়েন্টমেন্ট / নির্ধারিত সময়", "দের টের-মিন", "Ich habe einen Termin."),
+                VocabularyItem("einen Termin haben", "অ্যাপয়েন্টমেন্ট থাকা", "আই-নেন টের-মিন হা-বেন", "Ich habe am Montag einen Termin."),
+                VocabularyItem("der Arzttermin", "ডাক্তারের অ্যাপয়েন্টমেন্ট", "দের আরৎস-টের-মিন", "Ich habe einen Arzttermin."),
+                VocabularyItem("der Kurs", "কোর্স", "দের কুর্স", "Der Deutschkurs beginnt um neun Uhr."),
+                VocabularyItem("beginnen", "শুরু হওয়া", "বে-গিন-নেন", "Der Kurs beginnt um neun Uhr.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "সময় জিজ্ঞাসা ও বলা (Uhrzeit)",
+                    explanation = "সময় জিজ্ঞাসা করার জন্য সহজ প্রশ্ন:\n- Wie spät ist es? (কয়টা বাজে?)\n- Wie viel Uhr ist es? (কয়টা বাজে?)\n\nসময় উত্তর দেওয়ার নিয়ম:\n- পূর্ণ ঘণ্টা: Es ist + [সংখ্যা] + Uhr. (যেমন: Es ist zehn Uhr = ১০:০০)\n- অর্ধেক ঘণ্টা (halb): জার্মানে 'halb' এর পর পরবর্তী ঘণ্টা বলা হয়! যেমন: halb acht = ৭:৩০ (৮টার অর্ধেক পথ)।\n- মিনিট সহ: Es ist zehn Uhr fünfzehn (১০:১৫) / Es ist acht Uhr dreißig (৮:৩০)।",
+                    examples = listOf(
+                        "Wie spät ist es? - Es ist zehn Uhr. (১০:০০)",
+                        "Es ist halb acht. (৭:৩০ - সাড়ে সাতটা)",
+                        "Es ist acht Uhr dreißig. (৮:৩০)"
+                    )
+                ),
+                GrammarRule(
+                    title = "'am' বনাম 'um' এর ব্যবহার",
+                    explanation = "সময় ও সময়সূচীর জন্য সহজ নিয়ম:\n- AM: বার (Days) এবং তারিখ (Dates)-এর সাথে 'am' ব্যবহৃত হয়। ('am' → কোন দিন / কোন তারিখে)\n  উদাহরণ: am Montag (সোমবারে), am 5. September (৫ই সেপ্টেম্বরে)\n- UM: ঘড়ির নির্দিষ্ট সময়ের (Clock times) সাথে 'um' ব্যবহৃত হয়। ('um' → কোন সময়ে)\n  উদাহরণ: um zehn Uhr (১০টায়), um 14 Uhr (১৪টায়)",
+                    examples = listOf(
+                        "am Montag (সোমবারে)",
+                        "am 5. September (৫ই সেপ্টেম্বরে)",
+                        "um zehn Uhr (১০টায়)",
+                        "Ich arbeite am Montag. (আমি সোমবারে কাজ করি।)",
+                        "Der Termin ist um zehn Uhr. (অ্যাপয়েন্টমেন্টটি ১০টায়।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "অ্যাপয়েন্টমেন্ট ও সময়সূচী (Termine und Kurs)",
+                    explanation = "অ্যাপয়েন্টমেন্ট নেওয়া বা সময়সূচী জানার সহজ বাক্য গঠন:\n- Ich habe einen Termin. (আমার একটি অ্যাপয়েন্টমেন্ট আছে।)\n- Ich habe am Montag einen Termin. (সোমবার আমার একটি অ্যাপয়েন্টমেন্ট আছে।)\n- Der Termin ist um zehn Uhr. (অ্যাপয়েন্টমেন্টটি ১০টায়।)\n- Der Kurs beginnt um neun Uhr. (কোর্সটি ৯টায় শুরু হয়।)",
+                    examples = listOf(
+                        "Ich habe am Dienstag einen Termin.",
+                        "Der Kurs beginnt um neun Uhr."
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Wie spät ist es?", "কয়টা বাজে?", "ভি শ্পেত ইস্ট এস"),
+                ExampleSentence("Es ist zehn Uhr.", "দশটা বাজে।", "এস ইস্ট ত্সেন উর"),
+                ExampleSentence("Es ist halb acht.", "সাড়ে সাতটা। (৭:৩০)", "এস ইস্ট হাল্প আখ্ত"),
+                ExampleSentence("Heute ist Montag.", "আজ সোমবার।", "হয়-টে ইস্ট মোন-তাক"),
+                ExampleSentence("Morgen ist Dienstag.", "আগামীকাল মঙ্গলবার।", "মোর-গেন ইস্ট দিন্স-তাক"),
+                ExampleSentence("Am Freitag habe ich einen Termin.", "শুক্রবার আমার একটি অ্যাপয়েন্টমেন্ট আছে।", "আম ফ্রাই-তাক হা-বে ইখ আই-নেন টের-মিন"),
+                ExampleSentence("Ich habe am Montag einen Termin.", "সোমবার আমার একটি অ্যাপয়েন্টমেন্ট আছে।", "ইখ হা-বে আম মোন-তাক আই-নেন টের-মিন"),
+                ExampleSentence("Der Termin ist um zehn Uhr.", "অ্যাপয়েন্টমেন্টটি দশটায়।", "দের টের-মিন ইস্ট উম ত্সেন উর"),
+                ExampleSentence("Heute ist der 5. September.", "আজ ৫ সেপ্টেম্বর।", "হয়-টে ইস্ট দের ফিউনফ-টে জেপ-টেম-বার"),
+                ExampleSentence("Mein Geburtstag ist am 10. Mai.", "আমার জন্মদিন ১০ মে।", "মাইন গে-বুর্তস-তাক ইস্ট আম ত্সেন-তেন মাই"),
+                ExampleSentence("Am Morgen arbeite ich.", "সকালে আমি কাজ করি।", "আম মোর-গেন আর-বাই-টে ইখ"),
+                ExampleSentence("Der Kurs beginnt um neun Uhr.", "কোর্সটি নয়টায় শুরু হয়।", "দের কুর্স বে-গিন্ট উম নয়ন উর")
+            ),
+            dialogues = listOf(
+                DialogueEntry("A", "Entschuldigung, wie spät ist es?", "ক্ষমা করবেন, কয়টা বাজে?"),
+                DialogueEntry("B", "Es ist zehn Uhr.", "দশটা বাজে।"),
+                DialogueEntry("A", "Danke!", "ধন্যবাদ!"),
+                DialogueEntry("B", "Bitte!", "স্বাগতম!"),
+                DialogueEntry("A", "Guten Tag. Ich möchte einen Termin.", "শুভ দিন। আমি একটি অ্যাপয়েন্টমেন্ট চাই।"),
+                DialogueEntry("B", "Gerne. Wann?", "অবশ্যই। কখন?"),
+                DialogueEntry("A", "Am Montag, bitte.", "সোমবারে, দয়া করে।"),
+                DialogueEntry("B", "Um zehn Uhr?", "দশটায়?"),
+                DialogueEntry("A", "Ja, das ist gut.", "হ্যাঁ, সেটা ভালো হয়।"),
+                DialogueEntry("B", "Gut. Bis Montag!", "বেশ। সোমবার দেখা হবে!"),
+                DialogueEntry("A", "Danke. Bis Montag!", "ধন্যবাদ। সোমবার দেখা হবে!"),
+                DialogueEntry("A", "Wann beginnt der Deutschkurs?", "জার্মান কোর্স কখন শুরু হয়?"),
+                DialogueEntry("B", "Am Dienstag um neun Uhr.", "মঙ্গলবার নয়টায়।"),
+                DialogueEntry("A", "Um neun Uhr?", "নয়টায়?"),
+                DialogueEntry("B", "Ja, genau.", "হ্যাঁ, একদম ঠিক।"),
+                DialogueEntry("A", "Danke!", "ধন্যবাদ!")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_9_1",
+                    question = "ঘড়িতে ১০:০০ বাজে। \"Wie spät ist es?\" প্রশ্নের সঠিক উত্তর কোনটি?",
+                    options = listOf("Es ist zehn Uhr.", "Es ist acht Uhr.", "Es ist zwei Uhr.", "Es ist fünf Uhr."),
+                    correctAnswer = "Es ist zehn Uhr.",
+                    explanation = "১০:০০ এর ক্ষেত্রে 'Es ist zehn Uhr.' বলা হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_2",
+                    question = "শূন্যস্থান পূরণ করুন: Der Termin ist ___ zehn Uhr.",
+                    options = listOf("um", "am", "in", "aus"),
+                    correctAnswer = "um",
+                    explanation = "ঘড়ির নির্দিষ্ট সময়ের পূর্বে 'um' অব্যয় ব্যবহৃত হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_3",
+                    question = "শূন্যস্থান পূরণ করুন: Ich habe ___ Montag einen Termin.",
+                    options = listOf("am", "um", "in", "aus"),
+                    correctAnswer = "am",
+                    explanation = "বার বা দিনের পূর্বে 'am' ব্যবহৃত হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_4",
+                    question = "\"Montag\" শব্দের অর্থ কী?",
+                    options = listOf("মঙ্গলবার", "সোমবার", "শুক্রবার", "রবিবার"),
+                    correctAnswer = "সোমবার",
+                    explanation = "'Montag' অর্থ 'সোমবার'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_5",
+                    question = "জার্মানে অনুবাদ করুন: আমার সোমবার একটি অ্যাপয়েন্টমেন্ট আছে।",
+                    correctAnswer = "Ich habe am Montag einen Termin.",
+                    explanation = "'আমার সোমবার একটি অ্যাপয়েন্টমেন্ট আছে' এর অনুবাদ হলো 'Ich habe am Montag einen Termin.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_9_6",
+                    question = "জার্মানে অনুবাদ করুন: অ্যাপয়েন্টমেন্টটি দশটায়।",
+                    correctAnswer = "Der Termin ist um zehn Uhr.",
+                    explanation = "'অ্যাপয়েন্টমেন্টটি দশটায়' এর অনুবাদ হলো 'Der Termin ist um zehn Uhr.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_9_7",
+                    question = "জার্মান ব্যাকরণে \"halb acht\" বলতে সময়ের কোন রূপটিকে বোঝায়?",
+                    options = listOf("০৭:৩০", "০৮:৩০", "০৮:০০", "০৭:০০"),
+                    correctAnswer = "০৭:৩০",
+                    explanation = "জার্মানে 'halb acht' মানে ৭:৩০ (৮টা বাজার অর্ধেক পথ)।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_8",
+                    question = "ঘড়িতে ০৯:১৫ বাজে। জার্মানে কীভাবে বলবেন?",
+                    options = listOf("Es ist neun Uhr fünfzehn.", "Es ist zehn Uhr.", "Es ist acht Uhr.", "Es ist halb neun."),
+                    correctAnswer = "Es ist neun Uhr fünfzehn.",
+                    explanation = "৯:১৫ হলো 'Es ist neun Uhr fünfzehn.'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_9",
+                    question = "You have a doctor's appointment on Monday at 10:00.\nWann ist der Termin?",
+                    options = listOf("Am Montag um zehn Uhr.", "Am Dienstag um zwei Uhr.", "Um zehn Uhr am Freitag.", "Am Sonntag."),
+                    correctAnswer = "Am Montag um zehn Uhr.",
+                    explanation = "সোমবারে (Am Montag) এবং ১০টায় (um zehn Uhr)।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_10",
+                    question = "You want to ask what time the German course starts. Which sentence is correct?",
+                    options = listOf("Wann beginnt der Deutschkurs?", "Wie heißt du?", "Wo wohne ich?", "Wie viel kostet das?"),
+                    correctAnswer = "Wann beginnt der Deutschkurs?",
+                    explanation = "'Wann beginnt der Deutschkurs?' মানে 'জার্মান কোর্স কখন শুরু হয়?'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_11",
+                    question = "You want to ask the current time. Which sentence is correct?",
+                    options = listOf("Wie spät ist es?", "Wo ist der Bahnhof?", "Wie geht es Ihnen?", "Was machst du?"),
+                    correctAnswer = "Wie spät ist es?",
+                    explanation = "'Wie spät ist es?' মানে 'কয়টা বাজে?'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_9_12",
+                    question = "শূন্যস্থান পূরণ করুন: Heute ist Montag. Morgen ist ___.",
+                    options = listOf("Dienstag", "Sonntag", "Freitag", "Gestern"),
+                    correctAnswer = "Dienstag",
+                    explanation = "আজ সোমবার হলে আগামীকাল মঙ্গলবার (Dienstag)।",
+                    type = ExerciseType.FILL_IN_BLANK
+                )
+            )
+        ),
+        Lesson(
+            id = "lesson_10",
+            title = "Lektion 10: স্বাস্থ্য ও শরীর (Gesundheit & Körper)",
+            description = "শরীরের বিভিন্ন অঙ্গপ্রতঙ্গের নাম, শারীরিক অনুভূতি ও অসুস্থতার বিবরণ প্রকাশ, ডাক্তার ও ফার্মেসিতে সাধারণ কথাপোকথন এবং জরুরি পরিস্থিতিতে সাহায্য চাওয়ার জার্মান ভাষা শিখুন।",
+            order = 10,
+            objectives = listOf(
+                "শরীরের প্রধান অঙ্গপ্রতঙ্গসমূহের নাম জার্মান ভাষায় বলা।",
+                "কারো শরীর বা অনুভূতি কেমন তা জিজ্ঞেস করা এবং নিজের অনুভূতি প্রকাশ করা (Wie geht es Ihnen? / Mir geht es gut)।",
+                "শরীরের কোথাও ব্যথা হলে বা অসুস্থ হলে তা প্রকাশ করা (Ich habe Kopfschmerzen / Mein Bauch tut weh)।",
+                "সাধারণ উপসর্গ (জ্বর, কাশি, সর্দি ইত্যাদি) বর্ণনা করা।",
+                "ডাক্তার ও ফার্মেসিতে সহজ কথাবার্তা বলা এবং ওষুধের কথা জিজ্ঞেস করা।",
+                "জরুরি মুহূর্তে ডাক্তার বা সাহায্য চাওয়ার প্রাথমিক বাক্য ব্যবহার করা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("der Kopf", "মাথা", "দের কফ", "Mein Kopf tut weh."),
+                VocabularyItem("das Gesicht", "মুখমণ্ডল", "দাস গে-যিখ্ত", "Das Gesicht ist sauber."),
+                VocabularyItem("das Auge", "চোখ", "দাস আউ-গে", "Das Auge tut weh."),
+                VocabularyItem("das Ohr", "কান", "দাস ওর", "Das Ohr tut weh."),
+                VocabularyItem("die Nase", "নাক", "দি না-জে", "Die Nase ist rot."),
+                VocabularyItem("der Mund", "মুখ", "দের মুন্ট", "Der Mund ist offen."),
+                VocabularyItem("der Zahn", "দাঁত", "দের ত্সান", "Mein Zahn tut weh."),
+                VocabularyItem("der Hals", "গলা", "দের হাল্স", "Mein Hals tut weh."),
+                VocabularyItem("der Arm", "বাহু", "দের আর্ম", "Der Arm tut weh."),
+                VocabularyItem("die Hand", "হাত", "দি হান্ট", "Meine Hand tut weh."),
+                VocabularyItem("der Finger", "আঙুল", "দের ফিঙ-গার", "Der Finger tut weh."),
+                VocabularyItem("der Rücken", "পিঠ", "দের র্যু-কেন", "Mein Rücken tut weh."),
+                VocabularyItem("der Bauch", "পেট", "দের বাউখ", "Mein Bauch tut weh."),
+                VocabularyItem("das Bein", "পা", "দাস বাইন", "Das Bein tut weh."),
+                VocabularyItem("der Fuß", "পা / পদতল", "দের ফুস", "Mein Fuß tut weh."),
+                VocabularyItem("die Gesundheit", "স্বাস্থ্য", "দি গে-জুন্ট-হাইত", "Gesundheit ist wichtig."),
+                VocabularyItem("der Arzt", "ডাক্তার", "দের আর্ৎস", "Ich brauche einen Arzt."),
+                VocabularyItem("die Ärztin", "মহিলা ডাক্তার", "দি আর্ৎস-তিন", "Die Ärztin hilft mir."),
+                VocabularyItem("die Apotheke", "ফার্মেসি", "দি আ-পো-তে-কে", "Wo ist die Apotheke?"),
+                VocabularyItem("das Krankenhaus", "হাসপাতাল", "দাস ক্রাংকেন-হাউস", "Wo ist das Krankenhaus?"),
+                VocabularyItem("die Medizin", "ওষুধ", "দি মে-দি-ত্সিন", "Ich brauche Medizin."),
+                VocabularyItem("das Medikament", "ওষুধ", "দাস মে-দি-কা-মেন্ট", "Das Medikament hilft."),
+                VocabularyItem("die Krankheit", "অসুস্থতা / রোগ", "দি ক্রাংক-হাইত", "Die Krankheit ist nicht schwer."),
+                VocabularyItem("der Schmerz", "ব্যথা", "দের শ্মের্ৎস", "Ich habe Schmerzen."),
+                VocabularyItem("das Fieber", "জ্বর", "দাস ফি-বার", "Ich habe Fieber."),
+                VocabularyItem("der Husten", "কাশি", "দের হুস-তেন", "Ich habe Husten."),
+                VocabularyItem("der Schnupfen", "সর্দি", "দের শ্নুপ-ফেন", "Ich habe Schnupfen."),
+                VocabularyItem("die Kopfschmerzen", "মাথাব্যথা", "দি কফ-শ্মের্ৎসেন", "Ich habe Kopfschmerzen."),
+                VocabularyItem("die Bauchschmerzen", "পেটব্যথা", "দি বাউখ-শ্মের্ৎসেন", "Ich habe Bauchschmerzen."),
+                VocabularyItem("die Zahnschmerzen", "দাঁতের ব্যথা", "দি ত্সান-শ্মের্ৎসেন", "Ich habe Zahnschmerzen.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "শারীরিক অবস্থা ও অনুভূতি প্রকাশ ('Wie geht es dir / Ihnen?' & 'Mir geht es ...')",
+                    explanation = "কারো শারীরিক অবস্থা বা কেমন আছেন তা জানতে:\n- Wie geht es dir? (তুমি কেমন আছ? - অনানুষ্ঠানিক)\n- Wie geht es Ihnen? (আপনি কেমন আছেন? - মার্জিত/আনুষ্ঠানিক)\n\nনিজের অনুভূতি প্রকাশ করতে:\n- Mir geht es gut. (আমি ভালো আছি।)\n- Mir geht es sehr gut. (আমি খুব ভালো আছি।)\n- Mir geht es nicht gut. (আমি ভালো নেই।)\n- Es geht mir schlecht. (আমি খারাপ বোধ করছি।)",
+                    examples = listOf(
+                        "Wie geht es Ihnen? - Mir geht es gut, danke.",
+                        "Wie geht es dir? - Mir geht es nicht gut.",
+                        "Es geht mir schlecht."
+                    )
+                ),
+                GrammarRule(
+                    title = "অসুস্থতা ও উপসর্গ প্রকাশে 'haben' ক্রিয়ার ব্যবহার",
+                    explanation = "বিভিন্ন শারীরিক সমস্যা বা লক্ষণ প্রকাশ করতে 'haben' ক্রিয়া ব্যবহৃত হয় (ich habe, du hast, er/sie hat):\n- Ich habe Kopfschmerzen. (আমার মাথাব্যথা আছে।)\n- Ich habe Bauchschmerzen. (আমার পেটব্যথা আছে।)\n- Ich habe Zahnschmerzen. (আমার দাঁতের ব্যথা আছে।)\n- Ich habe Fieber. (আমার জ্বর আছে।)\n- Ich habe Husten. (আমার কাশি আছে।)\n- Ich habe Schnupfen. (আমার সর্দি হয়েছে।)",
+                    examples = listOf(
+                        "Ich habe Kopfschmerzen. (আমার মাথাব্যথা আছে।)",
+                        "Du hast Fieber. (তোমার জ্বর আছে।)",
+                        "Er hat Husten. (তার কাশি আছে।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "শরীরের অঙ্গপ্রতঙ্গে পজেসিভ প্রোনাউন ('mein / meine')",
+                    explanation = "নিজের কোনো অঙ্গের কথা বলতে পজেসিভ প্রোনাউন 'mein' (masculine/neuter) এবং 'meine' (feminine) ব্যবহৃত হয়:\n- mein Kopf (আমার মাথা) [der Kopf]\n- mein Bauch (আমার পেট) [der Bauch]\n- mein Rücken (আমার পিঠ) [der Rücken]\n- mein Zahn (আমার দাঁত) [der Zahn]\n- meine Hand (আমার হাত) [die Hand]",
+                    examples = listOf(
+                        "mein Kopf (আমার মাথা)",
+                        "mein Bauch (আমার পেট)",
+                        "meine Hand (আমার হাত)"
+                    )
+                ),
+                GrammarRule(
+                    title = "ব্যথা অনুভূতি প্রকাশে 'tut weh'",
+                    explanation = "শরীরের কোনো নির্দিষ্ট স্থানে ব্যথা হলে 'Mein [অঙ্গ] + tut weh' প্যাটার্ন ব্যবহার করা হয়। এখানে 'tut weh' মানে 'ব্যথা করছে' বা 'ব্যথা করছে এমন অনুভূতি'।\n- Mein Kopf tut weh. (আমার মাথা ব্যথা করছে।)\n- Mein Bauch tut weh. (আমার পেট ব্যথা করছে।)\n- Mein Rücken tut weh. (আমার পিঠ ব্যথা করছে।)\n- Mein Zahn tut weh. (আমার দাঁত ব্যথা করছে।)",
+                    examples = listOf(
+                        "Mein Kopf tut weh. (আমার মাথা ব্যথা করছে।)",
+                        "Mein Bauch tut weh. (আমার পেট ব্যথা করছে।)",
+                        "Mein Rücken tut weh. (আমার পিঠ ব্যথা করছে।)"
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Wie geht es Ihnen?", "আপনি কেমন আছেন?", "ভি গেত এস ই-ნენ"),
+                ExampleSentence("Wie geht es dir?", "তুমি কেমন আছ?", "ভি গেত এস ডির"),
+                ExampleSentence("Mir geht es gut.", "আমি ভালো আছি।", "মির গেত এস গুত"),
+                ExampleSentence("Mir geht es nicht gut.", "আমি ভালো নেই।", "মির গেত এস নিখ্ত গুত"),
+                ExampleSentence("Ich habe Kopfschmerzen.", "আমার মাথাব্যথা আছে।", "ইখ হা-বে কফ-শ্মের্ৎসেন"),
+                ExampleSentence("Ich habe Bauchschmerzen.", "আমার পেটব্যথা আছে।", "ইখ হা-বে বাউখ-শ্মের্ৎসেন"),
+                ExampleSentence("Mein Kopf tut weh.", "আমার মাথা ব্যথা করছে।", "মাইন কফ তুৎ ভে"),
+                ExampleSentence("Mein Bauch tut weh.", "আমার পেট ব্যথা করছে।", "মাইন বাউখ তুৎ ভে"),
+                ExampleSentence("Ich habe Fieber.", "আমার জ্বর আছে।", "ইখ হা-বে ফি-বার"),
+                ExampleSentence("Wo ist die Apotheke?", "ফার্মেসি কোথায়?", "ভো ইস্ট দি আ-পো-তে-কে"),
+                ExampleSentence("Ich brauche einen Arzt.", "আমার একজন ডাক্তার দরকার।", "ইখ ব্রাউ-খে আই-নেন আর্ৎস"),
+                ExampleSentence("Gute Besserung!", "দ্রুত সুস্থ হয়ে ওঠো / সুস্থতা কামনা করি।", "গু-টে বেস-সে-রুং")
+            ),
+            dialogues = listOf(
+                DialogueEntry("A", "Hallo! Wie geht es dir?", "হ্যালো! তুমি কেমন আছ?"),
+                DialogueEntry("B", "Mir geht es nicht gut.", "আমি ভালো নেই।"),
+                DialogueEntry("A", "Was hast du?", "তোমার কী হয়েছে?"),
+                DialogueEntry("B", "Ich habe Kopfschmerzen.", "আমার মাথাব্যথা আছে।"),
+                DialogueEntry("A", "Oh, gute Besserung!", "ওহ, দ্রুত সুস্থ হয়ে ওঠো!"),
+                DialogueEntry("B", "Danke!", "ধন্যবাদ!"),
+                DialogueEntry("Arzt", "Guten Tag. Wie geht es Ihnen?", "শুভ দিন। আপনি কেমন আছেন?"),
+                DialogueEntry("Patient", "Mir geht es nicht gut.", "আমি ভালো নেই।"),
+                DialogueEntry("Arzt", "Was haben Sie?", "আপনার কী সমস্যা?"),
+                DialogueEntry("Patient", "Ich habe Bauchschmerzen.", "আমার পেটব্যথা আছে।"),
+                DialogueEntry("Arzt", "Seit wann?", "কবে থেকে?"),
+                DialogueEntry("Patient", "Seit heute.", "আজ থেকে।"),
+                DialogueEntry("Kunde", "Guten Tag. Ich habe Kopfschmerzen.", "শুভ দিন। আমার মাথাব্যথা আছে।"),
+                DialogueEntry("Apotheker", "Guten Tag.", "শুভ দিন।"),
+                DialogueEntry("Kunde", "Ich brauche etwas.", "আমার কিছু ওষুধ দরকার।"),
+                DialogueEntry("Apotheker", "Natürlich.", "অবশ্যই।"),
+                DialogueEntry("Kunde", "Danke.", "ধন্যবাদ।"),
+                DialogueEntry("A", "Hilfe!", "সাহায্য!"),
+                DialogueEntry("B", "Ich brauche einen Arzt.", "আমার একজন ডাক্তার দরকার।"),
+                DialogueEntry("A", "Rufen Sie einen Arzt!", "একজন ডাক্তার ডাকুন!"),
+                DialogueEntry("B", "Wo ist das Krankenhaus?", "হাসপাতাল কোথায়?")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_10_1",
+                    question = "\"Kopfschmerzen\"-এর সঠিক বাংলা অর্থ কোনটি?",
+                    options = listOf("পেটব্যথা", "মাথাব্যথা", "দাঁতের ব্যথা", "কাশি"),
+                    correctAnswer = "মাথাব্যথা",
+                    explanation = "'Kopfschmerzen' শব্দের অর্থ মাথাব্যথা।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_2",
+                    question = "শূন্যস্থান পূরণ করুন: Ich habe ________.",
+                    options = emptyList(),
+                    correctAnswer = "Kopfschmerzen",
+                    explanation = "'Ich habe Kopfschmerzen' অর্থ 'আমার মাথাব্যথা আছে'।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_10_3",
+                    question = "\"Wo ist die Apotheke?\"-এর অর্থ কী?",
+                    options = listOf("ডাক্তার কোথায়?", "হাসপাতাল কোথায়?", "ফার্মেসি কোথায়?", "দোকান কোথায়?"),
+                    correctAnswer = "ফার্মেসি কোথায়?",
+                    explanation = "'Wo ist die Apotheke?' অর্থ 'ফার্মেসি কোথায়?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_4",
+                    question = "জার্মানে অনুবাদ করুন: আমি ভালো নেই।",
+                    options = emptyList(),
+                    correctAnswer = "Mir geht es nicht gut.",
+                    explanation = "'আমি ভালো নেই'-এর সঠিক জার্মান অনুবাদ হলো 'Mir geht es nicht gut.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_10_5",
+                    question = "জার্মানে অনুবাদ করুন: আমার মাথাব্যথা আছে।",
+                    options = emptyList(),
+                    correctAnswer = "Ich habe Kopfschmerzen.",
+                    explanation = "'আমার মাথাব্যথা আছে'-এর অনুবাদ হলো 'Ich habe Kopfschmerzen.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_10_6",
+                    question = "জার্মান শব্দ \"der Kopf\"-এর বাংলা অর্থ কী?",
+                    options = listOf("হাত", "মাথা", "চোখ", "পেট"),
+                    correctAnswer = "মাথা",
+                    explanation = "'der Kopf' মানে মাথা।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_7",
+                    question = "জার্মান শব্দ \"die Hand\"-এর বাংলা অর্থ কী?",
+                    options = emptyList(),
+                    correctAnswer = "হাত",
+                    explanation = "'die Hand' মানে হাত।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_10_8",
+                    question = "জার্মান শব্দ \"das Auge\"-এর বাংলা অর্থ কী?",
+                    options = listOf("কান", "চোখ", "নাক", "মুখ"),
+                    correctAnswer = "চোখ",
+                    explanation = "'das Auge' মানে চোখ।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_9",
+                    question = "জার্মান শব্দ \"der Bauch\"-এর বাংলা অর্থ কী?",
+                    options = listOf("পিঠ", "পা", "পেট", "গলা"),
+                    correctAnswer = "পেট",
+                    explanation = "'der Bauch' মানে পেট।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_10",
+                    question = "You are not feeling well. Which sentence should you use?",
+                    options = listOf("Mir geht es gut.", "Mir geht es nicht gut.", "Guten Tag.", "Wie heißt du?"),
+                    correctAnswer = "Mir geht es nicht gut.",
+                    explanation = "'Mir geht es nicht gut.' ব্যবহার করা হয় ভালো না লাগলে।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_11",
+                    question = "You have a stomach ache. Which sentence is correct?",
+                    options = listOf("Ich habe Bauchschmerzen.", "Ich habe Kopfschmerzen.", "Ich habe Fieber.", "Ich habe Zahnschmerzen."),
+                    correctAnswer = "Ich habe Bauchschmerzen.",
+                    explanation = "'Bauchschmerzen' মানে পেটব্যথা।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_12",
+                    question = "You want to find a pharmacy. Which question should you ask?",
+                    options = listOf("Wo ist der Bahnhof?", "Wo ist die Apotheke?", "Wo ist das Hotel?", "Wo ist die Bank?"),
+                    correctAnswer = "Wo ist die Apotheke?",
+                    explanation = "'die Apotheke' মানে ফার্মেসি।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_13",
+                    question = "You need a doctor. Which sentence is correct?",
+                    options = listOf("Ich brauche einen Arzt.", "Ich habe ein Brot.", "Ich fahre mit dem Bus.", "Das ist teuer."),
+                    correctAnswer = "Ich brauche einen Arzt.",
+                    explanation = "'Ich brauche einen Arzt.' মানে 'আমার একজন ডাক্তার দরকার।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_14",
+                    question = "Your stomach hurts. Which sentence is correct?",
+                    options = listOf("Mein Kopf tut weh.", "Mein Bauch tut weh.", "Mein Zahn tut weh.", "Mein Rücken tut weh."),
+                    correctAnswer = "Mein Bauch tut weh.",
+                    explanation = "'Mein Bauch tut weh.' মানে 'আমার পেট ব্যথা করছে।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_10_15",
+                    question = "শূন্যস্থান পূরণ করুন: Mein Kopf tut ___.",
+                    options = emptyList(),
+                    correctAnswer = "weh",
+                    explanation = "'tut weh' জোড়া অভিব্যক্তিটি ব্যথা করা প্রকাশ করে।",
+                    type = ExerciseType.FILL_IN_BLANK
+                )
+            )
+        ),
+        Lesson(
+            id = "lesson_11",
+            title = "Lektion 11: কাজ ও পেশা (Arbeit & Beruf)",
+            description = "পেশা, কর্মস্থল, কাজের দিন ও সময় সম্পর্কিত মৌলিক জার্মান ভাষা শিখুন।",
+            order = 11,
+            objectives = listOf(
+                "সাধারণ পেশাসমূহের নাম চেনা ও বলা।",
+                "নিজের পেশা বলা এবং অন্যের পেশা সম্পর্কে জিজ্ঞাসা করা।",
+                "কোথায় কাজ করেন (কর্মস্থল) তা বলা।",
+                "সাধারণ কর্মস্থলের বিবরণ দেওয়া।",
+                "কাজের দিন (যেমন: সোমবার থেকে শুক্রবার) সম্পর্কে বলা।",
+                "কাজের সময় ও সময়সূচী জানা ও বলা (যেমন: Feierabend, beginnen)।",
+                "কর্মস্থল সম্পর্কিত সহজ প্রশ্ন ও উত্তর বোঝা।",
+                "পূর্ববর্তী অধ্যায়ের বার, সময় ও সংখ্যার সাথে কাজ সম্পর্কিত শব্দাবলীর সমন্বয় করা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("der Beruf", "পেশা", "দের বে-রুফ", "Was sind Sie von Beruf?"),
+                VocabularyItem("die Arbeit", "কাজ", "দি আর-বাইত", "Die Arbeit macht Spaß."),
+                VocabularyItem("der Arbeitsplatz", "কর্মস্থল", "দের আর-বাইতস-প্লাৎস", "Mein Arbeitsplatz ist neu."),
+                VocabularyItem("der Arzt", "ডাক্তার", "দের আর্ৎস", "Er ist Arzt."),
+                VocabularyItem("die Ärztin", "মহিলা ডাক্তার", "দি আর্ৎস-তিন", "Sie ist Ärztin."),
+                VocabularyItem("der Lehrer", "শিক্ষক", "দের লে-রের", "Er ist Lehrer."),
+                VocabularyItem("die Lehrerin", "মহিলা শিক্ষিকা", "দি লে-রে-রিন", "Sie ist Lehrerin."),
+                VocabularyItem("der Verkäufer", "বিক্রয়কর্মী", "দের ফের-কয়-ফার", "Er ist Verkäufer."),
+                VocabularyItem("die Verkäuferin", "মহিলা বিক্রয়কর্মী", "দি ফের-কয়-ফে-রিন", "Sie ist Verkäuferin."),
+                VocabularyItem("der Koch", "রাঁধুনি", "দের খোখ", "Der Koch kocht gut."),
+                VocabularyItem("die Köchin", "মহিলা রাঁধুনি", "দি খে-খিন", "Sie ist Köchin."),
+                VocabularyItem("der Fahrer", "চালক", "দের ফা-রের", "Er ist Fahrer."),
+                VocabularyItem("die Fahrerin", "মহিলা চালক", "দি ফা-রে-রিন", "Sie ist Fahrerin."),
+                VocabularyItem("der Mechaniker", "মেকানিক", "দের মে-খা-নি-কার", "Er ist Mechaniker."),
+                VocabularyItem("die Mechanikerin", "মহিলা মেকানিক", "দি মে-খা-নি-কে-রিন", "Sie ist Mechanikerin."),
+                VocabularyItem("der Ingenieur", "ইঞ্জিনিয়ার", "দের ইন-জে-নি-অর", "Er ist Ingenieur."),
+                VocabularyItem("die Ingenieurin", "মহিলা ইঞ্জিনিয়ার", "দি ইন-জে-নি-অ-রিন", "Sie ist Ingenieurin."),
+                VocabularyItem("der Student", "ছাত্র", "দের স্টু-ডেন্ট", "Er ist Student."),
+                VocabularyItem("die Studentin", "ছাত্রী", "দি স্টু-ডেন-তিন", "Sie ist Studentin."),
+                VocabularyItem("der Arbeiter", "শ্রমিক", "দের আর-বাই-টার", "Er ist Arbeiter."),
+                VocabularyItem("die Arbeiterin", "মহিলা শ্রমিক", "দি আর-বাই-টে-রিন", "Sie ist Arbeiterin."),
+                VocabularyItem("der Kellner", "ওয়েটার", "দের কেল-নার", "Der Kellner bringt Kaffee."),
+                VocabularyItem("die Kellnerin", "মহিলা ওয়েটার", "দি কেল-নে-রিন", "Sie ist Kellnerin."),
+                VocabularyItem("das Büro", "অফিস", "দাস ব্যু-রো", "Ich arbeite im Büro."),
+                VocabularyItem("die Schule", "স্কুল", "দি শু-লে", "Sie arbeitet in der Schule."),
+                VocabularyItem("das Krankenhaus", "হাসপাতাল", "দাস ক্রাংকেন-হাউস", "Er arbeitet im Krankenhaus."),
+                VocabularyItem("das Restaurant", "রেস্টুরেন্ট", "দাস রেস-তো-রং", "Ich arbeite in einem Restaurant."),
+                VocabularyItem("das Geschäft", "দোকান", "দাস গে-শেফট", "Sie arbeitet in einem Geschäft."),
+                VocabularyItem("die Firma", "কোম্পানি", "দি ফির-মা", "Er arbeitet in einer Firma."),
+                VocabularyItem("die Fabrik", "কারখানা", "দি ফা-ব্রিক", "Er arbeitet in einer Fabrik."),
+                VocabularyItem("der Supermarkt", "সুপারমার্কেট", "দের জুপার-মার্কট", "Sie arbeitet im Supermarkt."),
+                VocabularyItem("die Werkstatt", "ওয়ার্কশপ / মেরামতের স্থান", "দি ভের্ক-স্টাট", "Er arbeitet in einer Werkstatt."),
+                VocabularyItem("arbeiten", "কাজ করা", "আর-বাই-তেন", "Ich arbeite von Montag bis Freitag."),
+                VocabularyItem("beginnen", "শুরু করা", "বে-গিন-নেন", "Ich beginne um acht Uhr."),
+                VocabularyItem("der Feierabend", "কাজ শেষ হওয়ার সময় / কাজ শেষে অবসর", "দের ফাই-য়ার-আ-বেন্ট", "Um fünf Uhr habe ich Feierabend."),
+                VocabularyItem("von ... bis ...", "থেকে ... পর্যন্ত", "ফন ... বিস ...", "Ich arbeite von Montag bis Freitag.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "পেশা সম্পর্কে প্রশ্ন ও উত্তর (Was sind Sie von Beruf? / Was machst du beruflich?)",
+                    explanation = "কার কী পেশা তা জানতে দুটি প্রচলিত রূপ রয়েছে:\n- আনুষ্ঠানিক: Was sind Sie von Beruf? (আপনার পেশা কী?)\n- অনানুষ্ঠানিক: Was machst du beruflich? (তুমি কী কাজ করো?)\n\nনিজের পেশা প্রকাশের নিয়ম:\n- Ich bin + [পেশা] (জার্মানে পেশার আগে 'a/an' বসে না)।\n  উদাহরণ: Ich bin Lehrer. (আমি শিক্ষক।), Ich bin Ärztin. (আমি মহিলা ডাক্তার।)",
+                    examples = listOf(
+                        "Was sind Sie von Beruf? - Ich bin Ingenieur.",
+                        "Was machst du beruflich? - Ich bin Verkäuferin.",
+                        "Ich bin Student."
+                    )
+                ),
+                GrammarRule(
+                    title = "কর্মস্থল প্রকাশ করা ('arbeite in / im')",
+                    explanation = "আপনি কোথায় কাজ করেন তা বলতে 'arbeiten' ক্রিয়া এবং নির্দিষ্ট কর্মস্থল ব্যবহার করা হয়।\n- Wo arbeiten Sie? (আপনি কোথায় কাজ করেন?)\n- Wo arbeitest du? (তুমি কোথায় কাজ করো?)\n\nকর্মস্থলের সাধারণ প্যাটার্নসমূহ:\n- im Büro (অফিসে)\n- in der Schule (স্কুলে)\n- im Krankenhaus (হাসপাতালে)\n- in einem Restaurant (রেস্টুরেন্টে)\n- in einer Firma (কোম্পানিতে)",
+                    examples = listOf(
+                        "Wo arbeiten Sie? - Ich arbeite im Büro.",
+                        "Ich arbeite im Krankenhaus.",
+                        "Ich arbeite in einer Firma."
+                    )
+                ),
+                GrammarRule(
+                    title = "'arbeiten' ক্রিয়ার রূপ এবং সময়সূচী (arbeiten, beginnen, von... bis...)",
+                    explanation = "'arbeiten' ক্রিয়ার প্রয়োজনীয় রূপসমূহ:\n- ich arbeite\n- du arbeitest\n- er/sie arbeitet\n\nকাজের সময়সূচী প্রকাশের সহজ বাক্য রূপ:\n- Ich arbeite von Montag bis Freitag. (আমি সোমবার থেকে শুক্রবার কাজ করি।)\n- Ich beginne um acht Uhr. (আমি আটটায় কাজ শুরু করি।)\n- Um fünf Uhr habe ich Feierabend. (পাঁচটায় আমার কাজ শেষ হয়।)",
+                    examples = listOf(
+                        "Ich arbeite von Montag bis Freitag.",
+                        "Er arbeitet im Krankenhaus.",
+                        "Um fünf Uhr habe ich Feierabend."
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Was sind Sie von Beruf?", "আপনার পেশা কী?", "ভাস জিন্ট জি ফন বে-রুফ"),
+                ExampleSentence("Was machst du beruflich?", "তুমি কী কাজ করো?", "ভাস মাখস্ট দু বে-রুফ-লিশ"),
+                ExampleSentence("Ich bin Lehrer.", "আমি শিক্ষক।", "ইখ বিন লে-রের"),
+                ExampleSentence("Ich bin Verkäuferin.", "আমি বিক্রয়কর্মী।", "ইখ বিন ফের-কয়-ফে-রিন"),
+                ExampleSentence("Wo arbeiten Sie?", "আপনি কোথায় কাজ করেন?", "ভো আর-বাই-তেন জি"),
+                ExampleSentence("Ich arbeite in einem Büro.", "আমি একটি অফিসে কাজ করি।", "ইখ আর-বাই-টে ইন আই-নেম ব্যু-রো"),
+                ExampleSentence("Ich arbeite im Krankenhaus.", "আমি হাসপাতালে কাজ করি।", "ইখ আর-বাই-টে ইম ক্রাংকেন-হাউস"),
+                ExampleSentence("Ich arbeite von Montag bis Freitag.", "আমি সোমবার থেকে শুক্রবার কাজ করি।", "ইখ আর-বাই-টে ফন মোন-তাক বিস ফ্রাই-তাক"),
+                ExampleSentence("Ich beginne um acht Uhr.", "আমি আটটায় কাজ শুরু করি।", "ইখ বে-গিন-নে উম আখ্ত উর"),
+                ExampleSentence("Um fünf Uhr habe ich Feierabend.", "পাঁচটায় আমার কাজ শেষ হয়।", "উম ফিউনফ উর হা-বে ইখ ফাই-য়ার-আ-বেন্ট")
+            ),
+            dialogues = listOf(
+                DialogueEntry("A", "Guten Tag. Was sind Sie von Beruf?", "শুভ দিন। আপনার পেশা কী?"),
+                DialogueEntry("B", "Ich bin Ingenieur.", "আমি ইঞ্জিনিয়ার।"),
+                DialogueEntry("A", "Wo arbeiten Sie?", "আপনি কোথায় কাজ করেন?"),
+                DialogueEntry("B", "Ich arbeite in einer Firma.", "আমি একটি কোম্পানিতে কাজ করি।"),
+                DialogueEntry("A", "Ah, interessant!", "আহা, দারুণ!"),
+                DialogueEntry("B", "Danke.", "ধন্যবাদ।"),
+                DialogueEntry("A", "Was machst du beruflich?", "তুমি কী কাজ করো?"),
+                DialogueEntry("B", "Ich bin Verkäuferin.", "আমি বিক্রয়কর্মী।"),
+                DialogueEntry("A", "Wo arbeitest du?", "তুমি কোথায় কাজ করো?"),
+                DialogueEntry("B", "Ich arbeite in einem Geschäft.", "আমি একটি দোকানে কাজ করি।"),
+                DialogueEntry("A", "Arbeitest du jeden Tag?", "তুমি কি প্রতিদিন কাজ করো?"),
+                DialogueEntry("B", "Nein. Ich arbeite von Montag bis Freitag.", "না। আমি সোমবার থেকে শুক্রবার কাজ করি।"),
+                DialogueEntry("A", "Wann beginnst du?", "তুমি কখন শুরু করো?"),
+                DialogueEntry("B", "Ich beginne um acht Uhr.", "আমি আটটায় শুরু করি।"),
+                DialogueEntry("A", "Wann hast du Feierabend?", "তোমার কাজ কখন শেষ হয়?"),
+                DialogueEntry("B", "Um fünf Uhr.", "পাঁচটায়।"),
+                DialogueEntry("A", "Was sind Sie von Beruf?", "আপনার পেশা কী?"),
+                DialogueEntry("B", "Ich bin Ärztin.", "আমি মহিলা ডাক্তার।"),
+                DialogueEntry("A", "Wo arbeiten Sie?", "আপনি কোথায় কাজ করেন?"),
+                DialogueEntry("B", "Ich arbeite im Krankenhaus.", "আমি হাসপাতালে কাজ করি।"),
+                DialogueEntry("A", "Von wann bis wann arbeiten Sie?", "আপনি কখন থেকে কখন পর্যন্ত কাজ করেন?"),
+                DialogueEntry("B", "Von acht Uhr bis vier Uhr.", "আটটা থেকে চারটা পর্যন্ত।")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_11_1",
+                    question = "\"der Lehrer\" শব্দের বাংলা অর্থ কোনটি?",
+                    options = listOf("ডাক্তার", "শিক্ষক", "চালক", "রাঁধুনি"),
+                    correctAnswer = "শিক্ষক",
+                    explanation = "'der Lehrer' মানে শিক্ষক।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_2",
+                    question = "\"das Büro\" শব্দের সঠিক বাংলা অর্থ কোনটি?",
+                    options = listOf("হাসপাতাল", "অফিস", "স্কুল", "দোকান"),
+                    correctAnswer = "অফিস",
+                    explanation = "'das Büro' মানে অফিস।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_3",
+                    question = "শূন্যস্থান পূরণ করুন: Ich ______ in einem Büro.",
+                    options = emptyList(),
+                    correctAnswer = "arbeite",
+                    explanation = "'Ich' এর সাথে 'arbeiten' ক্রিয়া রূপ হলো 'arbeite'।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_11_4",
+                    question = "শূন্যস্থান পূরণ করুন: Ich arbeite von Montag ___ Freitag.",
+                    options = emptyList(),
+                    correctAnswer = "bis",
+                    explanation = "'von ... bis ...' মানে 'থেকে ... পর্যন্ত'।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_11_5",
+                    question = "জার্মানে অনুবাদ করুন: আমি একজন শিক্ষক।",
+                    options = emptyList(),
+                    correctAnswer = "Ich bin Lehrer.",
+                    explanation = "জার্মানে পেশা প্রকাশের সময় 'Ich bin Lehrer' বলা হয়।",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_11_6",
+                    question = "জার্মানে অনুবাদ করুন: আমি একটি অফিসে কাজ করি।",
+                    options = emptyList(),
+                    correctAnswer = "Ich arbeite in einem Büro.",
+                    explanation = "'আমি একটি অফিসে কাজ করি' এর সঠিক অনুবাদ হলো 'Ich arbeite in einem Büro.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_11_7",
+                    question = "জার্মানে অনুবাদ করুন: আপনি কোথায় কাজ করেন?",
+                    options = emptyList(),
+                    correctAnswer = "Wo arbeiten Sie?",
+                    explanation = "আনুষ্ঠানিক প্রশ্ন 'Wo arbeiten Sie?' এর অর্থ 'আপনি কোথায় কাজ করেন?'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_11_8",
+                    question = "You meet someone for the first time and want to ask their profession.",
+                    options = listOf("Was sind Sie von Beruf?", "Wo wohnst du?", "Wie alt bist du?", "Wie viel kostet das?"),
+                    correctAnswer = "Was sind Sie von Beruf?",
+                    explanation = "'Was sind Sie von Beruf?' হলো আনুষ্ঠানিকভাবে পেশা জিজ্ঞাসা করার বাক্য।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_9",
+                    question = "You are talking to a friend and ask what they do for work.",
+                    options = listOf("Was machst du beruflich?", "Wie spät ist es?", "Wo ist die Apotheke?", "Hast du Geschwister?"),
+                    correctAnswer = "Was machst du beruflich?",
+                    explanation = "'Was machst du beruflich?' হলো বন্ধুর কাছে কাজ সম্পর্কে জানার অনানুষ্ঠানিক রূপ।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_10",
+                    question = "You work in a hospital. Which sentence should you say?",
+                    options = listOf("Ich arbeite im Krankenhaus.", "Ich arbeite in der Schule.", "Ich arbeite im Büro.", "Ich arbeite im Supermarkt."),
+                    correctAnswer = "Ich arbeite im Krankenhaus.",
+                    explanation = "'im Krankenhaus' মানে হাসপাতালে।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_11",
+                    question = "You work from Monday to Friday. Which sentence is correct?",
+                    options = listOf("Ich arbeite von Montag bis Freitag.", "Ich arbeite am Sonntag.", "Ich bin Arzt.", "Das ist teuer."),
+                    correctAnswer = "Ich arbeite von Montag bis Freitag.",
+                    explanation = "'von Montag bis Freitag' মানে সোমবার থেকে শুক্রবার।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_12",
+                    question = "You start work at 8 o'clock. Which sentence is correct?",
+                    options = listOf("Ich beginne um acht Uhr.", "Ich schlafe um elf Uhr.", "Ich esse Brot.", "Ich fahre mit dem Bus."),
+                    correctAnswer = "Ich beginne um acht Uhr.",
+                    explanation = "'Ich beginne um acht Uhr.' মানে 'আমি আটটায় শুরু করি।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_13",
+                    question = "জার্মান শব্দ \"die Ärztin\"-এর বাংলা অর্থ কী?",
+                    options = listOf("শিক্ষিকা", "মহিলা ডাক্তার", "বিক্রয়কর্মী", "মহিলা চালক"),
+                    correctAnswer = "মহিলা ডাক্তার",
+                    explanation = "'die Ärztin' শব্দের অর্থ মহিলা ডাক্তার।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_11_14",
+                    question = "জার্মানে অনুবাদ করুন: পাঁচটায় আমার কাজ শেষ হয়।",
+                    options = emptyList(),
+                    correctAnswer = "Um fünf Uhr habe ich Feierabend.",
+                    explanation = "'Um fünf Uhr habe ich Feierabend.' মানে পাঁচটায় আমার কাজ শেষ হয়।",
+                    type = ExerciseType.TRANSLATION
+                )
+            )
+        ),
+        Lesson(
+            id = "lesson_12",
+            title = "Lektion 12: অবসর, পরিকল্পনা ও দৈনন্দিন কথোপকথন (Freizeit, Pläne & Alltag)",
+            description = "অবসর সময়, শখ, পরিকল্পনা করা, আমন্ত্রণ জানানো ও গ্রহণ/প্রত্যাখ্যান করা, আবহাওয়া এবং দৈনন্দিন জীবনের সাধারণ সামাজিক কথোপকথন শিখুন।",
+            order = 12,
+            objectives = listOf(
+                "সহজ শখ ও অবসর সময় সম্পর্কে বলা (Hobbies & Freizeit)।",
+                "সপ্তাহান্তের পরিকল্পনা বলা ও জিজ্ঞেস করা (Pläne am Wochenende)।",
+                "কাউকে কিছু করার আমন্ত্রণ জানানো (Einladungen)।",
+                "মার্জিতভাবে আমন্ত্রণ গ্রহণ ও প্রত্যাখ্যান করা (Zusagen & Absagen)।",
+                "আবহাওয়া সম্পর্কে সহজ প্রশ্ন করা ও বর্ণনা দেয়া (Wetter)।",
+                "পূর্ববর্তী অধ্যায় সমূহের (১–১১) জানা বিষয়াবলী সমন্বয় করে দৈনন্দিন কথোপকথনে প্রয়োগ করা।"
+            ),
+            vocabulary = listOf(
+                VocabularyItem("die Freizeit", "অবসর সময়", "দি ফ্রাই-সাইত", "In der Freizeit lese ich."),
+                VocabularyItem("das Wochenende", "সপ্তাহান্ত", "দাস ভো-খেন-এন্ডে", "Was machst du am Wochenende?"),
+                VocabularyItem("das Hobby", "শখ", "দাস হো-বি", "Mein Hobby ist Musik."),
+                VocabularyItem("der Sport", "খেলাধুলা", "দের শ্পোর্ট", "Ich mache Sport."),
+                VocabularyItem("die Musik", "সঙ্গীত", "দি মু-জিক", "Ich höre gerne Musik."),
+                VocabularyItem("der Film", "সিনেমা", "দের ফিল্ম", "Der Film ist gut."),
+                VocabularyItem("das Buch", "বই", "দাস বুখ", "Ich lese ein Buch."),
+                VocabularyItem("das Fußballspiel", "ফুটবল খেলা", "দাস ফুস-বাল-শ্পিল", "Das Fußballspiel ist am Samstag."),
+                VocabularyItem("der Spaziergang", "হাঁটা / পদচারণা", "দের শ্পা-সির-গাং", "Ich mache einen Spaziergang."),
+                VocabularyItem("spielen", "খেলা", "শ্পি-লেন", "Ich spiele Fußball."),
+                VocabularyItem("lesen", "পড়া", "লে-জেন", "Ich lese gern."),
+                VocabularyItem("hören", "শোনা", "হে-রেন", "Ich höre Musik."),
+                VocabularyItem("sehen", "দেখা", "জে-েন", "Ich sehe fern."),
+                VocabularyItem("schwimmen", "সাঁতার কাটা", "শ্মি-মেন", "Ich schwimme gern."),
+                VocabularyItem("tanzen", "নাচা", "তান-সেন", "Sie tanzt gern."),
+                VocabularyItem("kochen", "রান্না করা", "কো-খেন", "Ich koche gern."),
+                VocabularyItem("reisen", "ভ্রমণ করা", "রাই-জেন", "Ich reise gern."),
+                VocabularyItem("treffen", "দেখা করা", "ত্রে-ফেন", "Ich treffe meine Freunde."),
+                VocabularyItem("spazieren gehen", "হাঁটতে যাওয়া", "শ্পা-সি-রেন গে-এন", "Ich gehe im Park spazieren."),
+                VocabularyItem("das Wetter", "আবহাওয়া", "দাস ভে-টার", "Wie ist das Wetter?"),
+                VocabularyItem("die Sonne", "সূর্য", "দি জো-নে", "Die Sonne scheint."),
+                VocabularyItem("der Regen", "বৃষ্টি", "দের রে-গেন", "Der Regen kommt."),
+                VocabularyItem("der Schnee", "তুষার", "দের শ্নে", "Der Schnee fällt."),
+                VocabularyItem("der Wind", "বাতাস", "দের ভিন্ট", "Der Wind ist stark."),
+                VocabularyItem("sonnig", "রৌদ্রোজ্জ্বল", "জো-নিশ", "Es ist sonnig."),
+                VocabularyItem("warm", "উষ্ণ", "ভार्म", "Es ist warm."),
+                VocabularyItem("kalt", "ঠান্ডা", "কাল্ট", "Es ist kalt."),
+                VocabularyItem("heiß", "গরম", "হাইস", "Es ist heiß."),
+                VocabularyItem("schön", "সুন্দর", "শেন", "Es ist schön."),
+                VocabularyItem("schlecht", "খারাপ", "শ্লেখ্ত", "Das Wetter ist schlecht."),
+                VocabularyItem("regnerisch", "বৃষ্টিময়", "রেগ-নে-রিশ", "Es ist regnerisch.")
+            ),
+            grammarRules = listOf(
+                GrammarRule(
+                    title = "পছন্দের প্রকাশ ('gern / gerne')",
+                    explanation = "কোনো কাজ করতে পছন্দ করা বোঝাতে Verb-এর পর 'gern' বা 'gerne' ব্যবহার করা হয়।\n- Ich höre gern Musik. (আমি গান শুনতে পছন্দ করি।)\n- Ich lese gern. (আমি পড়তে পছন্দ করি।)\n- Ich spiele gern Fußball. (আমি ফুটবল খেলতে পছন্দ করি।)",
+                    examples = listOf(
+                        "Mein Hobby ist Musik. (আমার শখ সঙ্গীত।)",
+                        "Ich höre gern Musik. (আমি গান শুনতে পছন্দ করি।)",
+                        "Ich lese gern. (আমি পড়তে পছন্দ করি।)",
+                        "Ich spiele gern Fußball. (আমি ফুটবল খেলতে পছন্দ করি।)",
+                        "Ich schwimme gern. (আমি সাঁতার কাটতে পছন্দ করি।)",
+                        "Ich koche gern. (আমি রান্না করতে পছন্দ করি।)"
+                    )
+                ),
+                GrammarRule(
+                    title = "সপ্তাহান্ত ও দৈনন্দিন সময়সূচী ('am')",
+                    explanation = "সপ্তাহান্ত বা দিনের নাম উল্লেখ করে পরিকল্পনা বলতে 'am' প্রিপজিশন ব্যবহৃত হয়:\n- am Wochenende (সপ্তাহান্তে)\n- am Samstag (শনিবার)\n- am Sonntag (রবিবার)\n- heute (আজ) / morgen (আগামীকাল)",
+                    examples = listOf(
+                        "Am Samstag spiele ich Fußball. (শনিবার আমি ফুটবল খেলি।)",
+                        "Am Sonntag lese ich. (রবিবার আমি পড়ি।)",
+                        "Am Wochenende treffe ich meine Freunde. (সপ্তাহান্তে আমি বন্ধুদের সঙ্গে দেখা করি।)",
+                        "Was machst du am Wochenende? (তুমি সপ্তাহান্তে কী করো?)"
+                    )
+                ),
+                GrammarRule(
+                    title = "পরিকল্পনা ও ইচ্ছা প্রকাশ ('Was machen wir?' / 'möchte')",
+                    explanation = "সহজ বাক্যে ভবিষ্যতের পরিকল্পনা বা ইচ্ছা প্রকাশ করতে বর্তমান কাল ও 'möchte' ব্যবহৃত হয়:\n- Was machen wir? (আমরা কী করব?)\n- Was machen wir morgen? (আমরা আগামীকাল কী করব?)\n- Was möchtest du machen? (তুমি কী করতে চাও?)\n- Ich möchte ins Kino gehen. (আমি সিনেমা দেখতে যেতে চাই।)\n- Ich möchte im Park spazieren gehen. (আমি পার্কে হাঁটতে যেতে চাই।)",
+                    examples = listOf(
+                        "Was machen wir morgen?",
+                        "Ich möchte ins Kino gehen.",
+                        "Ich möchte im Park spazieren gehen."
+                    )
+                ),
+                GrammarRule(
+                    title = "আমন্ত্রণ জানানো ('Möchtest du ...?')",
+                    explanation = "কাউকে কোথাও যাওয়া বা কিছু করার প্রস্তাব দিতে 'Möchtest du ...?' ব্যবহৃত হয়:\n- Möchtest du mitkommen? (তুমি কি সঙ্গে আসতে চাও?)\n- Möchtest du Kaffee trinken? (তুমি কি কফি খেতে চাও?)\n- Möchtest du ins Kino gehen? (তুমি কি সিনেমা দেখতে যেতে চাও?)",
+                    examples = listOf(
+                        "Möchtest du mitkommen? (তুমি কি সঙ্গে আসতে চাও?)",
+                        "Möchtest du Kaffee trinken?",
+                        "Möchtest du ins Kino gehen?"
+                    )
+                ),
+                GrammarRule(
+                    title = "আমন্ত্রণ গ্রহণ ও প্রত্যাখ্যান (Zusagen & Absagen)",
+                    explanation = "আমন্ত্রণ গ্রহণ করতে:\n- Ja, gerne! (হ্যাঁ, অবশ্যই!)\n- Ja, gern. (হ্যাঁ, ভালো লাগবে।)\n- Sehr gerne! (অবশ্যই!)\n- Das ist eine gute Idee! (এটা একটি ভালো ধারণা!)\n\nমার্জিতভাবে প্রত্যাখ্যান করতে:\n- Leider kann ich nicht. (দুঃখিত, আমি পারব না।)\n- Leider habe ich keine Zeit. (দুঃখিত, আমার সময় নেই।)\n- Vielleicht morgen. (হয়তো আগামীকাল।)",
+                    examples = listOf(
+                        "Ja, gerne! (হ্যাঁ, অবশ্যই!)",
+                        "Das ist eine gute Idee!",
+                        "Leider kann ich nicht.",
+                        "Leider habe ich keine Zeit."
+                    )
+                ),
+                GrammarRule(
+                    title = "আবহাওয়া বর্ণনা (Das Wetter)",
+                    explanation = "আবহাওয়া সম্পর্কে প্রশ্ন ও উত্তর:\n- Wie ist das Wetter? (আবহাওয়া কেমন?)\n- Es ist schön. (আবহাওয়া সুন্দর।)\n- Es ist kalt / warm / heiß. (ঠান্ডা / উষ্ণ / গরম।)\n- Es regnet. (বৃষ্টি হচ্ছে।)\n- Die Sonne scheint. (সূর্য কিরণ দিচ্ছে।)",
+                    examples = listOf(
+                        "Wie ist das Wetter?",
+                        "Es ist schön.",
+                        "Es regnet.",
+                        "Die Sonne scheint."
+                    )
+                )
+            ),
+            exampleSentences = listOf(
+                ExampleSentence("Was machst du am Wochenende?", "তুমি সপ্তাহান্তে কী করো?", "ভাস মাখস্ট দু আম ভো-খেন-এন্ডে"),
+                ExampleSentence("Ich spiele Fußball.", "আমি ফুটবল খেলি।", "ইখ শ্পিলে ফুস-বাল"),
+                ExampleSentence("Ich höre Musik.", "আমি গান শুনি।", "ইখ হে-রে মু-জিক"),
+                ExampleSentence("Ich sehe fern.", "আমি টিভি দেখি।", "ইখ জে-হে ফের্ন"),
+                ExampleSentence("Möchtest du mitkommen?", "তুমি কি সঙ্গে আসতে চাও?", "মেখ-টেস্ট দু মিট-কো-মেন"),
+                ExampleSentence("Ja, gerne!", "হ্যাঁ, অবশ্যই!", "যা গের-নে"),
+                ExampleSentence("Leider kann ich nicht.", "দুঃখিত, আমি পারব না।", "লাই-ডের কান ইখ নিখ্ত"),
+                ExampleSentence("Was machen wir morgen?", "আমরা আগামীকাল কী করব?", "ভাস মা-খেন ভির মোর-গেন"),
+                ExampleSentence("Wie ist das Wetter?", "আবহাওয়া কেমন?", "ভি ইস্ট দাস ভে-টার"),
+                ExampleSentence("Es ist schön.", "আবহাওয়া সুন্দর।", "এস ইস্ট শেন"),
+                ExampleSentence("Es regnet.", "বৃষ্টি হচ্ছে।", "এস রেগ-নেট")
+            ),
+            dialogues = listOf(
+                DialogueEntry("A", "Was machst du am Wochenende?", "তুমি সপ্তাহান্তে কী করো?"),
+                DialogueEntry("B", "Am Samstag spiele ich Fußball.", "শনিবার আমি ফুটবল খেলি।"),
+                DialogueEntry("A", "Und am Sonntag?", "আর রবিবার?"),
+                DialogueEntry("B", "Am Sonntag lese ich.", "রবিবার আমি পড়ি।"),
+                DialogueEntry("A", "Schön!", "সুন্দর!"),
+                DialogueEntry("A", "Hallo! Möchtest du mitkommen?", "হ্যালো! তুমি কি সঙ্গে আসতে চাও?"),
+                DialogueEntry("B", "Wohin?", "কোথায়?"),
+                DialogueEntry("A", "Ins Kino.", "সিনেমা দেখতে।"),
+                DialogueEntry("B", "Ja, gerne!", "হ্যাঁ, অবশ্যই!"),
+                DialogueEntry("A", "Super!", "দারুণ!"),
+                DialogueEntry("A", "Möchtest du heute mit uns essen?", "তুমি কি আজ আমাদের সঙ্গে খেতে চাও?"),
+                DialogueEntry("B", "Leider kann ich nicht.", "দুঃখিত, আমি পারব না।"),
+                DialogueEntry("A", "Warum?", "কেন?"),
+                DialogueEntry("B", "Ich habe einen Termin.", "আমার একটি অ্যাপয়েন্টমেন্ট আছে।"),
+                DialogueEntry("A", "Okay. Vielleicht morgen?", "ঠিক আছে। হয়তো আগামীকাল?"),
+                DialogueEntry("B", "Ja, gerne!", "হ্যাঁ, অবশ্যই!"),
+                DialogueEntry("A", "Wie ist das Wetter heute?", "আজ আবহাওয়া কেমন?"),
+                DialogueEntry("B", "Es ist kalt und regnerisch.", "ঠান্ডা এবং বৃষ্টিময়।"),
+                DialogueEntry("A", "Oh!", "ওহ!"),
+                DialogueEntry("B", "Ja.", "হ্যাঁ।"),
+                DialogueEntry("A", "Hallo! Wie geht es dir?", "হ্যালো! তুমি কেমন আছো?"),
+                DialogueEntry("B", "Gut, danke. Und dir?", "ভালো, ধন্যবাদ। আর তুমি?"),
+                DialogueEntry("A", "Auch gut.", "আমিও ভালো।"),
+                DialogueEntry("B", "Was machst du am Samstag?", "তুমি শনিবারে কী করছ?"),
+                DialogueEntry("A", "Ich möchte in die Stadt gehen.", "আমি শহরে যেতে চাই।"),
+                DialogueEntry("B", "Möchtest du mitkommen?", "তুমি কি সঙ্গে আসতে চাও?"),
+                DialogueEntry("A", "Ja, gerne!", "হ্যাঁ, অবশ্যই!"),
+                DialogueEntry("B", "Super. Um zehn Uhr?", "দারুণ। ১০টায়?"),
+                DialogueEntry("A", "Ja, um zehn Uhr.", "হ্যাঁ, ১০টায়।")
+            ),
+            exercises = listOf(
+                Exercise(
+                    id = "ex_12_1",
+                    question = "\"das Wochenende\" শব্দের বাংলা অর্থ কী?",
+                    options = listOf("সপ্তাহ", "সপ্তাহান্ত", "সকাল", "ছুটি"),
+                    correctAnswer = "সপ্তাহান্ত",
+                    explanation = "'das Wochenende' মানে সপ্তাহান্ত (Weekend)।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_2",
+                    question = "\"Ich höre gern Musik.\" বাক্যের সঠিক বাংলা অর্থ কোনটি?",
+                    options = listOf("আমি গান শুনতে পছন্দ করি।", "আমি গান গাইতে পছন্দ করি।", "আমি সিনেমা দেখতে পছন্দ করি।", "আমি বই পড়তে পছন্দ করি।"),
+                    correctAnswer = "আমি গান শুনতে পছন্দ করি।",
+                    explanation = "'hören' মানে শোনা এবং 'Musik' মানে গান/সঙ্গীত, তাই সঠিক অর্থ 'আমি গান শুনতে পছন্দ করি।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_3",
+                    question = "শূন্যস্থান পূরণ করুন: Was machst du ___ Wochenende?",
+                    options = listOf("am", "um", "in", "aus"),
+                    correctAnswer = "am",
+                    explanation = "'Wochenende' এর পূর্বে 'am' ব্যবহৃত হয় (am Wochenende)।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_4",
+                    question = "শূন্যস্থান পূরণ করুন: Möchtest du ________?",
+                    options = emptyList(),
+                    correctAnswer = "mitkommen",
+                    explanation = "'Möchtest du mitkommen?' অর্থ 'তুমি কি সঙ্গে আসতে চাও?'।",
+                    type = ExerciseType.FILL_IN_BLANK
+                ),
+                Exercise(
+                    id = "ex_12_5",
+                    question = "জার্মানে অনুবাদ করুন: তুমি কি সঙ্গে আসতে চাও?",
+                    options = emptyList(),
+                    correctAnswer = "Möchtest du mitkommen?",
+                    explanation = "'তুমি কি সঙ্গে আসতে চাও?' এর জার্মান রূপ হলো 'Möchtest du mitkommen?'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_12_6",
+                    question = "জার্মানে অনুবাদ করুন: আমি ফুটবল খেলতে পছন্দ করি।",
+                    options = emptyList(),
+                    correctAnswer = "Ich spiele gern Fußball.",
+                    explanation = "'আমি ফুটবল খেলতে পছন্দ করি' এর অনুবাদ হলো 'Ich spiele gern Fußball.'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_12_7",
+                    question = "জার্মানে অনুবাদ করুন: আবহাওয়া কেমন?",
+                    options = emptyList(),
+                    correctAnswer = "Wie ist das Wetter?",
+                    explanation = "'আবহাওয়া কেমন?' এর অনুবাদ হলো 'Wie ist das Wetter?'",
+                    type = ExerciseType.TRANSLATION
+                ),
+                Exercise(
+                    id = "ex_12_8",
+                    question = "You want to ask a friend about their weekend plans. Which question should you ask?",
+                    options = listOf("Was machst du am Wochenende?", "Wie viel kostet das?", "Wo wohnst du?", "Was sind Sie von Beruf?"),
+                    correctAnswer = "Was machst du am Wochenende?",
+                    explanation = "'Was machst du am Wochenende?' এর মাধ্যমে সপ্তাহান্তের পরিকল্পনা জানতে চাওয়া হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_9",
+                    question = "You want to invite a friend to the cinema. Which sentence is correct?",
+                    options = listOf("Möchtest du ins Kino gehen?", "Wie spät ist es?", "Ich habe Kopfschmerzen.", "Wo ist die Bank?"),
+                    correctAnswer = "Möchtest du ins Kino gehen?",
+                    explanation = "'Möchtest du ins Kino gehen?' মানে 'তুমি কি সিনেমা দেখতে যেতে চাও?'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_10",
+                    question = "You accept an invitation happily. What do you say?",
+                    options = listOf("Ja, gerne!", "Leider kann ich nicht.", "Nein, danke.", "Ich habe keine Zeit."),
+                    correctAnswer = "Ja, gerne!",
+                    explanation = "'Ja, gerne!' মানে 'হ্যাঁ, অবশ্যই!' যা আমন্ত্রণ সানন্দে গ্রহণের বাক্য।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_11",
+                    question = "You cannot go because you have an appointment. What do you say?",
+                    options = listOf("Leider kann ich nicht. Ich habe einen Termin.", "Ja, gerne!", "Das ist eine gute Idee!", "Es ist schön."),
+                    correctAnswer = "Leider kann ich nicht. Ich habe einen Termin.",
+                    explanation = "'Leider kann ich nicht. Ich habe einen Termin.' মানে 'দুঃখিত, আমি পারব না। আমার একটি অ্যাপয়েন্টমেন্ট আছে।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_12",
+                    question = "You want to ask about the weather today. What do you say?",
+                    options = listOf("Wie ist das Wetter?", "Wie heißen Sie?", "Wo ist der Bahnhof?", "Was machst du beruflich?"),
+                    correctAnswer = "Wie ist das Wetter?",
+                    explanation = "'Wie ist das Wetter?' অর্থ 'আবহাওয়া কেমন?'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_13",
+                    question = "[FINAL A1 REVIEW - Greetings]: Someone says 'Guten Tag! Wie geht es Ihnen?'. How do you politely respond?",
+                    options = listOf("Danke, gut! Und Ihnen?", "Tschüss!", "Ich bin 20 Jahre alt.", "Das kostet fünf Euro."),
+                    correctAnswer = "Danke, gut! Und Ihnen?",
+                    explanation = "'Danke, gut! Und Ihnen?' হলো মার্জিত উত্তর।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_14",
+                    question = "[FINAL A1 REVIEW - Personal Intro]: Someone asks 'Wie heißen Sie?'. How do you answer?",
+                    options = listOf("Ich heiße ...", "Ich komme aus Bangladesch.", "Ich wohne in Dhaka.", "Ich habe einen Bruder."),
+                    correctAnswer = "Ich heiße ...",
+                    explanation = "'Ich heiße ...' হলো নিজের নাম বলার সঠিক প্রকাশ।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_15",
+                    question = "[FINAL A1 REVIEW - Shopping]: How do you ask 'How much does this cost?' in German?",
+                    options = listOf("Wie viel kostet das?", "Wo ist das Krankenhaus?", "Wann beginnt der Kurs?", "Was machst du am Samstag?"),
+                    correctAnswer = "Wie viel kostet das?",
+                    explanation = "'Wie viel kostet das?' মানে 'এটার দাম কত?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_16",
+                    question = "[FINAL A1 REVIEW - City & Transport]: How do you ask 'Where is the train station?'",
+                    options = listOf("Wo ist der Bahnhof?", "Wie spät ist es?", "Hast du Schmerzen?", "Was möchten Sie trinken?"),
+                    correctAnswer = "Wo ist der Bahnhof?",
+                    explanation = "'Wo ist der Bahnhof?' মানে 'রেলস্টেশন কোথায়?'।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_17",
+                    question = "[FINAL A1 REVIEW - Health]: You have a headache. What do you say?",
+                    options = listOf("Ich habe Kopfschmerzen.", "Ich habe Hunger.", "Ich fahre mit dem Bus.", "Ich bin Verkäufer."),
+                    correctAnswer = "Ich habe Kopfschmerzen.",
+                    explanation = "'Ich habe Kopfschmerzen.' মানে 'আমার মাথাব্যথা আছে।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_18",
+                    question = "[FINAL A1 REVIEW - Work]: Someone asks 'Was sind Sie von Beruf?'. How do you reply if you are a teacher?",
+                    options = listOf("Ich bin Lehrer.", "Ich lerne Deutsch.", "Ich gehe nach Hause.", "Ich esse ein Brot."),
+                    correctAnswer = "Ich bin Lehrer.",
+                    explanation = "'Ich bin Lehrer.' মানে 'আমি শিক্ষক।'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_19",
+                    question = "[FINAL PRACTICAL CHALLENGE]: Arrange a meeting time. 'Um wie viel Uhr treffen wir uns?' - '___ zehn Uhr.'",
+                    options = listOf("Um", "Am", "In", "Aus"),
+                    correctAnswer = "Um",
+                    explanation = "নির্দিষ্ট সময় প্রকাশের জন্য 'Um' অব্যয় ব্যবহৃত হয়।",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                ),
+                Exercise(
+                    id = "ex_12_20",
+                    question = "[FINAL PRACTICAL CHALLENGE]: Complete the dialogue.\nA: Was machst du am Samstag?\nB: Ich möchte in die Stadt gehen. Möchtest du mitkommen?\nA: Ja, ________!",
+                    options = listOf("gerne", "schlecht", "kalt", "teuer"),
+                    correctAnswer = "gerne",
+                    explanation = "'Ja, gerne!' মানে 'হ্যাঁ, অবশ্যই!'",
+                    type = ExerciseType.MULTIPLE_CHOICE
+                )
+            )
         )
     )
 
